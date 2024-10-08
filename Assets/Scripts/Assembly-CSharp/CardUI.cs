@@ -1,80 +1,62 @@
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Token: 0x0200000E RID: 14
 public class CardUI : MonoBehaviour
 {
-	public int theSeedType;
-
-	public int theSeedCost = 100;
-
-	public bool isSelected;
-
-	public int theNumberInCardSort;
-
-	public InGameUIMgr thisUI;
-
-	public GameObject parent;
-
-	public bool isAvailable = true;
-
-	public float CD;
-
-	public float fullCD = 7.5f;
-
-	private Slider slider;
-
-	public bool isPickUp;
-
-	public bool isExtra;
-
+	// Token: 0x06000020 RID: 32 RVA: 0x00002678 File Offset: 0x00000878
 	private void Start()
 	{
-		slider = base.transform.GetChild(2).gameObject.GetComponent<Slider>();
+		this.slider = base.transform.GetChild(2).gameObject.GetComponent<Slider>();
 		if (GameAPP.theBoardType == 1)
 		{
-			switch (GameAPP.theBoardLevel)
+			int theBoardLevel = GameAPP.theBoardLevel;
+			if (theBoardLevel <= 17)
 			{
-			case 15:
-			case 17:
-				if (theSeedType != 256)
+				if (theBoardLevel == 15 || theBoardLevel == 17)
 				{
-					Object.Destroy(base.gameObject);
+					if (this.theSeedType != 256)
+					{
+						Object.Destroy(base.gameObject);
+					}
+					else
+					{
+						this.theSeedCost = 75;
+					}
 				}
-				else
+			}
+			else if (theBoardLevel - 25 > 1)
+			{
+				if (theBoardLevel == 35)
 				{
-					theSeedCost = 75;
+					if (this.theSeedType == 1)
+					{
+						Object.Destroy(base.gameObject);
+					}
+					else if (this.theSeedType == 256)
+					{
+						Object.Destroy(base.gameObject);
+					}
 				}
-				break;
-			case 25:
-			case 26:
-				if (theSeedType == 9)
-				{
-					Object.Destroy(base.gameObject);
-				}
-				break;
-			case 35:
-				if (theSeedType == 1)
-				{
-					Object.Destroy(base.gameObject);
-				}
-				else if (theSeedType == 256)
-				{
-					Object.Destroy(base.gameObject);
-				}
-				break;
+			}
+			else if (this.theSeedType == 9)
+			{
+				Object.Destroy(base.gameObject);
 			}
 		}
 		if (!GameAPP.board.GetComponent<Board>().isNight)
 		{
-			int num = theSeedType;
-			if ((uint)(num - 6) <= 5u)
+			int theBoardLevel = this.theSeedType;
+			if (theBoardLevel - 6 <= 5)
 			{
-				theSeedCost += 75;
+				this.theSeedCost += 75;
 			}
 		}
 	}
 
+	// Token: 0x06000021 RID: 33 RVA: 0x00002767 File Offset: 0x00000967
 	private void OnMouseEnter()
 	{
 		if (GameAPP.board.GetComponent<Mouse>().theItemOnMouse == null)
@@ -83,77 +65,117 @@ public class CardUI : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06000022 RID: 34 RVA: 0x00002785 File Offset: 0x00000985
 	private void OnMouseExit()
 	{
 		CursorChange.SetDefaultCursor();
 	}
 
+	// Token: 0x06000023 RID: 35 RVA: 0x0000278C File Offset: 0x0000098C
 	private void OnMouseDown()
 	{
 		CursorChange.SetDefaultCursor();
 		if (GameAPP.theGameStatus == 3)
 		{
-			GameAPP.PlaySound(19);
-			if (!isSelected)
+			GameAPP.PlaySound(19, 0.5f);
+			if (!this.isSelected)
 			{
-				isSelected = true;
-				thisUI.AddCardToBank(base.gameObject);
+				this.isSelected = true;
+				this.thisUI.AddCardToBank(base.gameObject);
+				return;
 			}
-			else
-			{
-				isSelected = false;
-				thisUI.RemoveCardFromBank(base.gameObject);
-			}
+			this.isSelected = false;
+			this.thisUI.RemoveCardFromBank(base.gameObject);
 		}
 	}
 
+	// Token: 0x06000024 RID: 36 RVA: 0x000027EB File Offset: 0x000009EB
 	public void PickUp()
 	{
-		base.transform.GetChild(3).gameObject.SetActive(value: true);
-		isPickUp = true;
+		base.transform.GetChild(3).gameObject.SetActive(true);
+		this.isPickUp = true;
 	}
 
+	// Token: 0x06000025 RID: 37 RVA: 0x0000280B File Offset: 0x00000A0B
 	public void PutDown()
 	{
-		base.transform.GetChild(3).gameObject.SetActive(value: false);
-		isPickUp = false;
+		base.transform.GetChild(3).gameObject.SetActive(false);
+		this.isPickUp = false;
 	}
 
+	// Token: 0x06000026 RID: 38 RVA: 0x0000282C File Offset: 0x00000A2C
 	private void Update()
 	{
 		if (GameAPP.theGameStatus == 0)
 		{
-			if (CD < fullCD)
+			if (this.CD < this.fullCD)
 			{
-				CD += Time.deltaTime;
-				isAvailable = false;
+				this.CD += Time.deltaTime;
+				this.isAvailable = false;
 			}
 			else
 			{
-				CD = fullCD;
+				this.CD = this.fullCD;
 			}
-			if (CD == fullCD && Board.Instance.theSun >= theSeedCost && !isPickUp)
+			if (this.CD == this.fullCD && Board.Instance.theSun >= this.theSeedCost && !this.isPickUp)
 			{
-				isAvailable = true;
-				base.transform.GetChild(3).gameObject.SetActive(value: false);
+				this.isAvailable = true;
+				base.transform.GetChild(3).gameObject.SetActive(false);
 			}
 			else
 			{
-				isAvailable = false;
-				base.transform.GetChild(3).gameObject.SetActive(value: true);
+				this.isAvailable = false;
+				base.transform.GetChild(3).gameObject.SetActive(true);
 			}
-			CDUpdate();
+			this.CDUpdate();
 		}
 		if (Board.Instance.freeCD)
 		{
-			CD = fullCD;
-			isAvailable = true;
+			this.CD = this.fullCD;
+			this.isAvailable = true;
 		}
-		base.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = theSeedCost.ToString();
+		base.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = this.theSeedCost.ToString();
 	}
 
+	// Token: 0x06000027 RID: 39 RVA: 0x00002924 File Offset: 0x00000B24
 	private void CDUpdate()
 	{
-		slider.value = 1f - CD / fullCD;
+		this.slider.value = 1f - this.CD / this.fullCD;
 	}
+
+	// Token: 0x04000018 RID: 24
+	public int theSeedType;
+
+	// Token: 0x04000019 RID: 25
+	public int theSeedCost = 100;
+
+	// Token: 0x0400001A RID: 26
+	public bool isSelected;
+
+	// Token: 0x0400001B RID: 27
+	public int theNumberInCardSort;
+
+	// Token: 0x0400001C RID: 28
+	public InGameUIMgr thisUI;
+
+	// Token: 0x0400001D RID: 29
+	public GameObject parent;
+
+	// Token: 0x0400001E RID: 30
+	public bool isAvailable = true;
+
+	// Token: 0x0400001F RID: 31
+	public float CD;
+
+	// Token: 0x04000020 RID: 32
+	public float fullCD = 7.5f;
+
+	// Token: 0x04000021 RID: 33
+	private Slider slider;
+
+	// Token: 0x04000022 RID: 34
+	public bool isPickUp;
+
+	// Token: 0x04000023 RID: 35
+	public bool isExtra;
 }

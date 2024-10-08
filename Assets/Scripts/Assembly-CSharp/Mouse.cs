@@ -1,174 +1,163 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000FC RID: 252
 public class Mouse : MonoBehaviour
 {
-	public static Mouse Instance;
-
-	public Renderer r;
-
-	public float theMouseX;
-
-	public float theMouseY;
-
-	public int theMouseRow;
-
-	public int theMouseColumn;
-
-	public float theBoxXofMouse;
-
-	public float theBoxYofMouse;
-
-	public int thePlantTypeOnMouse = -1;
-
-	public int theZombieTypeOnMouse = -1;
-
-	public GameObject plantShadow;
-
-	public GameObject zombieShadow;
-
-	public GameObject theItemOnMouse;
-
-	public CardUI theCardOnMouse;
-
-	public IZECard theIZECardOnMouse;
-
-	public GameObject thePlantOnGlove;
-
-	public float modifyX = 1f;
-
-	public float modifyY = 1f;
-
-	private bool existShadow;
-
+	// Token: 0x060004E1 RID: 1249 RVA: 0x0002A319 File Offset: 0x00028519
 	private void Awake()
 	{
-		Instance = this;
+		Mouse.Instance = this;
 	}
 
+	// Token: 0x060004E2 RID: 1250 RVA: 0x0002A324 File Offset: 0x00028524
 	private void Update()
 	{
-		DrawItemOnMouse();
-		PlantPreviewUpdate();
+		this.DrawItemOnMouse();
+		this.PlantPreviewUpdate();
 		if (GameAPP.theGameStatus == 0)
 		{
-			MouseClick();
+			this.MouseClick();
 		}
-		modifyX = (float)Screen.width / 1920f;
-		modifyY = (float)Screen.height / 600f;
-		theMouseX = Input.mousePosition.x;
-		theMouseY = (float)Screen.height - Input.mousePosition.y;
-		theMouseColumn = GetColumnFromX(theMouseX);
-		theMouseRow = GetRowFromY(theMouseY);
-		theBoxXofMouse = GetBoxXFromColumn(theMouseColumn);
-		theBoxYofMouse = GetBoxYFromRow(theMouseRow);
+		this.modifyX = (float)Screen.width / 1920f;
+		this.modifyY = (float)Screen.height / 600f;
+		this.theMouseX = Input.mousePosition.x;
+		this.theMouseY = (float)Screen.height - Input.mousePosition.y;
+		this.theMouseColumn = this.GetColumnFromX(this.theMouseX);
+		this.theMouseRow = this.GetRowFromY(this.theMouseY);
+		this.theBoxXofMouse = this.GetBoxXFromColumn(this.theMouseColumn);
+		this.theBoxYofMouse = this.GetBoxYFromRow(this.theMouseRow);
 	}
 
+	// Token: 0x060004E3 RID: 1251 RVA: 0x0002A3E0 File Offset: 0x000285E0
 	public int GetColumnFromX(float X)
 	{
-		X -= modifyX * 350f;
-		if ((float)(int)X / (modifyX * 148f) < 0f)
+		X -= this.modifyX * 350f;
+		if ((float)((int)X) / (this.modifyX * 148f) < 0f)
 		{
 			return 0;
 		}
-		if ((float)(int)X / (modifyX * 148f) > 9f)
+		if ((float)((int)X) / (this.modifyX * 148f) > 9f)
 		{
 			return 9;
 		}
-		return (int)(X / (modifyX * 148f));
+		return (int)(X / (this.modifyX * 148f));
 	}
 
+	// Token: 0x060004E4 RID: 1252 RVA: 0x0002A440 File Offset: 0x00028640
 	public int GetRowFromY(float Y)
 	{
 		if (Board.Instance.roadNum == 5)
 		{
-			if (Y <= modifyY * 70f)
+			if (Y <= this.modifyY * 70f)
 			{
 				return 0;
 			}
-			if (Y >= modifyY * 500f)
+			if (Y >= this.modifyY * 500f)
 			{
 				return 4;
 			}
-			Y -= modifyY * 70f;
-			return (int)((float)(int)Y / (modifyY * 100f));
+			Y -= this.modifyY * 70f;
+			return (int)((float)((int)Y) / (this.modifyY * 100f));
 		}
-		if (Y <= modifyY * 70f)
+		else
 		{
-			return 0;
+			if (Y <= this.modifyY * 70f)
+			{
+				return 0;
+			}
+			if (Y >= this.modifyY * 500f)
+			{
+				return 5;
+			}
+			Y -= this.modifyY * 70f;
+			return (int)((float)((int)Y) / (this.modifyY * 90f));
 		}
-		if (Y >= modifyY * 500f)
-		{
-			return 5;
-		}
-		Y -= modifyY * 70f;
-		return (int)((float)(int)Y / (modifyY * 90f));
 	}
 
+	// Token: 0x060004E5 RID: 1253 RVA: 0x0002A4E1 File Offset: 0x000286E1
 	public float GetBoxXFromColumn(int theColumn)
 	{
 		return -4.8f + 1.35f * (float)theColumn;
 	}
 
+	// Token: 0x060004E6 RID: 1254 RVA: 0x0002A4F4 File Offset: 0x000286F4
 	public float GetBoxYFromRow(int theRow)
 	{
+		float result;
 		if (Board.Instance.roadNum == 5)
 		{
-			return 2.3f - 1.67f * (float)theRow;
+			result = 2.3f - 1.67f * (float)theRow;
 		}
-		return 2.3f - 1.45f * (float)theRow;
+		else
+		{
+			result = 2.3f - 1.45f * (float)theRow;
+		}
+		return result;
 	}
 
+	// Token: 0x060004E7 RID: 1255 RVA: 0x0002A530 File Offset: 0x00028730
 	private void CreatePlantOnMouse(int theSeedType)
 	{
 		GameObject gameObject = GameAPP.prePlantPrefab[theSeedType];
-		GameObject gameObject2 = Object.Instantiate(gameObject);
+		GameObject gameObject2 = Object.Instantiate<GameObject>(gameObject);
 		gameObject2.name = gameObject.name;
 		gameObject2.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		gameObject2.transform.SetParent(GameAPP.board.transform);
 		gameObject2.GetComponent<SpriteRenderer>().sortingLayerName = "up";
 		gameObject2.GetComponent<SpriteRenderer>().sortingOrder = 30000;
-		theItemOnMouse = gameObject2;
+		this.theItemOnMouse = gameObject2;
 	}
 
+	// Token: 0x060004E8 RID: 1256 RVA: 0x0002A5B0 File Offset: 0x000287B0
 	private void CreateZombieOnMouse(int theZombieType)
 	{
-		GameObject gameObject = ((theZombieType != -5) ? GameAPP.preZombiePrefab[theZombieType] : GameAPP.prePlantPrefab[256]);
-		GameObject gameObject2 = Object.Instantiate(gameObject);
+		GameObject gameObject;
+		if (theZombieType == -5)
+		{
+			gameObject = GameAPP.prePlantPrefab[256];
+		}
+		else
+		{
+			gameObject = GameAPP.preZombiePrefab[theZombieType];
+		}
+		GameObject gameObject2 = Object.Instantiate<GameObject>(gameObject);
 		gameObject2.name = gameObject.name;
 		gameObject2.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		gameObject2.transform.SetParent(GameAPP.board.transform);
 		gameObject2.GetComponent<SpriteRenderer>().sortingLayerName = "up";
 		gameObject2.GetComponent<SpriteRenderer>().sortingOrder = 30000;
-		theItemOnMouse = gameObject2;
+		this.theItemOnMouse = gameObject2;
 	}
 
+	// Token: 0x060004E9 RID: 1257 RVA: 0x0002A644 File Offset: 0x00028844
 	private void DrawItemOnMouse()
 	{
-		if (theItemOnMouse != null)
+		if (this.theItemOnMouse != null)
 		{
-			if (theItemOnMouse.name == "Shovel")
+			if (this.theItemOnMouse.name == "Shovel")
 			{
-				theItemOnMouse.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				theItemOnMouse.transform.position = new Vector3(theItemOnMouse.transform.position.x + 0.4f, theItemOnMouse.transform.position.y + 0.4f, 0f);
+				this.theItemOnMouse.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				this.theItemOnMouse.transform.position = new Vector3(this.theItemOnMouse.transform.position.x + 0.4f, this.theItemOnMouse.transform.position.y + 0.4f, 0f);
+				return;
 			}
-			else
-			{
-				theItemOnMouse.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				theItemOnMouse.transform.position = new Vector3(theItemOnMouse.transform.position.x, theItemOnMouse.transform.position.y, -3f);
-			}
+			this.theItemOnMouse.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			this.theItemOnMouse.transform.position = new Vector3(this.theItemOnMouse.transform.position.x, this.theItemOnMouse.transform.position.y, -3f);
 		}
 	}
 
+	// Token: 0x060004EA RID: 1258 RVA: 0x0002A74C File Offset: 0x0002894C
 	private void PlantPreviewUpdate()
 	{
-		if (theItemOnMouse != null)
+		if (this.theItemOnMouse != null)
 		{
-			if (theItemOnMouse.CompareTag("Preview"))
+			if (this.theItemOnMouse.CompareTag("Preview"))
 			{
-				if (!existShadow)
+				if (!this.existShadow)
 				{
-					existShadow = true;
-					GameObject gameObject = (plantShadow = Object.Instantiate(theItemOnMouse));
+					this.existShadow = true;
+					GameObject gameObject = Object.Instantiate<GameObject>(this.theItemOnMouse);
+					this.plantShadow = gameObject;
 					gameObject.transform.SetParent(GameAPP.board.transform);
 					SpriteRenderer component = gameObject.GetComponent<SpriteRenderer>();
 					Color color = component.color;
@@ -177,351 +166,435 @@ public class Mouse : MonoBehaviour
 					component.sortingLayerName = "Default";
 				}
 			}
-			else if (plantShadow != null)
+			else if (this.plantShadow != null)
 			{
-				Object.Destroy(plantShadow);
-				plantShadow = null;
-				existShadow = false;
+				Object.Destroy(this.plantShadow);
+				this.plantShadow = null;
+				this.existShadow = false;
 			}
 		}
-		else if (plantShadow != null)
+		else if (this.plantShadow != null)
 		{
-			Object.Destroy(plantShadow);
-			plantShadow = null;
-			existShadow = false;
+			Object.Destroy(this.plantShadow);
+			this.plantShadow = null;
+			this.existShadow = false;
 		}
-		if (!(plantShadow != null))
+		if (this.plantShadow != null)
 		{
-			return;
-		}
-		if (GetComponent<Board>().isIZ && theZombieTypeOnMouse != -5)
-		{
-			if (theMouseY > 75f * modifyY && theMouseColumn > 4)
+			if (base.GetComponent<Board>().isIZ && this.theZombieTypeOnMouse != -5)
 			{
-				plantShadow.transform.position = new Vector3(theBoxXofMouse, theBoxYofMouse + 1f, 0f);
-			}
-			else if (theMouseY > 75f * modifyY && theMouseColumn <= 4)
-			{
-				plantShadow.transform.position = new Vector3(GetBoxXFromColumn(5), theBoxYofMouse + 1f, 0f);
+				if (this.theMouseY > 75f * this.modifyY && this.theMouseColumn > 4)
+				{
+					this.plantShadow.transform.position = new Vector3(this.theBoxXofMouse, this.theBoxYofMouse + 1f, 0f);
+					return;
+				}
+				if (this.theMouseY > 75f * this.modifyY && this.theMouseColumn <= 4)
+				{
+					this.plantShadow.transform.position = new Vector3(this.GetBoxXFromColumn(5), this.theBoxYofMouse + 1f, 0f);
+					return;
+				}
+				this.plantShadow.transform.position = new Vector3(100f, 100f, 100f);
+				return;
 			}
 			else
 			{
-				plantShadow.transform.position = new Vector3(100f, 100f, 100f);
+				if (this.theMouseY > 75f * this.modifyY && base.GetComponent<CreatePlant>().CheckBox(this.theMouseColumn, this.theMouseRow, this.thePlantTypeOnMouse))
+				{
+					this.plantShadow.transform.position = new Vector3(this.theBoxXofMouse, this.theBoxYofMouse + 0.7f, 0f);
+					return;
+				}
+				this.plantShadow.transform.position = new Vector3(100f, 100f, 100f);
 			}
-		}
-		else if (theMouseY > 75f * modifyY && GetComponent<CreatePlant>().CheckBox(theMouseColumn, theMouseRow, thePlantTypeOnMouse))
-		{
-			plantShadow.transform.position = new Vector3(theBoxXofMouse, theBoxYofMouse + 0.7f, 0f);
-		}
-		else
-		{
-			plantShadow.transform.position = new Vector3(100f, 100f, 100f);
 		}
 	}
 
+	// Token: 0x060004EB RID: 1259 RVA: 0x0002A9A0 File Offset: 0x00028BA0
 	private void TryToSetPlantByCard()
 	{
-		if (theMouseY > 75f * modifyY)
+		if (this.theMouseY > 75f * this.modifyY)
 		{
-			int theColumn = GetComponent<Mouse>().theMouseColumn;
-			int theRow = GetComponent<Mouse>().theMouseRow;
-			int theSeedType = thePlantTypeOnMouse;
-			if (GetComponent<CreatePlant>().SetPlant(theColumn, theRow, theSeedType) != null)
+			int theColumn = base.GetComponent<Mouse>().theMouseColumn;
+			int theRow = base.GetComponent<Mouse>().theMouseRow;
+			int theSeedType = this.thePlantTypeOnMouse;
+			if (base.GetComponent<CreatePlant>().SetPlant(theColumn, theRow, theSeedType, null, default(Vector2), false, 0f) != null)
 			{
-				GameAPP.board.GetComponent<Board>().theSun -= theCardOnMouse.theSeedCost;
-				theCardOnMouse.CD = 0f;
-				theCardOnMouse.PutDown();
-				Object.Destroy(theItemOnMouse);
-				ClearItemOnMouse();
+				GameAPP.board.GetComponent<Board>().theSun -= this.theCardOnMouse.theSeedCost;
+				this.theCardOnMouse.CD = 0f;
+				this.theCardOnMouse.PutDown();
+				Object.Destroy(this.theItemOnMouse);
+				this.ClearItemOnMouse(false);
+				return;
 			}
 		}
 		else
 		{
-			PutDownItem();
+			this.PutDownItem();
 		}
 	}
 
+	// Token: 0x060004EC RID: 1260 RVA: 0x0002AA60 File Offset: 0x00028C60
 	private void TryToSetZombieByCard()
 	{
-		if (theMouseY > 75f * modifyY)
+		if (this.theMouseY > 75f * this.modifyY)
 		{
-			int num = theMouseColumn;
-			if (num < 5 && theZombieTypeOnMouse != -5)
+			int num = this.theMouseColumn;
+			if (num < 5 && this.theZombieTypeOnMouse != -5)
 			{
 				num = 5;
 			}
-			float boxXFromColumn = GetBoxXFromColumn(num);
-			int theRow = theMouseRow;
-			int num2 = theZombieTypeOnMouse;
-			GameObject gameObject = ((num2 != -5) ? CreateZombie.Instance.SetZombie(0, theRow, num2, boxXFromColumn) : CreatePlant.Instance.SetPlant(num, theRow, 256));
-			if (gameObject != null)
+			float boxXFromColumn = this.GetBoxXFromColumn(num);
+			int theRow = this.theMouseRow;
+			int num2 = this.theZombieTypeOnMouse;
+			GameObject x;
+			if (num2 == -5)
 			{
-				if (Board.Instance.roadType[theMouseRow] == 1)
+				x = CreatePlant.Instance.SetPlant(num, theRow, 256, null, default(Vector2), false, 0f);
+			}
+			else
+			{
+				x = CreateZombie.Instance.SetZombie(0, theRow, num2, boxXFromColumn, false);
+			}
+			if (x != null)
+			{
+				if (Board.Instance.roadType[this.theMouseRow] == 1)
 				{
-					GameAPP.PlaySound(75);
+					GameAPP.PlaySound(75, 0.5f);
 				}
 				else
 				{
-					GameAPP.PlaySound(Random.Range(22, 24));
+					GameAPP.PlaySound(Random.Range(22, 24), 0.5f);
 				}
-				GameAPP.board.GetComponent<Board>().theSun -= theIZECardOnMouse.theZombieCost;
-				theIZECardOnMouse.PutDown();
-				Object.Destroy(theItemOnMouse);
-				ClearItemOnMouse();
+				GameAPP.board.GetComponent<Board>().theSun -= this.theIZECardOnMouse.theZombieCost;
+				this.theIZECardOnMouse.PutDown();
+				Object.Destroy(this.theItemOnMouse);
+				this.ClearItemOnMouse(false);
+				return;
 			}
 		}
 		else
 		{
-			PutDownItem();
+			this.PutDownItem();
 		}
 	}
 
+	// Token: 0x060004ED RID: 1261 RVA: 0x0002AB74 File Offset: 0x00028D74
 	private void TryToSetPlantByGlove()
 	{
-		if (theMouseY > 75f * modifyY)
+		if (this.theMouseY > 75f * this.modifyY)
 		{
-			int theColumn = GetComponent<Mouse>().theMouseColumn;
-			int theRow = GetComponent<Mouse>().theMouseRow;
-			int theSeedType = thePlantTypeOnMouse;
-			if (GetComponent<CreatePlant>().SetPlant(theColumn, theRow, theSeedType, thePlantOnGlove) != null)
+			int theColumn = base.GetComponent<Mouse>().theMouseColumn;
+			int theRow = base.GetComponent<Mouse>().theMouseRow;
+			int theSeedType = this.thePlantTypeOnMouse;
+			if (base.GetComponent<CreatePlant>().SetPlant(theColumn, theRow, theSeedType, this.thePlantOnGlove, default(Vector2), false, 0f) != null)
 			{
 				GameObject.Find("Glove").GetComponent<GloveMgr>().CD = 0f;
-				Object.Destroy(theItemOnMouse);
-				ClearItemOnMouse();
+				Object.Destroy(this.theItemOnMouse);
+				this.ClearItemOnMouse(false);
+				return;
 			}
 		}
 		else
 		{
-			PutDownItem();
+			this.PutDownItem();
 		}
 	}
 
+	// Token: 0x060004EE RID: 1262 RVA: 0x0002AC14 File Offset: 0x00028E14
 	private void PutDownItem()
 	{
-		if (!(theItemOnMouse != null))
+		if (this.theItemOnMouse != null)
 		{
-			return;
-		}
-		ShovelMgr component;
-		GloveMgr component2;
-		if (theItemOnMouse.CompareTag("Preview"))
-		{
-			if (theCardOnMouse != null)
+			ShovelMgr shovelMgr;
+			GloveMgr gloveMgr;
+			if (this.theItemOnMouse.CompareTag("Preview"))
 			{
-				theCardOnMouse.PutDown();
+				if (this.theCardOnMouse != null)
+				{
+					this.theCardOnMouse.PutDown();
+				}
+				if (this.theIZECardOnMouse != null)
+				{
+					this.theIZECardOnMouse.PutDown();
+				}
+				Object.Destroy(this.theItemOnMouse);
+				this.ClearItemOnMouse(false);
 			}
-			if (theIZECardOnMouse != null)
+			else if (this.theItemOnMouse.TryGetComponent<ShovelMgr>(out shovelMgr))
 			{
-				theIZECardOnMouse.PutDown();
+				shovelMgr.PutDown();
+				this.ClearItemOnMouse(false);
 			}
-			Object.Destroy(theItemOnMouse);
-			ClearItemOnMouse();
+			else if (this.theItemOnMouse.TryGetComponent<GloveMgr>(out gloveMgr))
+			{
+				gloveMgr.PutDown();
+				this.ClearItemOnMouse(false);
+			}
+			else
+			{
+				Object.Destroy(this.theItemOnMouse);
+				this.ClearItemOnMouse(false);
+			}
+			GameAPP.PlaySound(19, 0.5f);
 		}
-		else if (theItemOnMouse.TryGetComponent<ShovelMgr>(out component))
-		{
-			component.PutDown();
-			ClearItemOnMouse();
-		}
-		else if (theItemOnMouse.TryGetComponent<GloveMgr>(out component2))
-		{
-			component2.PutDown();
-			ClearItemOnMouse();
-		}
-		else
-		{
-			Object.Destroy(theItemOnMouse);
-			ClearItemOnMouse();
-		}
-		GameAPP.PlaySound(19);
 	}
 
+	// Token: 0x060004EF RID: 1263 RVA: 0x0002ACE4 File Offset: 0x00028EE4
 	private void MouseClick()
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			LeftEvent();
+			this.LeftEvent();
 		}
 		if (Input.GetMouseButtonDown(1))
 		{
-			PutDownItem();
+			this.PutDownItem();
 		}
 	}
 
+	// Token: 0x060004F0 RID: 1264 RVA: 0x0002AD02 File Offset: 0x00028F02
 	private void LeftEvent()
 	{
-		if (theItemOnMouse == null)
+		if (this.theItemOnMouse == null)
 		{
-			LeftClickWithNothing();
+			this.LeftClickWithNothing();
+			return;
 		}
-		else
-		{
-			LeftClickWithSomeThing();
-		}
+		this.LeftClickWithSomeThing();
 	}
 
+	// Token: 0x060004F1 RID: 1265 RVA: 0x0002AD20 File Offset: 0x00028F20
 	private void LeftClickWithNothing()
 	{
 		RaycastHit2D raycastHit2D = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-		if (!(raycastHit2D.collider != null))
+		if (raycastHit2D.collider != null)
 		{
-			return;
-		}
-		GameObject gameObject = raycastHit2D.collider.gameObject;
-		ShovelMgr component2;
-		GloveMgr component3;
-		CardUI component4;
-		IZECard component5;
-		DoomFume component6;
-		if (gameObject.TryGetComponent<Bucket>(out var component))
-		{
-			component.Pick();
-		}
-		else if (gameObject.TryGetComponent<ShovelMgr>(out component2))
-		{
-			if (!component2.isPickUp)
+			GameObject gameObject = raycastHit2D.collider.gameObject;
+			Bucket bucket;
+			if (gameObject.TryGetComponent<Bucket>(out bucket))
 			{
-				component2.PickUp();
-				theItemOnMouse = component2.gameObject;
-				GameAPP.PlaySound(21);
+				bucket.Pick();
+				return;
 			}
-		}
-		else if (gameObject.TryGetComponent<GloveMgr>(out component3))
-		{
-			if (!component3.isPickUp && component3.avaliable)
+			ShovelMgr shovelMgr;
+			if (gameObject.TryGetComponent<ShovelMgr>(out shovelMgr))
 			{
-				component3.PickUp();
-				theItemOnMouse = component3.gameObject;
-				GameAPP.PlaySound(19);
+				if (!shovelMgr.isPickUp)
+				{
+					shovelMgr.PickUp();
+					this.theItemOnMouse = shovelMgr.gameObject;
+					GameAPP.PlaySound(21, 0.5f);
+				}
+				return;
 			}
-		}
-		else if (gameObject.TryGetComponent<CardUI>(out component4))
-		{
-			ClickOnCard(component4);
-		}
-		else if (gameObject.TryGetComponent<IZECard>(out component5))
-		{
-			ClickOnIZECard(component5);
-		}
-		else if (gameObject.TryGetComponent<DoomFume>(out component6))
-		{
-			component6.Shoot();
+			GloveMgr gloveMgr;
+			if (gameObject.TryGetComponent<GloveMgr>(out gloveMgr))
+			{
+				if (!gloveMgr.isPickUp && gloveMgr.avaliable)
+				{
+					gloveMgr.PickUp();
+					this.theItemOnMouse = gloveMgr.gameObject;
+					GameAPP.PlaySound(19, 0.5f);
+				}
+				return;
+			}
+			CardUI card;
+			if (gameObject.TryGetComponent<CardUI>(out card))
+			{
+				this.ClickOnCard(card);
+				return;
+			}
+			IZECard card2;
+			if (gameObject.TryGetComponent<IZECard>(out card2))
+			{
+				this.ClickOnIZECard(card2);
+				return;
+			}
+			DoomFume doomFume;
+			if (gameObject.TryGetComponent<DoomFume>(out doomFume))
+			{
+				doomFume.Shoot();
+				return;
+			}
 		}
 	}
 
+	// Token: 0x060004F2 RID: 1266 RVA: 0x0002AE24 File Offset: 0x00029024
 	private void LeftClickWithSomeThing()
 	{
-		Bucket component;
-		if (theItemOnMouse.CompareTag("Preview"))
+		if (this.theItemOnMouse.CompareTag("Preview"))
 		{
-			if (thePlantOnGlove == null)
+			if (!(this.thePlantOnGlove == null))
 			{
-				if (!GetComponent<Board>().isIZ)
-				{
-					TryToSetPlantByCard();
-				}
-				else
-				{
-					TryToSetZombieByCard();
-				}
+				this.TryToSetPlantByGlove();
+				return;
 			}
-			else
+			if (!base.GetComponent<Board>().isIZ)
 			{
-				TryToSetPlantByGlove();
+				this.TryToSetPlantByCard();
+				return;
 			}
-		}
-		else if (theItemOnMouse.name == "Shovel")
-		{
-			TryToRemovePlant();
-		}
-		else if (theItemOnMouse.name == "Glove")
-		{
-			TryToPickPlant();
-		}
-		else if (theItemOnMouse.TryGetComponent<Bucket>(out component))
-		{
-			component.Use();
-			ClearItemOnMouse();
-		}
-	}
-
-	private void TryToRemovePlant()
-	{
-		GameObject obj = theItemOnMouse;
-		ClearItemOnMouse();
-		RaycastHit2D raycastHit2D = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-		if (raycastHit2D.collider != null && raycastHit2D.collider.TryGetComponent<Plant>(out var component))
-		{
-			component.Die();
-			GameAPP.PlaySound(23);
-		}
-		obj.GetComponent<ShovelMgr>().PutDown();
-	}
-
-	private void TryToPickPlant()
-	{
-		GameObject obj = theItemOnMouse;
-		ClearItemOnMouse();
-		RaycastHit2D raycastHit2D = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-		if (raycastHit2D.collider != null && raycastHit2D.collider.TryGetComponent<Plant>(out var component) && component.thePlantType != 255)
-		{
-			thePlantOnGlove = component.gameObject;
-			thePlantTypeOnMouse = component.thePlantType;
-			CreatePlantOnMouse(thePlantTypeOnMouse);
-			GameAPP.PlaySound(25);
-		}
-		obj.GetComponent<GloveMgr>().PutDown();
-	}
-
-	public void ClickOnCard(CardUI card)
-	{
-		if (GameAPP.board.GetComponent<Board>().theSun >= card.theSeedCost)
-		{
-			if (card.isAvailable)
-			{
-				card.PickUp();
-				theCardOnMouse = card;
-				thePlantTypeOnMouse = card.theSeedType;
-				CreatePlantOnMouse(thePlantTypeOnMouse);
-				GameAPP.PlaySound(25);
-			}
-			else
-			{
-				GameAPP.PlaySound(26);
-			}
+			this.TryToSetZombieByCard();
+			return;
 		}
 		else
 		{
-			GameAPP.PlaySound(26);
+			if (this.theItemOnMouse.name == "Shovel")
+			{
+				this.TryToRemovePlant();
+				return;
+			}
+			if (this.theItemOnMouse.name == "Glove")
+			{
+				this.TryToPickPlant();
+				return;
+			}
+			Bucket bucket;
+			if (this.theItemOnMouse.TryGetComponent<Bucket>(out bucket))
+			{
+				bucket.Use();
+				this.ClearItemOnMouse(false);
+				return;
+			}
+			return;
 		}
 	}
 
+	// Token: 0x060004F3 RID: 1267 RVA: 0x0002AECC File Offset: 0x000290CC
+	private void TryToRemovePlant()
+	{
+		GameObject gameObject = this.theItemOnMouse;
+		this.ClearItemOnMouse(false);
+		RaycastHit2D raycastHit2D = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		Plant plant;
+		if (raycastHit2D.collider != null && raycastHit2D.collider.TryGetComponent<Plant>(out plant))
+		{
+			plant.Die();
+			GameAPP.PlaySound(23, 0.5f);
+		}
+		gameObject.GetComponent<ShovelMgr>().PutDown();
+	}
+
+	// Token: 0x060004F4 RID: 1268 RVA: 0x0002AF40 File Offset: 0x00029140
+	private void TryToPickPlant()
+	{
+		GameObject gameObject = this.theItemOnMouse;
+		this.ClearItemOnMouse(false);
+		RaycastHit2D raycastHit2D = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		Plant plant;
+		if (raycastHit2D.collider != null && raycastHit2D.collider.TryGetComponent<Plant>(out plant) && plant.thePlantType != 255)
+		{
+			this.thePlantOnGlove = plant.gameObject;
+			this.thePlantTypeOnMouse = plant.thePlantType;
+			this.CreatePlantOnMouse(this.thePlantTypeOnMouse);
+			GameAPP.PlaySound(25, 0.5f);
+		}
+		gameObject.GetComponent<GloveMgr>().PutDown();
+	}
+
+	// Token: 0x060004F5 RID: 1269 RVA: 0x0002AFE0 File Offset: 0x000291E0
+	public void ClickOnCard(CardUI card)
+	{
+		if (GameAPP.board.GetComponent<Board>().theSun < card.theSeedCost)
+		{
+			GameAPP.PlaySound(26, 0.5f);
+			return;
+		}
+		if (card.isAvailable)
+		{
+			card.PickUp();
+			this.theCardOnMouse = card;
+			this.thePlantTypeOnMouse = card.theSeedType;
+			this.CreatePlantOnMouse(this.thePlantTypeOnMouse);
+			GameAPP.PlaySound(25, 0.5f);
+			return;
+		}
+		GameAPP.PlaySound(26, 0.5f);
+	}
+
+	// Token: 0x060004F6 RID: 1270 RVA: 0x0002B058 File Offset: 0x00029258
 	public void ClickOnIZECard(IZECard card)
 	{
 		if (GameAPP.board.GetComponent<Board>().theSun >= card.theZombieCost)
 		{
 			card.PickUp();
-			theIZECardOnMouse = card;
-			theZombieTypeOnMouse = card.theZombieType;
-			CreateZombieOnMouse(theZombieTypeOnMouse);
-			GameAPP.PlaySound(25);
+			this.theIZECardOnMouse = card;
+			this.theZombieTypeOnMouse = card.theZombieType;
+			this.CreateZombieOnMouse(this.theZombieTypeOnMouse);
+			GameAPP.PlaySound(25, 0.5f);
+			return;
 		}
-		else
-		{
-			GameAPP.PlaySound(26);
-		}
+		GameAPP.PlaySound(26, 0.5f);
 	}
 
+	// Token: 0x060004F7 RID: 1271 RVA: 0x0002B0BA File Offset: 0x000292BA
 	public void ClearItemOnMouse(bool clearItem = false)
 	{
 		if (clearItem)
 		{
-			Object.Destroy(theItemOnMouse);
+			Object.Destroy(this.theItemOnMouse);
 		}
-		thePlantTypeOnMouse = -1;
-		theZombieTypeOnMouse = -1;
-		theIZECardOnMouse = null;
-		theItemOnMouse = null;
-		theCardOnMouse = null;
-		thePlantOnGlove = null;
+		this.thePlantTypeOnMouse = -1;
+		this.theZombieTypeOnMouse = -1;
+		this.theIZECardOnMouse = null;
+		this.theItemOnMouse = null;
+		this.theCardOnMouse = null;
+		this.thePlantOnGlove = null;
 	}
+
+	// Token: 0x04000265 RID: 613
+	public static Mouse Instance;
+
+	// Token: 0x04000266 RID: 614
+	public Renderer r;
+
+	// Token: 0x04000267 RID: 615
+	public float theMouseX;
+
+	// Token: 0x04000268 RID: 616
+	public float theMouseY;
+
+	// Token: 0x04000269 RID: 617
+	public int theMouseRow;
+
+	// Token: 0x0400026A RID: 618
+	public int theMouseColumn;
+
+	// Token: 0x0400026B RID: 619
+	public float theBoxXofMouse;
+
+	// Token: 0x0400026C RID: 620
+	public float theBoxYofMouse;
+
+	// Token: 0x0400026D RID: 621
+	public int thePlantTypeOnMouse = -1;
+
+	// Token: 0x0400026E RID: 622
+	public int theZombieTypeOnMouse = -1;
+
+	// Token: 0x0400026F RID: 623
+	public GameObject plantShadow;
+
+	// Token: 0x04000270 RID: 624
+	public GameObject zombieShadow;
+
+	// Token: 0x04000271 RID: 625
+	public GameObject theItemOnMouse;
+
+	// Token: 0x04000272 RID: 626
+	public CardUI theCardOnMouse;
+
+	// Token: 0x04000273 RID: 627
+	public IZECard theIZECardOnMouse;
+
+	// Token: 0x04000274 RID: 628
+	public GameObject thePlantOnGlove;
+
+	// Token: 0x04000275 RID: 629
+	public float modifyX = 1f;
+
+	// Token: 0x04000276 RID: 630
+	public float modifyY = 1f;
+
+	// Token: 0x04000277 RID: 631
+	private bool existShadow;
 }

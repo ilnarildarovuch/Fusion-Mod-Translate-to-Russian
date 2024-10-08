@@ -1,84 +1,87 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000DB RID: 219
 public class SuperDriverZombie : DriverZombie
 {
+	// Token: 0x06000403 RID: 1027 RVA: 0x0001F020 File Offset: 0x0001D220
 	protected override void BodyTakeDamage(int theDamage)
 	{
-		theHealth -= theDamage;
-		if (theHealth >= (float)theMaxHealth / 3f && theHealth < (float)theMaxHealth * 2f / 3f)
+		this.theHealth -= (float)theDamage;
+		if (this.theHealth >= (float)this.theMaxHealth / 3f && this.theHealth < (float)this.theMaxHealth * 2f / 3f)
 		{
 			base.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[33];
 			base.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[34];
 		}
-		if (theHealth < (float)theMaxHealth / 3f)
+		if (this.theHealth < (float)this.theMaxHealth / 3f)
 		{
-			anim.SetTrigger("shake");
+			this.anim.SetTrigger("shake");
 			base.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[35];
 			base.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[36];
-			base.transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>()
-				.sprite = GameAPP.spritePrefab[37];
-			base.transform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>()
-				.sprite = GameAPP.spritePrefab[37];
-			base.transform.GetChild(1).GetChild(0).gameObject.SetActive(value: true);
-			GameObject obj = base.transform.GetChild(1).GetChild(0).gameObject;
-			obj.SetActive(value: true);
-			foreach (Transform item in obj.transform)
+			base.transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[37];
+			base.transform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[37];
+			base.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+			GameObject gameObject = base.transform.GetChild(1).GetChild(0).gameObject;
+			gameObject.SetActive(true);
+			foreach (object obj in gameObject.transform)
 			{
-				item.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = $"zombie{theZombieRow}";
-				item.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = baseLayer + 29;
+				Transform transform = (Transform)obj;
+				transform.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+				transform.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = this.baseLayer + 29;
 			}
 		}
-		if (theHealth <= 0f)
+		if (this.theHealth <= 0f)
 		{
-			DieAndExplode();
+			base.DieAndExplode();
 		}
 	}
 
+	// Token: 0x06000404 RID: 1028 RVA: 0x0001F224 File Offset: 0x0001D424
 	protected override void DriverPositionUpdate()
 	{
 		float x = base.transform.GetChild(4).position.x;
-		if (Board.Instance.iceRoadX[theZombieRow] > x)
+		if (Board.Instance.iceRoadX[this.theZombieRow] > x)
 		{
 			base.transform.Translate(-0.2f * Time.deltaTime, 0f, 0f);
-		}
-		else
-		{
-			base.transform.Translate((0f - currentSpeed) * Time.deltaTime, 0f, 0f);
-		}
-	}
-
-	public override void KillByCaltrop()
-	{
-		if (theHealth > 0.5f * (float)theMaxHealth)
-		{
-			TakeDamage(0, (int)((float)theMaxHealth * 0.5f));
 			return;
 		}
-		anim.SetTrigger("shake");
-		anim.SetTrigger("GoDie");
-		base.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[35];
-		base.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[36];
-		base.transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>()
-			.sprite = GameAPP.spritePrefab[37];
-		base.transform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>()
-			.sprite = GameAPP.spritePrefab[37];
-		base.transform.GetChild(1).GetChild(0).gameObject.SetActive(value: true);
-		GameObject obj = base.transform.GetChild(1).GetChild(0).gameObject;
-		obj.SetActive(value: true);
-		foreach (Transform item in obj.transform)
-		{
-			item.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = $"zombie{theZombieRow}";
-			item.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = baseLayer + 29;
-		}
-		GetComponent<BoxCollider2D>().enabled = false;
-		theStatus = 1;
-		Invoke("DieAndExplode", 2f);
+		base.transform.Translate(-this.currentSpeed * Time.deltaTime, 0f, 0f);
 	}
 
+	// Token: 0x06000405 RID: 1029 RVA: 0x0001F2A0 File Offset: 0x0001D4A0
+	public override void KillByCaltrop()
+	{
+		if (this.theHealth > 0.5f * (float)this.theMaxHealth)
+		{
+			this.TakeDamage(0, (int)((float)this.theMaxHealth * 0.5f));
+			return;
+		}
+		this.anim.SetTrigger("shake");
+		this.anim.SetTrigger("GoDie");
+		base.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[35];
+		base.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[36];
+		base.transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[37];
+		base.transform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[37];
+		base.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+		GameObject gameObject = base.transform.GetChild(1).GetChild(0).gameObject;
+		gameObject.SetActive(true);
+		foreach (object obj in gameObject.transform)
+		{
+			Transform transform = (Transform)obj;
+			transform.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+			transform.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = this.baseLayer + 29;
+		}
+		base.GetComponent<BoxCollider2D>().enabled = false;
+		this.theStatus = 1;
+		base.Invoke("DieAndExplode", 2f);
+	}
+
+	// Token: 0x06000406 RID: 1030 RVA: 0x0001F45C File Offset: 0x0001D65C
 	protected override void DieEvent()
 	{
-		GameAPP.PlaySound(43);
-		Vector2 vector = shadow.transform.position;
-		Object.Instantiate(position: new Vector2(vector.x, vector.y + 0.6f), original: GameAPP.particlePrefab[36], rotation: Quaternion.identity, parent: board.transform);
+		GameAPP.PlaySound(43, 0.5f);
+		Vector2 vector = this.shadow.transform.position;
+		vector = new Vector2(vector.x, vector.y + 0.6f);
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[36], vector, Quaternion.identity, this.board.transform);
 	}
 }

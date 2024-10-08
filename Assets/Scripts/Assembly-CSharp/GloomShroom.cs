@@ -1,26 +1,24 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000AD RID: 173
 public class GloomShroom : Shooter
 {
-	protected Collider2D[] colliders;
-
-	protected GameObject center;
-
-	protected readonly float range = 2f;
-
+	// Token: 0x06000355 RID: 853 RVA: 0x0001A1E1 File Offset: 0x000183E1
 	protected override void Awake()
 	{
 		base.Awake();
-		center = base.transform.Find("Shoot").gameObject;
+		this.center = base.transform.Find("Shoot").gameObject;
 	}
 
+	// Token: 0x06000356 RID: 854 RVA: 0x0001A204 File Offset: 0x00018404
 	protected override GameObject SearchZombie()
 	{
-		colliders = Physics2D.OverlapCircleAll(center.transform.position, range, zombieLayer);
-		Collider2D[] array = colliders;
-		foreach (Collider2D collider2D in array)
+		this.colliders = Physics2D.OverlapCircleAll(this.center.transform.position, this.range, this.zombieLayer);
+		foreach (Collider2D collider2D in this.colliders)
 		{
-			if (collider2D.TryGetComponent<Zombie>(out var component) && Mathf.Abs(component.theZombieRow - thePlantRow) <= 1 && SearchUniqueZombie(component))
+			Zombie zombie;
+			if (collider2D.TryGetComponent<Zombie>(out zombie) && Mathf.Abs(zombie.theZombieRow - this.thePlantRow) <= 1 && base.SearchUniqueZombie(zombie))
 			{
 				return collider2D.gameObject;
 			}
@@ -28,37 +26,49 @@ public class GloomShroom : Shooter
 		return null;
 	}
 
+	// Token: 0x06000357 RID: 855 RVA: 0x0001A286 File Offset: 0x00018486
 	public override GameObject AnimShoot()
 	{
-		Object.Instantiate(GameAPP.particlePrefab[37], center.transform.position, Quaternion.identity, board.transform);
-		AttackZombie();
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[37], this.center.transform.position, Quaternion.identity, this.board.transform);
+		this.AttackZombie();
 		return null;
 	}
 
+	// Token: 0x06000358 RID: 856 RVA: 0x0001A2C0 File Offset: 0x000184C0
 	protected virtual void AttackZombie()
 	{
 		bool flag = false;
-		colliders = Physics2D.OverlapCircleAll(center.transform.position, range, zombieLayer);
-		Collider2D[] array = colliders;
+		this.colliders = Physics2D.OverlapCircleAll(this.center.transform.position, this.range, this.zombieLayer);
+		Collider2D[] array = this.colliders;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (array[i].TryGetComponent<Zombie>(out var component) && Mathf.Abs(component.theZombieRow - thePlantRow) <= 1 && AttackUniqueZombie(component))
+			Zombie zombie;
+			if (array[i].TryGetComponent<Zombie>(out zombie) && Mathf.Abs(zombie.theZombieRow - this.thePlantRow) <= 1 && base.AttackUniqueZombie(zombie))
 			{
 				flag = true;
-				zombieList.Add(component);
+				this.zombieList.Add(zombie);
 			}
 		}
-		for (int num = zombieList.Count - 1; num >= 0; num--)
+		for (int j = this.zombieList.Count - 1; j >= 0; j--)
 		{
-			if (zombieList[num] != null)
+			if (this.zombieList[j] != null)
 			{
-				zombieList[num].TakeDamage(1, 20);
+				this.zombieList[j].TakeDamage(1, 20);
 			}
 		}
-		zombieList.Clear();
+		this.zombieList.Clear();
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
+
+	// Token: 0x040001C5 RID: 453
+	protected Collider2D[] colliders;
+
+	// Token: 0x040001C6 RID: 454
+	protected GameObject center;
+
+	// Token: 0x040001C7 RID: 455
+	protected readonly float range = 2f;
 }

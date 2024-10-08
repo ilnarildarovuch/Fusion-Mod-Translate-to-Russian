@@ -1,73 +1,69 @@
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Token: 0x02000090 RID: 144
 public class Present : Plant
 {
-	private readonly List<int> list = new List<int>();
-
-	private readonly int basePlantNum = 19;
-
+	// Token: 0x060002E9 RID: 745 RVA: 0x00017679 File Offset: 0x00015879
 	protected override void Start()
 	{
 		base.Start();
-		anim.Play("idle");
+		this.anim.Play("idle");
 	}
 
+	// Token: 0x060002EA RID: 746 RVA: 0x00017694 File Offset: 0x00015894
 	public void AnimEvent()
 	{
-		Object.Instantiate(GameAPP.particlePrefab[11], base.transform.position, Quaternion.identity).transform.SetParent(GameAPP.board.transform);
-		Die();
-		if (board.isEveStarted)
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[11], base.transform.position, Quaternion.identity).transform.SetParent(GameAPP.board.transform);
+		this.Die();
+		if (this.board.isEveStarted)
 		{
-			Board.Instance.SetEvePlants(thePlantColumn, thePlantRow);
+			Board.Instance.SetEvePlants(this.thePlantColumn, this.thePlantRow);
+			return;
 		}
-		else
-		{
-			RandomPlant();
-		}
+		this.RandomPlant();
 	}
 
+	// Token: 0x060002EB RID: 747 RVA: 0x00017704 File Offset: 0x00015904
 	private void RandomPlant()
 	{
-		for (int i = 0; i < basePlantNum; i++)
+		for (int i = 0; i < this.basePlantNum; i++)
 		{
-			list.Add(i);
+			this.list.Add(i);
 		}
-		int num = Random.Range(0, basePlantNum);
+		int num = Random.Range(0, this.basePlantNum);
 		while (CreatePlant.Instance.IsWaterPlant(num))
 		{
-			num = Random.Range(0, basePlantNum);
+			num = Random.Range(0, this.basePlantNum);
 		}
-		GameObject[] plantArray = board.plantArray;
-		foreach (GameObject gameObject in plantArray)
+		foreach (GameObject gameObject in this.board.plantArray)
 		{
-			if (!(gameObject != null))
+			if (gameObject != null)
 			{
-				continue;
-			}
-			Plant component = gameObject.GetComponent<Plant>();
-			if (component.thePlantRow != thePlantRow || component.thePlantColumn != thePlantColumn || component.thePlantType == 12)
-			{
-				continue;
-			}
-			int num2 = 1000;
-			while (num2-- >= 0 && list.Count != 0)
-			{
-				int index = Random.Range(0, list.Count);
-				num = list[index];
-				if (MixData.data[component.thePlantType, num] != 0)
+				Plant component = gameObject.GetComponent<Plant>();
+				if (component.thePlantRow == this.thePlantRow && component.thePlantColumn == this.thePlantColumn && component.thePlantType != 12)
 				{
-					break;
+					int num2 = 1000;
+					while (num2-- >= 0 && this.list.Count != 0)
+					{
+						int index = Random.Range(0, this.list.Count);
+						num = this.list[index];
+						if (MixData.data[component.thePlantType, num] != 0)
+						{
+							break;
+						}
+						this.list.RemoveAt(index);
+					}
 				}
-				list.RemoveAt(index);
 			}
 		}
 		if (num == 6)
 		{
-			CreatePlant.Instance.SetPlant(thePlantColumn, thePlantRow, num);
-			CreatePlant.Instance.SetPlant(thePlantColumn, thePlantRow, num);
+			CreatePlant.Instance.SetPlant(this.thePlantColumn, this.thePlantRow, num, null, default(Vector2), false, 0f);
+			CreatePlant.Instance.SetPlant(this.thePlantColumn, this.thePlantRow, num, null, default(Vector2), false, 0f);
 		}
-		if (CreatePlant.Instance.SetPlant(thePlantColumn, thePlantRow, num) == null)
+		if (CreatePlant.Instance.SetPlant(this.thePlantColumn, this.thePlantRow, num, null, default(Vector2), false, 0f) == null)
 		{
 			CreateCoin.Instance.SetCoin(0, 0, 0, 0, base.transform.position);
 			CreateCoin.Instance.SetCoin(0, 0, 0, 0, base.transform.position);
@@ -75,4 +71,10 @@ public class Present : Plant
 			CreateCoin.Instance.SetCoin(0, 0, 0, 0, base.transform.position);
 		}
 	}
+
+	// Token: 0x040001AB RID: 427
+	private readonly List<int> list = new List<int>();
+
+	// Token: 0x040001AC RID: 428
+	private readonly int basePlantNum = 19;
 }

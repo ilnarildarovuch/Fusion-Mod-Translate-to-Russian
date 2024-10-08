@@ -1,76 +1,93 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000088 RID: 136
 public class FireSquashTorch : SquashTorch
 {
+	// Token: 0x060002C8 RID: 712 RVA: 0x0001680C File Offset: 0x00014A0C
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (!collision.TryGetComponent<Bullet>(out var component) || component.torchWood == base.gameObject || component.isZombieBullet || (component.theMovingWay != 2 && component.theBulletRow != thePlantRow))
+		Bullet bullet;
+		if (collision.TryGetComponent<Bullet>(out bullet))
 		{
-			return;
-		}
-		switch (component.theBulletType)
-		{
-		case 0:
-			if (Board.Instance.RedFirePea(component, this))
+			if (bullet.torchWood == base.gameObject || bullet.isZombieBullet)
 			{
-				fireTimes++;
-				if (fireTimes > 20)
-				{
-					SummonSquash();
-				}
+				return;
 			}
-			break;
-		case 1:
-			if (Board.Instance.FireCherry(component, this))
+			if (bullet.theMovingWay != 2 && bullet.theBulletRow != this.thePlantRow)
 			{
-				fireTimes++;
-				if (fireTimes > 20)
-				{
-					SummonSquash();
-				}
+				return;
 			}
-			break;
-		case 3:
-			if (SuperFireCherry(component))
+			switch (bullet.theBulletType)
 			{
-				fireTimes++;
-				if (fireTimes > 20)
+			case 0:
+				if (Board.Instance.RedFirePea(bullet, this))
 				{
-					SummonSquash();
+					this.fireTimes++;
+					if (this.fireTimes > 20)
+					{
+						this.SummonSquash();
+						return;
+					}
 				}
+				break;
+			case 1:
+				if (Board.Instance.FireCherry(bullet, this))
+				{
+					this.fireTimes++;
+					if (this.fireTimes > 20)
+					{
+						this.SummonSquash();
+						return;
+					}
+				}
+				break;
+			case 2:
+				break;
+			case 3:
+				if (this.SuperFireCherry(bullet))
+				{
+					this.fireTimes++;
+					if (this.fireTimes > 20)
+					{
+						this.SummonSquash();
+					}
+				}
+				break;
+			default:
+				return;
 			}
-			break;
-		case 2:
-			break;
 		}
 	}
 
+	// Token: 0x060002C9 RID: 713 RVA: 0x000168FC File Offset: 0x00014AFC
 	private bool SuperFireCherry(Bullet bullet)
 	{
 		if (bullet.torchWood != this)
 		{
 			Vector3 position = bullet.transform.position;
-			int theRow = thePlantRow;
-			CreateBullet.Instance.SetBullet(position.x, position.y, theRow, 36, 0);
-			GameAPP.PlaySound(Random.Range(3, 5));
+			int thePlantRow = this.thePlantRow;
+			CreateBullet.Instance.SetBullet(position.x, position.y, thePlantRow, 36, 0);
+			GameAPP.PlaySound(Random.Range(3, 5), 0.5f);
 			bullet.Die();
 			return true;
 		}
 		return false;
 	}
 
+	// Token: 0x060002CA RID: 714 RVA: 0x00016960 File Offset: 0x00014B60
 	protected override void SummonSquash()
 	{
 		int num = 1;
 		GameObject gameObject;
 		do
 		{
-			if (board.boxType[thePlantColumn + num, thePlantRow] == 1)
+			if (this.board.boxType[this.thePlantColumn + num, this.thePlantRow] == 1)
 			{
-				CreatePlant.Instance.SetPlant(thePlantColumn + num, thePlantRow, 12);
+				CreatePlant.Instance.SetPlant(this.thePlantColumn + num, this.thePlantRow, 12, null, default(Vector2), false, 0f);
 			}
-			gameObject = CreatePlant.Instance.SetPlant(thePlantColumn + num, thePlantRow, 1054);
-			if (thePlantColumn + num > 9)
+			gameObject = CreatePlant.Instance.SetPlant(this.thePlantColumn + num, this.thePlantRow, 1054, null, default(Vector2), false, 0f);
+			if (this.thePlantColumn + num > 9)
 			{
 				break;
 			}
@@ -80,14 +97,16 @@ public class FireSquashTorch : SquashTorch
 		if (gameObject != null)
 		{
 			Vector2 vector = gameObject.GetComponent<Plant>().shadow.transform.position;
-			Object.Instantiate(position: new Vector2(vector.x, vector.y + 0.5f), original: GameAPP.particlePrefab[11], rotation: Quaternion.identity, parent: board.transform);
-			fireTimes = 0;
+			vector = new Vector2(vector.x, vector.y + 0.5f);
+			Object.Instantiate<GameObject>(GameAPP.particlePrefab[11], vector, Quaternion.identity, this.board.transform);
+			this.fireTimes = 0;
 		}
 	}
 
+	// Token: 0x060002CB RID: 715 RVA: 0x00016A6D File Offset: 0x00014C6D
 	public override void Die()
 	{
-		board.CreateFireLine(thePlantRow);
+		this.board.CreateFireLine(this.thePlantRow);
 		base.Die();
 	}
 }

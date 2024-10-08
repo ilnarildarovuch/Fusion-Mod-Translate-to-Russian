@@ -1,29 +1,33 @@
+﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Token: 0x020000DE RID: 222
 public class WallNutZ : ArmorZombie
 {
+	// Token: 0x0600040F RID: 1039 RVA: 0x0001F7F0 File Offset: 0x0001D9F0
 	protected override void FirstArmorBroken()
 	{
-		if ((float)theFirstArmorHealth < (float)(theFirstArmorMaxHealth * 2) / 3f && theFirstArmorBroken < 1)
+		if ((float)this.theFirstArmorHealth < (float)(this.theFirstArmorMaxHealth * 2) / 3f && this.theFirstArmorBroken < 1)
 		{
-			theFirstArmorBroken = 1;
-			theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[8];
+			this.theFirstArmorBroken = 1;
+			this.theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[8];
 		}
-		if ((float)theFirstArmorHealth < (float)theFirstArmorMaxHealth / 3f && theFirstArmorBroken < 2)
+		if ((float)this.theFirstArmorHealth < (float)this.theFirstArmorMaxHealth / 3f && this.theFirstArmorBroken < 2)
 		{
-			theFirstArmorBroken = 2;
-			theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[9];
+			this.theFirstArmorBroken = 2;
+			this.theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[9];
 		}
 	}
 
+	// Token: 0x06000410 RID: 1040 RVA: 0x0001F87C File Offset: 0x0001DA7C
 	protected override void BodyTakeDamage(int theDamage)
 	{
-		theHealth -= theDamage;
-		if (!isLoseHand && theHealth < (float)(theMaxHealth * 2) / 3f)
+		this.theHealth -= (float)theDamage;
+		if (!this.isLoseHand && this.theHealth < (float)(this.theMaxHealth * 2) / 3f)
 		{
-			isLoseHand = true;
-			GameAPP.PlaySound(7);
+			this.isLoseHand = true;
+			GameAPP.PlaySound(7, 0.5f);
 			for (int i = 0; i < base.transform.childCount; i++)
 			{
 				Transform child = base.transform.GetChild(i);
@@ -38,42 +42,41 @@ public class WallNutZ : ArmorZombie
 				}
 				if (child.name == "LoseArm")
 				{
-					child.gameObject.SetActive(value: true);
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
+					child.gameObject.SetActive(true);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
 					child.AddComponent<ZombieHead>();
 				}
 			}
 		}
-		if (!(theHealth < (float)theMaxHealth / 3f) || theStatus == 1)
+		if (this.theHealth < (float)this.theMaxHealth / 3f && this.theStatus != 1)
 		{
-			return;
-		}
-		theStatus = 1;
-		for (int j = 0; j < base.transform.childCount; j++)
-		{
-			Transform child2 = base.transform.GetChild(j);
-			if (child2.CompareTag("ZombieHead"))
+			this.theStatus = 1;
+			for (int j = 0; j < base.transform.childCount; j++)
 			{
-				Object.Destroy(child2.gameObject);
+				Transform child2 = base.transform.GetChild(j);
+				if (child2.CompareTag("ZombieHead"))
+				{
+					Object.Destroy(child2.gameObject);
+				}
 			}
 		}
 	}
 
+	// Token: 0x06000411 RID: 1041 RVA: 0x0001FA50 File Offset: 0x0001DC50
 	protected override int FirstArmorTakeDamage(int theDamage)
 	{
-		int num = theDamage;
-		if (num < theFirstArmorHealth)
+		if (theDamage < this.theFirstArmorHealth)
 		{
-			theFirstArmorHealth -= num;
-			FirstArmorBroken();
+			this.theFirstArmorHealth -= theDamage;
+			this.FirstArmorBroken();
 			return 0;
 		}
-		num -= theFirstArmorHealth;
-		theFirstArmorHealth = 0;
-		theFirstArmorType = 0;
-		theFirstArmor = null;
-		return num;
+		int result = theDamage - this.theFirstArmorHealth;
+		this.theFirstArmorHealth = 0;
+		this.theFirstArmorType = 0;
+		this.theFirstArmor = null;
+		return result;
 	}
 }

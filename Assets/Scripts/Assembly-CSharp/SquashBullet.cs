@@ -1,59 +1,64 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000048 RID: 72
 public class SquashBullet : Bullet
 {
-	protected float landY;
-
+	// Token: 0x06000154 RID: 340 RVA: 0x0000AE80 File Offset: 0x00009080
 	protected override void Awake()
 	{
 		base.Awake();
-		g = 10f;
-		Vx = Random.Range(1.8f, 2.2f);
-		Vy = Random.Range(4.8f, 5.2f);
-		Y = Vy;
+		this.g = 10f;
+		this.Vx = Random.Range(1.8f, 2.2f);
+		this.Vy = Random.Range(4.8f, 5.2f);
+		this.Y = this.Vy;
 	}
 
+	// Token: 0x06000155 RID: 341 RVA: 0x0000AED4 File Offset: 0x000090D4
 	protected override void HitZombie(GameObject zombie)
 	{
 		Zombie component = zombie.GetComponent<Zombie>();
-		component.TakeDamage(0, theBulletDamage);
-		theMovingWay = -1;
-		Vy *= -0.75f;
-		GetComponent<BoxCollider2D>().enabled = false;
-		originY = shadow.transform.position.y;
-		PlaySound(component);
+		component.TakeDamage(0, this.theBulletDamage);
+		this.theMovingWay = -1;
+		this.Vy *= -0.75f;
+		base.GetComponent<BoxCollider2D>().enabled = false;
+		this.originY = this.shadow.transform.position.y;
+		this.PlaySound(component);
 		if (Board.Instance.isEveStarted)
 		{
-			SetShadowPosition();
+			base.SetShadowPosition();
 		}
-		landY = shadow.transform.position.y + 0.3f;
+		this.landY = this.shadow.transform.position.y + 0.3f;
 	}
 
+	// Token: 0x06000156 RID: 342 RVA: 0x0000AF6F File Offset: 0x0000916F
 	protected override void Update()
 	{
 		base.Update();
-		if (theMovingWay == -1)
+		if (this.theMovingWay == -1)
 		{
-			PositionUpdate();
+			this.PositionUpdate();
 		}
 	}
 
+	// Token: 0x06000157 RID: 343 RVA: 0x0000AF88 File Offset: 0x00009188
 	private void PositionUpdate()
 	{
-		base.transform.Translate(new Vector3(Vx * Time.deltaTime, 0f));
-		base.transform.GetChild(0).transform.Translate(new Vector3(0f, Vy * Time.deltaTime));
-		Vy -= g * Time.deltaTime;
-		if (base.transform.GetChild(0).position.y < landY && Vy < 0f)
+		base.transform.Translate(new Vector3(this.Vx * Time.deltaTime, 0f));
+		base.transform.GetChild(0).transform.Translate(new Vector3(0f, this.Vy * Time.deltaTime));
+		this.Vy -= this.g * Time.deltaTime;
+		if (base.transform.GetChild(0).position.y < this.landY && this.Vy < 0f)
 		{
-			Vy = 0f - Vy;
-			AttackZombie();
-			if (Board.Instance.roadType[theBulletRow] == 1)
+			this.Vy = -this.Vy;
+			this.AttackZombie();
+			if (Board.Instance.roadType[this.theBulletRow] == 1)
 			{
-				Object.Instantiate(GameAPP.particlePrefab[32], shadow.transform.position, Quaternion.identity, Board.Instance.transform);
+				Object.Instantiate<GameObject>(GameAPP.particlePrefab[32], this.shadow.transform.position, Quaternion.identity, Board.Instance.transform);
 			}
 		}
 	}
 
+	// Token: 0x06000158 RID: 344 RVA: 0x0000B07C File Offset: 0x0000927C
 	protected virtual void AttackZombie()
 	{
 		Collider2D[] array = Physics2D.OverlapCircleAll(base.transform.position, 0.5f);
@@ -61,15 +66,19 @@ public class SquashBullet : Bullet
 		Collider2D[] array2 = array;
 		for (int i = 0; i < array2.Length; i++)
 		{
-			if (array2[i].TryGetComponent<Zombie>(out var component) && component.theZombieRow == theBulletRow && !component.isMindControlled)
+			Zombie zombie;
+			if (array2[i].TryGetComponent<Zombie>(out zombie) && zombie.theZombieRow == this.theBulletRow && !zombie.isMindControlled)
 			{
-				component.TakeDamage(1, theBulletDamage);
+				zombie.TakeDamage(1, this.theBulletDamage);
 				flag = true;
 			}
 		}
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
+
+	// Token: 0x04000101 RID: 257
+	protected float landY;
 }

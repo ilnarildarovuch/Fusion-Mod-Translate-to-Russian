@@ -1,64 +1,76 @@
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
+// Token: 0x0200007A RID: 122
 public class SunChomper : Chomper
 {
+	// Token: 0x06000281 RID: 641 RVA: 0x00014D1E File Offset: 0x00012F1E
 	protected override void Swallow()
 	{
 		base.Swallow();
-		if (!board.isIZ)
+		if (!this.board.isIZ)
 		{
-			Invoke("Produce", 1.5f);
+			base.Invoke("Produce", 1.5f);
 		}
 	}
 
+	// Token: 0x06000282 RID: 642 RVA: 0x00014D44 File Offset: 0x00012F44
 	private void Produce()
 	{
-		foreach (Transform item in base.transform)
+		foreach (object obj in base.transform)
 		{
-			if (item.name == "Shadow")
+			Transform transform = (Transform)obj;
+			if (!(transform.name == "Shadow"))
 			{
-				continue;
-			}
-			if (item.childCount != 0)
-			{
-				foreach (Transform item2 in item.transform)
+				if (transform.childCount != 0)
 				{
-					if (item2.TryGetComponent<SpriteRenderer>(out var component))
+					using (IEnumerator enumerator2 = transform.transform.GetEnumerator())
 					{
-						Material material = component.material;
-						StartCoroutine(SunBright(material));
+						while (enumerator2.MoveNext())
+						{
+							SpriteRenderer spriteRenderer;
+							if (((Transform)enumerator2.Current).TryGetComponent<SpriteRenderer>(out spriteRenderer))
+							{
+								Material material = spriteRenderer.material;
+								base.StartCoroutine(this.SunBright(material));
+							}
+						}
 					}
 				}
-			}
-			if (item.TryGetComponent<SpriteRenderer>(out var component2))
-			{
-				Material material2 = component2.material;
-				StartCoroutine(SunBright(material2));
+				SpriteRenderer spriteRenderer2;
+				if (transform.TryGetComponent<SpriteRenderer>(out spriteRenderer2))
+				{
+					Material material2 = spriteRenderer2.material;
+					base.StartCoroutine(this.SunBright(material2));
+				}
 			}
 		}
-		Invoke("ProduceSun", 0.5f);
+		base.Invoke("ProduceSun", 0.5f);
 	}
 
+	// Token: 0x06000283 RID: 643 RVA: 0x00014E54 File Offset: 0x00013054
 	private IEnumerator SunBright(Material mt)
 	{
-		for (float j = 1f; j < 4f; j += 0.1f)
+		for (float i = 1f; i < 4f; i += 0.1f)
 		{
-			mt.SetFloat("_Brightness", j);
+			mt.SetFloat("_Brightness", i);
 			yield return new WaitForFixedUpdate();
 		}
-		for (float j = 4f; j > 1f; j -= 0.1f)
+		for (float i = 4f; i > 1f; i -= 0.1f)
 		{
-			mt.SetFloat("_Brightness", j);
+			mt.SetFloat("_Brightness", i);
 			yield return new WaitForFixedUpdate();
 		}
+		yield break;
 	}
 
+	// Token: 0x06000284 RID: 644 RVA: 0x00014E64 File Offset: 0x00013064
 	private void ProduceSun()
 	{
-		board.GetComponent<CreateCoin>().SetCoin(thePlantColumn, thePlantRow, 0, 0);
-		board.GetComponent<CreateCoin>().SetCoin(thePlantColumn, thePlantRow, 0, 0);
-		board.GetComponent<CreateCoin>().SetCoin(thePlantColumn, thePlantRow, 0, 0);
-		board.GetComponent<CreateCoin>().SetCoin(thePlantColumn, thePlantRow, 0, 0);
+		this.board.GetComponent<CreateCoin>().SetCoin(this.thePlantColumn, this.thePlantRow, 0, 0, default(Vector3));
+		this.board.GetComponent<CreateCoin>().SetCoin(this.thePlantColumn, this.thePlantRow, 0, 0, default(Vector3));
+		this.board.GetComponent<CreateCoin>().SetCoin(this.thePlantColumn, this.thePlantRow, 0, 0, default(Vector3));
+		this.board.GetComponent<CreateCoin>().SetCoin(this.thePlantColumn, this.thePlantRow, 0, 0, default(Vector3));
 	}
 }

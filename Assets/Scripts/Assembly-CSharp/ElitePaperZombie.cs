@@ -1,22 +1,26 @@
+﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Token: 0x020000D6 RID: 214
 public class ElitePaperZombie : PaperZombie
 {
+	// Token: 0x060003E9 RID: 1001 RVA: 0x0001E028 File Offset: 0x0001C228
 	protected override void Start()
 	{
 		base.Start();
-		theStatus = 4;
-		theAttackDamage = 400;
+		this.theStatus = 4;
+		this.theAttackDamage = 400;
 	}
 
+	// Token: 0x060003EA RID: 1002 RVA: 0x0001E044 File Offset: 0x0001C244
 	protected override void BodyTakeDamage(int theDamage)
 	{
-		theHealth -= theDamage;
-		if (!isLoseHand && theHealth < (float)(theMaxHealth * 2 / 3) && losePaper)
+		this.theHealth -= (float)theDamage;
+		if (!this.isLoseHand && this.theHealth < (float)(this.theMaxHealth * 2 / 3) && this.losePaper)
 		{
-			isLoseHand = true;
-			GameAPP.PlaySound(7);
+			this.isLoseHand = true;
+			GameAPP.PlaySound(7, 0.5f);
 			for (int i = 0; i < base.transform.childCount; i++)
 			{
 				Transform child = base.transform.GetChild(i);
@@ -30,99 +34,101 @@ public class ElitePaperZombie : PaperZombie
 				}
 				if (child.name == "LoseArm")
 				{
-					child.gameObject.SetActive(value: true);
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
+					child.gameObject.SetActive(true);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
 					child.AddComponent<ZombieHead>();
 				}
 			}
 		}
-		if (!(theHealth < (float)(theMaxHealth / 3)) || theStatus == 1)
+		if (this.theHealth < (float)(this.theMaxHealth / 3) && this.theStatus != 1)
 		{
-			return;
-		}
-		theStatus = 1;
-		GameAPP.PlaySound(7);
-		for (int j = 0; j < base.transform.childCount; j++)
-		{
-			Transform child2 = base.transform.GetChild(j);
-			if (child2.CompareTag("ZombieHead"))
+			this.theStatus = 1;
+			GameAPP.PlaySound(7, 0.5f);
+			for (int j = 0; j < base.transform.childCount; j++)
 			{
-				Object.Destroy(child2.gameObject);
+				Transform child2 = base.transform.GetChild(j);
+				if (child2.CompareTag("ZombieHead"))
+				{
+					Object.Destroy(child2.gameObject);
+				}
+				if (child2.name == "LoseHead")
+				{
+					child2.gameObject.SetActive(true);
+					child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child2.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
+					child2.GetChild(0).gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
+					child2.GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child2.GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child2.AddComponent<ZombieHead>();
+					Vector3 localScale = child2.transform.localScale;
+					child2.transform.SetParent(this.board.transform);
+					child2.transform.localScale = localScale;
+				}
 			}
-			if (child2.name == "LoseHead")
+			if (!this.losePaper)
 			{
-				child2.gameObject.SetActive(value: true);
-				child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-				child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-				child2.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
-				child2.GetChild(0).gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
-				child2.GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-				child2.GetChild(0).gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-				child2.AddComponent<ZombieHead>();
-				Vector3 localScale = child2.transform.localScale;
-				child2.transform.SetParent(board.transform);
-				child2.transform.localScale = localScale;
+				this.SecondArmorFall();
 			}
-		}
-		if (!losePaper)
-		{
-			SecondArmorFall();
 		}
 	}
 
+	// Token: 0x060003EB RID: 1003 RVA: 0x0001E380 File Offset: 0x0001C580
 	public override void TakeDamage(int theDamageType, int theDamage)
 	{
-		if (theStatus == 4)
+		if (this.theStatus == 4)
 		{
-			if (GameAPP.difficulty > 4 && !isMindControlled && theDamage > 0)
+			if (GameAPP.difficulty > 4 && !this.isMindControlled && theDamage > 0)
 			{
 				theDamage /= 2;
 			}
-			if (GameAPP.difficulty == 1 && !isMindControlled)
+			if (GameAPP.difficulty == 1 && !this.isMindControlled)
 			{
 				theDamage += 10;
 			}
-			flashTime = 0.3f;
-			if (theSecondArmor != null)
+			this.flashTime = 0.3f;
+			if (this.theSecondArmor != null)
 			{
-				SecondArmorTakeDamage(theDamage);
+				this.SecondArmorTakeDamage(theDamage);
+				return;
 			}
-		}
-		else if (theStatus == 5)
-		{
-			base.TakeDamage(theDamageType, 0);
 		}
 		else
 		{
+			if (this.theStatus == 5)
+			{
+				base.TakeDamage(theDamageType, 0);
+				return;
+			}
 			base.TakeDamage(theDamageType, theDamage);
 		}
 	}
 
+	// Token: 0x060003EC RID: 1004 RVA: 0x0001E401 File Offset: 0x0001C601
 	public override void Charred()
 	{
-		if (theStatus != 6)
+		if (this.theStatus != 6)
 		{
-			TakeDamage(10, 1800);
+			this.TakeDamage(10, 1800);
+			return;
 		}
-		else
-		{
-			base.Charred();
-		}
+		base.Charred();
 	}
 
+	// Token: 0x060003ED RID: 1005 RVA: 0x0001E420 File Offset: 0x0001C620
 	protected override void SecondArmorBroken()
 	{
-		if (theSecondArmorHealth < theSecondArmorMaxHealth * 2 / 3 && theSecondArmorBroken < 1)
+		if (this.theSecondArmorHealth < this.theSecondArmorMaxHealth * 2 / 3 && this.theSecondArmorBroken < 1)
 		{
-			theSecondArmorBroken = 1;
-			theSecondArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[42];
+			this.theSecondArmorBroken = 1;
+			this.theSecondArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[42];
 		}
-		if (theSecondArmorHealth < theSecondArmorMaxHealth / 3 && theSecondArmorBroken < 2)
+		if (this.theSecondArmorHealth < this.theSecondArmorMaxHealth / 3 && this.theSecondArmorBroken < 2)
 		{
-			theSecondArmorBroken = 2;
-			theSecondArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[43];
+			this.theSecondArmorBroken = 2;
+			this.theSecondArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[43];
 		}
 	}
 }

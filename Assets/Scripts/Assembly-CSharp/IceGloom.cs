@@ -1,39 +1,44 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000B2 RID: 178
 public class IceGloom : GloomShroom
 {
+	// Token: 0x06000366 RID: 870 RVA: 0x0001A9A4 File Offset: 0x00018BA4
 	protected override void AttackZombie()
 	{
 		bool flag = false;
-		colliders = Physics2D.OverlapCircleAll(center.transform.position, range, zombieLayer);
-		Collider2D[] array = colliders;
-		for (int i = 0; i < array.Length; i++)
+		this.colliders = Physics2D.OverlapCircleAll(this.center.transform.position, this.range, this.zombieLayer);
+		Collider2D[] colliders = this.colliders;
+		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (array[i].TryGetComponent<Zombie>(out var component) && Mathf.Abs(component.theZombieRow - thePlantRow) <= 1 && SearchUniqueZombie(component))
+			Zombie zombie;
+			if (colliders[i].TryGetComponent<Zombie>(out zombie) && Mathf.Abs(zombie.theZombieRow - this.thePlantRow) <= 1 && base.SearchUniqueZombie(zombie))
 			{
 				flag = true;
-				zombieList.Add(component);
+				this.zombieList.Add(zombie);
 			}
 		}
-		for (int num = zombieList.Count - 1; num >= 0; num--)
+		for (int j = this.zombieList.Count - 1; j >= 0; j--)
 		{
-			if (zombieList[num] != null)
+			if (this.zombieList[j] != null)
 			{
-				zombieList[num].TakeDamage(3, 20);
-				zombieList[num].AddfreezeLevel(5);
+				this.zombieList[j].TakeDamage(3, 20);
+				this.zombieList[j].AddfreezeLevel(5);
 			}
 		}
-		zombieList.Clear();
+		this.zombieList.Clear();
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
 
+	// Token: 0x06000367 RID: 871 RVA: 0x0001AAA4 File Offset: 0x00018CA4
 	public override GameObject AnimShoot()
 	{
-		Object.Instantiate(GameAPP.particlePrefab[39], center.transform.position, Quaternion.identity, board.transform);
-		AttackZombie();
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[39], this.center.transform.position, Quaternion.identity, this.board.transform);
+		this.AttackZombie();
 		return null;
 	}
 }

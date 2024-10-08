@@ -1,31 +1,36 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000D1 RID: 209
 public class ConeZombie : ArmorZombie
 {
+	// Token: 0x060003CD RID: 973 RVA: 0x0001D134 File Offset: 0x0001B334
 	protected override void FirstArmorBroken()
 	{
-		if (theFirstArmorHealth < theFirstArmorMaxHealth * 2 / 3 && theFirstArmorBroken < 1)
+		if (this.theFirstArmorHealth < this.theFirstArmorMaxHealth * 2 / 3 && this.theFirstArmorBroken < 1)
 		{
-			theFirstArmorBroken = 1;
-			theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[1];
+			this.theFirstArmorBroken = 1;
+			this.theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[1];
 		}
-		if (theFirstArmorHealth < theFirstArmorMaxHealth / 3 && theFirstArmorBroken < 2)
+		if (this.theFirstArmorHealth < this.theFirstArmorMaxHealth / 3 && this.theFirstArmorBroken < 2)
 		{
-			theFirstArmorBroken = 2;
-			theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[2];
+			this.theFirstArmorBroken = 2;
+			this.theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[2];
 		}
 	}
 
+	// Token: 0x060003CE RID: 974 RVA: 0x0001D1B4 File Offset: 0x0001B3B4
 	protected override void FirstArmorFall()
 	{
-		foreach (Transform item in base.transform)
+		foreach (object obj in base.transform)
 		{
-			if (item.name == "LoseCone")
+			Transform transform = (Transform)obj;
+			if (transform.name == "LoseCone")
 			{
-				item.gameObject.SetActive(value: true);
-				item.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-				item.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-				item.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
+				transform.gameObject.SetActive(true);
+				transform.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+				transform.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+				transform.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
 			}
 		}
 	}

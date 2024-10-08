@@ -1,39 +1,45 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200008D RID: 141
 public class JalaSpike : Caltrop
 {
+	// Token: 0x060002D6 RID: 726 RVA: 0x00016D58 File Offset: 0x00014F58
 	protected override void KillCar()
 	{
-		Collider2D[] array = Physics2D.OverlapBoxAll(shadow.transform.position, new Vector2(1f, 1f), 0f);
+		Collider2D[] array = Physics2D.OverlapBoxAll(this.shadow.transform.position, new Vector2(1f, 1f), 0f);
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (array[i].TryGetComponent<DriverZombie>(out var component) && component.theZombieRow == thePlantRow && !component.isMindControlled && component.theStatus != 1)
+			DriverZombie driverZombie;
+			if (array[i].TryGetComponent<DriverZombie>(out driverZombie) && driverZombie.theZombieRow == this.thePlantRow && !driverZombie.isMindControlled && driverZombie.theStatus != 1)
 			{
-				component.Die(2);
-				GameAPP.PlaySound(77);
-				Die();
+				driverZombie.Die(2);
+				GameAPP.PlaySound(77, 0.5f);
+				this.Die();
 			}
 		}
 	}
 
+	// Token: 0x060002D7 RID: 727 RVA: 0x00016DE8 File Offset: 0x00014FE8
 	protected override void AnimAttack()
 	{
-		KillCar();
-		Collider2D[] array = Physics2D.OverlapBoxAll(shadow.transform.position, new Vector2(1f, 1f), 0f);
+		this.KillCar();
+		Collider2D[] array = Physics2D.OverlapBoxAll(this.shadow.transform.position, new Vector2(1f, 1f), 0f);
 		bool flag = false;
 		Collider2D[] array2 = array;
 		for (int i = 0; i < array2.Length; i++)
 		{
-			if (array2[i].TryGetComponent<Zombie>(out var component) && component.theZombieRow == thePlantRow && SearchUniqueZombie(component))
+			Zombie zombie;
+			if (array2[i].TryGetComponent<Zombie>(out zombie) && zombie.theZombieRow == this.thePlantRow && base.SearchUniqueZombie(zombie))
 			{
 				flag = true;
-				component.TakeDamage(4, 20);
-				component.SetJalaed();
+				zombie.TakeDamage(4, 20);
+				zombie.SetJalaed();
 			}
 		}
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
 }

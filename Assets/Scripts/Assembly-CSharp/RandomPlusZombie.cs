@@ -1,24 +1,28 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000D9 RID: 217
 public class RandomPlusZombie : RandomZombie
 {
+	// Token: 0x060003FB RID: 1019 RVA: 0x0001ECD8 File Offset: 0x0001CED8
 	protected override void FirstArmorBroken()
 	{
-		if (theFirstArmorHealth < theFirstArmorMaxHealth * 2 / 3 && theFirstArmorBroken < 1)
+		if (this.theFirstArmorHealth < this.theFirstArmorMaxHealth * 2 / 3 && this.theFirstArmorBroken < 1)
 		{
-			theFirstArmorBroken = 1;
-			theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[24];
+			this.theFirstArmorBroken = 1;
+			this.theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[24];
 		}
-		if (theFirstArmorHealth < theFirstArmorMaxHealth / 3 && theFirstArmorBroken < 2)
+		if (this.theFirstArmorHealth < this.theFirstArmorMaxHealth / 3 && this.theFirstArmorBroken < 2)
 		{
-			theFirstArmorBroken = 2;
-			theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[25];
+			this.theFirstArmorBroken = 2;
+			this.theFirstArmor.GetComponent<SpriteRenderer>().sprite = GameAPP.spritePrefab[25];
 		}
 	}
 
+	// Token: 0x060003FC RID: 1020 RVA: 0x0001ED58 File Offset: 0x0001CF58
 	protected override void RandomEvent(Zombie zombie)
 	{
-		float num = 5f / 5f;
+		float num = (float)5 / 5f;
 		zombie.theHealth *= num;
 		zombie.theMaxHealth = (int)((float)zombie.theMaxHealth * num);
 		zombie.theFirstArmorHealth = (int)((float)zombie.theFirstArmorHealth * num);

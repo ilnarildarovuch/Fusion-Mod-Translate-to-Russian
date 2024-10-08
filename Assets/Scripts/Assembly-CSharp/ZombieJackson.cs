@@ -1,75 +1,76 @@
+﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Token: 0x020000F0 RID: 240
 public class ZombieJackson : Zombie
 {
-	private float moonWalkTime;
-
-	private GameObject[] dancer = new GameObject[4];
-
-	private bool isMoonWalkFinish;
-
-	private bool isAbledToAttack;
-
+	// Token: 0x0600046E RID: 1134 RVA: 0x00023798 File Offset: 0x00021998
 	protected override void Update()
 	{
 		base.Update();
 		if (GameAPP.theGameStatus == 0)
 		{
-			moonWalkTime += Time.deltaTime;
+			this.moonWalkTime += Time.deltaTime;
 		}
-		if (moonWalkTime > 3f && !isMoonWalkFinish)
+		if (this.moonWalkTime > 3f && !this.isMoonWalkFinish)
 		{
-			anim.SetTrigger("summon");
-			isMoonWalkFinish = true;
+			this.anim.SetTrigger("summon");
+			this.isMoonWalkFinish = true;
 		}
 	}
 
+	// Token: 0x0600046F RID: 1135 RVA: 0x000237F0 File Offset: 0x000219F0
 	protected override void FixedUpdate()
 	{
 		base.FixedUpdate();
-		if (theZombieRow == 0)
+		if (this.theZombieRow == 0)
 		{
-			if (dancer[1] == null || dancer[2] == null || dancer[3] == null)
+			if (this.dancer[1] == null || this.dancer[2] == null || this.dancer[3] == null)
 			{
-				anim.SetBool("loseDancer", value: true);
+				this.anim.SetBool("loseDancer", true);
+				return;
 			}
 		}
-		else if (theZombieRow == 4)
+		else if (this.theZombieRow == 4)
 		{
-			if (dancer[0] == null || dancer[1] == null || dancer[2] == null)
+			if (this.dancer[0] == null || this.dancer[1] == null || this.dancer[2] == null)
 			{
-				anim.SetBool("loseDancer", value: true);
+				this.anim.SetBool("loseDancer", true);
+				return;
 			}
 		}
-		else if (dancer[0] == null || dancer[1] == null || dancer[2] == null || dancer[3] == null)
+		else if (this.dancer[0] == null || this.dancer[1] == null || this.dancer[2] == null || this.dancer[3] == null)
 		{
-			anim.SetBool("loseDancer", value: true);
+			this.anim.SetBool("loseDancer", true);
 		}
 	}
 
+	// Token: 0x06000470 RID: 1136 RVA: 0x000238EC File Offset: 0x00021AEC
 	protected override void OnTriggerStay2D(Collider2D collision)
 	{
-		if (theStatus != 1 && theAttackTarget == null)
+		if (this.theStatus != 1 && this.theAttackTarget == null)
 		{
-			if (collision.gameObject.CompareTag("Plant") && !isMindControlled)
+			if (collision.gameObject.CompareTag("Plant") && !this.isMindControlled)
 			{
 				Plant component = collision.gameObject.GetComponent<Plant>();
-				if (component.thePlantRow == theZombieRow)
+				if (component.thePlantRow == this.theZombieRow)
 				{
-					if (!TypeMgr.IsCaltrop(component.thePlantType))
+					if (TypeMgr.IsCaltrop(component.thePlantType))
 					{
-						if (isAbledToAttack)
-						{
-							theAttackTarget = collision.gameObject;
-							anim.SetBool("isAttacking", value: true);
-							isAttacking = true;
-						}
-						else if (!isMoonWalkFinish)
-						{
-							anim.SetTrigger("summon");
-							isMoonWalkFinish = true;
-						}
+						return;
+					}
+					if (this.isAbledToAttack)
+					{
+						this.theAttackTarget = collision.gameObject;
+						this.anim.SetBool("isAttacking", true);
+						this.isAttacking = true;
+						return;
+					}
+					if (!this.isMoonWalkFinish)
+					{
+						this.anim.SetTrigger("summon");
+						this.isMoonWalkFinish = true;
 					}
 					return;
 				}
@@ -77,170 +78,177 @@ public class ZombieJackson : Zombie
 			if (collision.gameObject.CompareTag("Zombie"))
 			{
 				Zombie component2 = collision.gameObject.GetComponent<Zombie>();
-				if (component2.theZombieRow == theZombieRow && component2.isMindControlled == !isMindControlled)
+				if (component2.theZombieRow == this.theZombieRow && component2.isMindControlled == !this.isMindControlled)
 				{
-					if (isAbledToAttack)
+					if (this.isAbledToAttack)
 					{
-						theAttackTarget = collision.gameObject;
-						anim.SetBool("isAttacking", value: true);
-						isAttacking = true;
+						this.theAttackTarget = collision.gameObject;
+						this.anim.SetBool("isAttacking", true);
+						this.isAttacking = true;
+						return;
 					}
-					else if (!isMoonWalkFinish)
+					if (!this.isMoonWalkFinish)
 					{
-						anim.SetTrigger("summon");
-						isMoonWalkFinish = true;
+						this.anim.SetTrigger("summon");
+						this.isMoonWalkFinish = true;
 					}
 					return;
 				}
 			}
-			if (collision.TryGetComponent<IZEBrains>(out var component3) && component3.theRow == theZombieRow && !isMindControlled)
+			IZEBrains izebrains;
+			if (collision.TryGetComponent<IZEBrains>(out izebrains) && izebrains.theRow == this.theZombieRow && !this.isMindControlled)
 			{
-				if (isAbledToAttack)
+				if (this.isAbledToAttack)
 				{
-					theAttackTarget = collision.gameObject;
-					anim.SetBool("isAttacking", value: true);
-					isAttacking = true;
+					this.theAttackTarget = collision.gameObject;
+					this.anim.SetBool("isAttacking", true);
+					this.isAttacking = true;
+					return;
 				}
-				else if (!isMoonWalkFinish)
+				if (!this.isMoonWalkFinish)
 				{
-					anim.SetTrigger("summon");
-					isMoonWalkFinish = true;
+					this.anim.SetTrigger("summon");
+					this.isMoonWalkFinish = true;
 				}
 				return;
 			}
 		}
-		if (theStatus != 1)
+		if (this.theStatus != 1)
 		{
-			if (collision.gameObject == theAttackTarget)
+			if (collision.gameObject == this.theAttackTarget)
 			{
-				Zombie component5;
-				if (theAttackTarget.TryGetComponent<Plant>(out var component4) && component4.thePlantRow != theZombieRow)
+				Plant plant;
+				if (this.theAttackTarget.TryGetComponent<Plant>(out plant) && plant.thePlantRow != this.theZombieRow)
 				{
-					theAttackTarget = null;
-					isAttacking = false;
-					anim.SetBool("isAttacking", value: false);
+					this.theAttackTarget = null;
+					this.isAttacking = false;
+					this.anim.SetBool("isAttacking", false);
+					return;
 				}
-				else if (theAttackTarget.TryGetComponent<Zombie>(out component5) && component5.theZombieRow != theZombieRow)
+				Zombie zombie;
+				if (this.theAttackTarget.TryGetComponent<Zombie>(out zombie) && zombie.theZombieRow != this.theZombieRow)
 				{
-					theAttackTarget = null;
-					isAttacking = false;
-					anim.SetBool("isAttacking", value: false);
+					this.theAttackTarget = null;
+					this.isAttacking = false;
+					this.anim.SetBool("isAttacking", false);
+					return;
 				}
 			}
 		}
-		else if (theStatus == 1)
+		else if (this.theStatus == 1)
 		{
-			theAttackTarget = null;
-			isAttacking = false;
+			this.theAttackTarget = null;
+			this.isAttacking = false;
 		}
 	}
 
+	// Token: 0x06000471 RID: 1137 RVA: 0x00023B50 File Offset: 0x00021D50
 	private void PointOver()
 	{
 		Debug.Log("允许攻击");
-		isAbledToAttack = true;
+		this.isAbledToAttack = true;
 	}
 
+	// Token: 0x06000472 RID: 1138 RVA: 0x00023B64 File Offset: 0x00021D64
 	private void AnimSummon()
 	{
-		GameAPP.PlaySound(69);
-		if (theStatus != 0)
+		GameAPP.PlaySound(69, 0.5f);
+		if (this.theStatus == 0)
 		{
-			return;
-		}
-		anim.SetBool("loseDancer", value: false);
-		if (dancer[0] == null && theZombieRow != 0 && board.roadType[theZombieRow - 1] != 1)
-		{
-			dancer[0] = board.GetComponent<CreateZombie>().SetZombie(0, theZombieRow - 1, 6, shadow.transform.position.x);
-			CreateParticle(dancer[0].transform.Find("Shadow").position);
-			if (isMindControlled)
+			this.anim.SetBool("loseDancer", false);
+			if (this.dancer[0] == null && this.theZombieRow != 0 && this.board.roadType[this.theZombieRow - 1] != 1)
 			{
-				dancer[0].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				this.dancer[0] = this.board.GetComponent<CreateZombie>().SetZombie(0, this.theZombieRow - 1, 6, this.shadow.transform.position.x, false);
+				this.CreateParticle(this.dancer[0].transform.Find("Shadow").position);
+				if (this.isMindControlled)
+				{
+					this.dancer[0].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				}
 			}
-		}
-		if (dancer[1] == null)
-		{
-			dancer[1] = board.GetComponent<CreateZombie>().SetZombie(0, theZombieRow, 6, shadow.transform.position.x + 1f);
-			CreateParticle(dancer[1].transform.Find("Shadow").position);
-			if (isMindControlled)
+			if (this.dancer[1] == null)
 			{
-				dancer[1].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				this.dancer[1] = this.board.GetComponent<CreateZombie>().SetZombie(0, this.theZombieRow, 6, this.shadow.transform.position.x + 1f, false);
+				this.CreateParticle(this.dancer[1].transform.Find("Shadow").position);
+				if (this.isMindControlled)
+				{
+					this.dancer[1].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				}
 			}
-		}
-		if (dancer[2] == null)
-		{
-			dancer[2] = board.GetComponent<CreateZombie>().SetZombie(0, theZombieRow, 6, shadow.transform.position.x - 1.5f);
-			CreateParticle(dancer[2].transform.Find("Shadow").position);
-			if (isMindControlled)
+			if (this.dancer[2] == null)
 			{
-				dancer[2].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				this.dancer[2] = this.board.GetComponent<CreateZombie>().SetZombie(0, this.theZombieRow, 6, this.shadow.transform.position.x - 1.5f, false);
+				this.CreateParticle(this.dancer[2].transform.Find("Shadow").position);
+				if (this.isMindControlled)
+				{
+					this.dancer[2].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				}
 			}
-		}
-		if (dancer[3] == null && theZombieRow != board.roadNum - 1 && board.roadType[theZombieRow + 1] != 1)
-		{
-			dancer[3] = board.GetComponent<CreateZombie>().SetZombie(0, theZombieRow + 1, 6, shadow.transform.position.x);
-			CreateParticle(dancer[3].transform.Find("Shadow").position);
-			if (isMindControlled)
+			if (this.dancer[3] == null && this.theZombieRow != this.board.roadNum - 1 && this.board.roadType[this.theZombieRow + 1] != 1)
 			{
-				dancer[3].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				this.dancer[3] = this.board.GetComponent<CreateZombie>().SetZombie(0, this.theZombieRow + 1, 6, this.shadow.transform.position.x, false);
+				this.CreateParticle(this.dancer[3].transform.Find("Shadow").position);
+				if (this.isMindControlled)
+				{
+					this.dancer[3].GetComponent<Zombie>().SetMindControlWithOutEffect();
+				}
 			}
 		}
 	}
 
+	// Token: 0x06000473 RID: 1139 RVA: 0x00023E08 File Offset: 0x00022008
 	public override void SetMindControl(bool mustControl = false)
 	{
 		base.SetMindControl(mustControl);
-		for (int i = 0; i < dancer.Length; i++)
+		for (int i = 0; i < this.dancer.Length; i++)
 		{
-			dancer[i] = null;
+			this.dancer[i] = null;
 		}
 	}
 
+	// Token: 0x06000474 RID: 1140 RVA: 0x00023E38 File Offset: 0x00022038
 	private void LookForward()
 	{
-		if (shadow != null)
+		if (this.shadow != null)
 		{
-			if (isMindControlled)
+			if (this.isMindControlled)
 			{
-				Vector2 vector = shadow.transform.position;
+				Vector2 v = this.shadow.transform.position;
 				base.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-				AdjustPosition(base.gameObject, vector);
+				base.AdjustPosition(base.gameObject, v);
+				return;
 			}
-			else
-			{
-				Vector2 vector2 = shadow.transform.position;
-				base.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-				AdjustPosition(base.gameObject, vector2);
-			}
+			Vector2 v2 = this.shadow.transform.position;
+			base.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+			base.AdjustPosition(base.gameObject, v2);
 		}
 	}
 
+	// Token: 0x06000475 RID: 1141 RVA: 0x00023EF0 File Offset: 0x000220F0
 	private void LookBack()
 	{
-		if (shadow != null)
+		if (this.shadow != null)
 		{
-			if (isMindControlled)
+			if (this.isMindControlled)
 			{
-				Vector2 vector = shadow.transform.position;
+				Vector2 v = this.shadow.transform.position;
 				base.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-				AdjustPosition(base.gameObject, vector);
+				base.AdjustPosition(base.gameObject, v);
+				return;
 			}
-			else
-			{
-				Vector2 vector2 = shadow.transform.position;
-				base.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-				AdjustPosition(base.gameObject, vector2);
-			}
+			Vector2 v2 = this.shadow.transform.position;
+			base.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+			base.AdjustPosition(base.gameObject, v2);
 		}
 	}
 
+	// Token: 0x06000476 RID: 1142 RVA: 0x00023FA8 File Offset: 0x000221A8
 	protected override void BodyTakeDamage(int theDamage)
 	{
-		theHealth -= theDamage;
-		if (!isLoseHand && theHealth < (float)(theMaxHealth * 2 / 3))
+		this.theHealth -= (float)theDamage;
+		if (!this.isLoseHand && this.theHealth < (float)(this.theMaxHealth * 2 / 3))
 		{
-			isLoseHand = true;
-			GameAPP.PlaySound(7);
+			this.isLoseHand = true;
+			GameAPP.PlaySound(7, 0.5f);
 			for (int i = 0; i < base.transform.childCount; i++)
 			{
 				Transform child = base.transform.GetChild(i);
@@ -254,62 +262,74 @@ public class ZombieJackson : Zombie
 				}
 				if (child.name == "LoseArm")
 				{
-					child.gameObject.SetActive(value: true);
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
+					child.gameObject.SetActive(true);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
 					child.AddComponent<ZombieHead>();
 				}
 			}
 		}
-		if (!(theHealth < (float)(theMaxHealth / 3)) || theStatus == 1)
+		if (this.theHealth < (float)(this.theMaxHealth / 3) && this.theStatus != 1)
 		{
-			return;
-		}
-		theStatus = 1;
-		GameAPP.PlaySound(7);
-		for (int j = 0; j < base.transform.childCount; j++)
-		{
-			Transform child2 = base.transform.GetChild(j);
-			if (child2.CompareTag("ZombieHead"))
+			this.theStatus = 1;
+			GameAPP.PlaySound(7, 0.5f);
+			for (int j = 0; j < base.transform.childCount; j++)
 			{
-				Object.Destroy(child2.gameObject);
-			}
-			if (child2.name == "LoseHead")
-			{
-				child2.gameObject.SetActive(value: true);
-				child2.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
-				child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-				child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-				child2.AddComponent<ZombieHead>();
-				Vector3 localScale = child2.transform.localScale;
-				child2.transform.SetParent(board.transform);
-				child2.transform.localScale = localScale;
+				Transform child2 = base.transform.GetChild(j);
+				if (child2.CompareTag("ZombieHead"))
+				{
+					Object.Destroy(child2.gameObject);
+				}
+				if (child2.name == "LoseHead")
+				{
+					child2.gameObject.SetActive(true);
+					child2.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
+					child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child2.AddComponent<ZombieHead>();
+					Vector3 localScale = child2.transform.localScale;
+					child2.transform.SetParent(this.board.transform);
+					child2.transform.localScale = localScale;
+				}
 			}
 		}
 	}
 
+	// Token: 0x06000477 RID: 1143 RVA: 0x00024244 File Offset: 0x00022444
 	private void AdjustAttackPosition()
 	{
-		if (shadow != null)
+		if (this.shadow != null)
 		{
-			if (isMindControlled)
+			if (this.isMindControlled)
 			{
-				Vector2 vector = shadow.transform.position;
+				Vector2 v = this.shadow.transform.position;
 				base.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-				AdjustPosition(base.gameObject, vector);
+				base.AdjustPosition(base.gameObject, v);
+				return;
 			}
-			else
-			{
-				Vector2 vector2 = shadow.transform.position;
-				base.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-				AdjustPosition(base.gameObject, vector2);
-			}
+			Vector2 v2 = this.shadow.transform.position;
+			base.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+			base.AdjustPosition(base.gameObject, v2);
 		}
 	}
 
+	// Token: 0x06000478 RID: 1144 RVA: 0x000242FC File Offset: 0x000224FC
 	private void CreateParticle(Vector3 position)
 	{
-		Object.Instantiate(position: new Vector3(position.x, position.y + 0.7f), original: GameAPP.particlePrefab[11], rotation: Quaternion.identity, parent: board.transform);
+		Vector3 position2 = new Vector3(position.x, position.y + 0.7f);
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[11], position2, Quaternion.identity, this.board.transform);
 	}
+
+	// Token: 0x040001FA RID: 506
+	private float moonWalkTime;
+
+	// Token: 0x040001FB RID: 507
+	private GameObject[] dancer = new GameObject[4];
+
+	// Token: 0x040001FC RID: 508
+	private bool isMoonWalkFinish;
+
+	// Token: 0x040001FD RID: 509
+	private bool isAbledToAttack;
 }

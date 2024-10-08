@@ -1,111 +1,132 @@
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Token: 0x02000012 RID: 18
 public class InGameBtn : MonoBehaviour
 {
-	public Sprite highLightSprite;
-
-	public int buttonNumber;
-
-	public GameObject thisMenu;
-
-	private Sprite originSprite;
-
-	private Image image;
-
-	private Vector3 originPosition;
-
-	private RectTransform rectTransform;
-
-	private bool speedTrigger;
-
+	// Token: 0x06000036 RID: 54 RVA: 0x000032B0 File Offset: 0x000014B0
 	private void Start()
 	{
-		rectTransform = GetComponent<RectTransform>();
-		originPosition = rectTransform.anchoredPosition;
-		image = GetComponent<Image>();
-		originSprite = image.sprite;
+		this.rectTransform = base.GetComponent<RectTransform>();
+		this.originPosition = this.rectTransform.anchoredPosition;
+		this.image = base.GetComponent<Image>();
+		this.originSprite = this.image.sprite;
 	}
 
+	// Token: 0x06000037 RID: 55 RVA: 0x000032FC File Offset: 0x000014FC
 	private void OnMouseEnter()
 	{
-		image.sprite = highLightSprite;
+		this.image.sprite = this.highLightSprite;
 		CursorChange.SetClickCursor();
 	}
 
+	// Token: 0x06000038 RID: 56 RVA: 0x00003314 File Offset: 0x00001514
 	private void OnMouseExit()
 	{
-		image.sprite = originSprite;
-		if (buttonNumber != 3)
+		this.image.sprite = this.originSprite;
+		if (this.buttonNumber != 3)
 		{
-			rectTransform.anchoredPosition = originPosition;
+			this.rectTransform.anchoredPosition = this.originPosition;
 		}
 		CursorChange.SetDefaultCursor();
 	}
 
+	// Token: 0x06000039 RID: 57 RVA: 0x0000334C File Offset: 0x0000154C
 	private void OnMouseDown()
 	{
-		if (buttonNumber == 0 || buttonNumber == 3)
+		if (this.buttonNumber == 0 || this.buttonNumber == 3)
 		{
-			GameAPP.PlaySound(28);
+			GameAPP.PlaySound(28, 0.5f);
 		}
 		else
 		{
-			GameAPP.PlaySound(19);
+			GameAPP.PlaySound(19, 0.5f);
 		}
-		if (buttonNumber != 3)
+		if (this.buttonNumber != 3)
 		{
-			rectTransform.anchoredPosition = new Vector2(originPosition.x + 1f, originPosition.y - 1f);
+			this.rectTransform.anchoredPosition = new Vector2(this.originPosition.x + 1f, this.originPosition.y - 1f);
 		}
 	}
 
+	// Token: 0x0600003A RID: 58 RVA: 0x000033C0 File Offset: 0x000015C0
 	private void OnMouseUp()
 	{
 		CursorChange.SetDefaultCursor();
-		if (buttonNumber != 3)
+		if (this.buttonNumber != 3)
 		{
-			rectTransform.anchoredPosition = originPosition;
+			this.rectTransform.anchoredPosition = this.originPosition;
 		}
-		switch (buttonNumber)
+		int num = this.buttonNumber;
+		if (num != 0)
 		{
-		case 0:
-			if (GameAPP.theGameStatus == 0 && GameAPP.board.GetComponent<Board>().isIZ)
+			if (num != 3)
 			{
-				base.transform.parent.GetComponent<IZEMgr>().PauseGame();
+				return;
 			}
-			else if (!GameAPP.board.GetComponent<Board>().isIZ)
-			{
-				Object.Destroy(GameAPP.board);
-				UIMgr.EnterMainMenu();
-			}
-			break;
-		case 3:
 			if (GameAPP.theGameStatus == 0)
 			{
-				SpeedTrigger();
+				this.SpeedTrigger();
 			}
-			break;
-		}
-	}
-
-	private void Update()
-	{
-		if (GameAPP.theGameStatus == 0 && buttonNumber == 3 && Input.GetKeyDown(KeyCode.Alpha3))
-		{
-			SpeedTrigger();
-		}
-	}
-
-	private void SpeedTrigger()
-	{
-		speedTrigger = !speedTrigger;
-		if (speedTrigger)
-		{
-			Time.timeScale = 0.2f;
 		}
 		else
 		{
-			Time.timeScale = GameAPP.gameSpeed;
+			if (GameAPP.theGameStatus == 0 && GameAPP.board.GetComponent<Board>().isIZ)
+			{
+				base.transform.parent.GetComponent<IZEMgr>().PauseGame();
+				return;
+			}
+			if (!GameAPP.board.GetComponent<Board>().isIZ)
+			{
+				Object.Destroy(GameAPP.board);
+				UIMgr.EnterMainMenu();
+				return;
+			}
 		}
 	}
+
+	// Token: 0x0600003B RID: 59 RVA: 0x0000345C File Offset: 0x0000165C
+	private void Update()
+	{
+		if (GameAPP.theGameStatus == 0 && this.buttonNumber == 3 && Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			this.SpeedTrigger();
+		}
+	}
+
+	// Token: 0x0600003C RID: 60 RVA: 0x0000347D File Offset: 0x0000167D
+	private void SpeedTrigger()
+	{
+		this.speedTrigger = !this.speedTrigger;
+		if (this.speedTrigger)
+		{
+			Time.timeScale = 0.2f;
+			return;
+		}
+		Time.timeScale = GameAPP.gameSpeed;
+	}
+
+	// Token: 0x04000039 RID: 57
+	public Sprite highLightSprite;
+
+	// Token: 0x0400003A RID: 58
+	public int buttonNumber;
+
+	// Token: 0x0400003B RID: 59
+	public GameObject thisMenu;
+
+	// Token: 0x0400003C RID: 60
+	private Sprite originSprite;
+
+	// Token: 0x0400003D RID: 61
+	private Image image;
+
+	// Token: 0x0400003E RID: 62
+	private Vector3 originPosition;
+
+	// Token: 0x0400003F RID: 63
+	private RectTransform rectTransform;
+
+	// Token: 0x04000040 RID: 64
+	private bool speedTrigger;
 }

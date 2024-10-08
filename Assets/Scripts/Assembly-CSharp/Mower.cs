@@ -1,98 +1,89 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000062 RID: 98
 public class Mower : MonoBehaviour
 {
-	public int theMowerRow;
-
-	public int theMowerType;
-
-	private bool isStart;
-
-	private readonly float speed = 5f;
-
-	private Rigidbody2D rb;
-
-	private Animator anim;
-
-	private int theBoxX;
-
-	private bool inWater;
-
+	// Token: 0x060001E6 RID: 486 RVA: 0x0000FBF5 File Offset: 0x0000DDF5
 	private void Start()
 	{
-		rb = GetComponent<Rigidbody2D>();
-		anim = GetComponent<Animator>();
+		this.rb = base.GetComponent<Rigidbody2D>();
+		this.anim = base.GetComponent<Animator>();
 	}
 
+	// Token: 0x060001E7 RID: 487 RVA: 0x0000FC10 File Offset: 0x0000DE10
 	private void Update()
 	{
 		Vector3 position = base.transform.position;
 		position = new Vector3(position.x - 1f, position.y);
 		Vector2 vector = Camera.main.WorldToScreenPoint(position);
-		theBoxX = Mouse.Instance.GetColumnFromX(vector.x - 1f);
+		this.theBoxX = Mouse.Instance.GetColumnFromX(vector.x - 1f);
 		if (Camera.main.WorldToViewportPoint(base.transform.position).x > 1f)
 		{
-			Die();
+			this.Die();
 		}
-		_ = theMowerType;
-		_ = 1;
+		int num = this.theMowerType;
 	}
 
+	// Token: 0x060001E8 RID: 488 RVA: 0x0000FCA0 File Offset: 0x0000DEA0
 	private void PoolCleanerUpdate()
 	{
-		if (GameAPP.theGameStatus == 0 && isStart && base.transform.position.x > -5.1f)
+		if (GameAPP.theGameStatus == 0 && this.isStart && base.transform.position.x > -5.1f)
 		{
-			if (!inWater && Board.Instance.boxType[theBoxX, theMowerRow] == 1)
+			if (!this.inWater && Board.Instance.boxType[this.theBoxX, this.theMowerRow] == 1)
 			{
-				inWater = true;
-				anim.SetTrigger("EnterWater");
+				this.inWater = true;
+				this.anim.SetTrigger("EnterWater");
 				GameObject original = Resources.Load<GameObject>("Particle/Anim/Water/WaterSplashPrefab");
 				Vector2 vector = base.transform.position;
-				Object.Instantiate(original, vector, Quaternion.identity, GameAPP.board.transform);
-				Object.Instantiate(position: new Vector2(vector.x, vector.y + 0.5f), original: GameAPP.particlePrefab[32], rotation: Quaternion.identity, parent: GameAPP.board.transform);
-				GameAPP.PlaySound(71);
+				Object.Instantiate<GameObject>(original, vector, Quaternion.identity, GameAPP.board.transform);
+				vector = new Vector2(vector.x, vector.y + 0.5f);
+				Object.Instantiate<GameObject>(GameAPP.particlePrefab[32], vector, Quaternion.identity, GameAPP.board.transform);
+				GameAPP.PlaySound(71, 0.5f);
 			}
-			if (inWater && Board.Instance.boxType[theBoxX, theMowerRow] == 0)
+			if (this.inWater && Board.Instance.boxType[this.theBoxX, this.theMowerRow] == 0)
 			{
-				inWater = false;
-				anim.SetTrigger("BackToLand");
-				GameAPP.PlaySound(71);
+				this.inWater = false;
+				this.anim.SetTrigger("BackToLand");
+				GameAPP.PlaySound(71, 0.5f);
 			}
 		}
 	}
 
+	// Token: 0x060001E9 RID: 489 RVA: 0x0000FDE8 File Offset: 0x0000DFE8
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		GameObject gameObject = collision.gameObject;
-		if (!gameObject.CompareTag("Zombie"))
+		if (gameObject.CompareTag("Zombie"))
 		{
-			return;
-		}
-		Zombie component = gameObject.GetComponent<Zombie>();
-		if (component.theZombieRow == theMowerRow && !component.isMindControlled)
-		{
-			if (!isStart && component.theStatus != 1)
+			Zombie component = gameObject.GetComponent<Zombie>();
+			if (component.theZombieRow == this.theMowerRow && !component.isMindControlled)
 			{
-				StartMove();
-				isStart = true;
+				if (!this.isStart && component.theStatus != 1)
+				{
+					this.StartMove();
+					this.isStart = true;
+				}
+				component.Die(1);
 			}
-			component.Die(1);
 		}
 	}
 
+	// Token: 0x060001EA RID: 490 RVA: 0x0000FE4C File Offset: 0x0000E04C
 	private void StartMove()
 	{
-		if (theMowerType == 0)
+		if (this.theMowerType == 0)
 		{
-			anim.SetBool("isMoving", value: true);
+			this.anim.SetBool("isMoving", true);
 		}
-		else if (theMowerType == 1)
+		else if (this.theMowerType == 1)
 		{
-			anim.SetFloat("Speed", 1f);
+			this.anim.SetFloat("Speed", 1f);
 		}
-		rb.velocity = new Vector2(speed, rb.velocity.y);
+		this.rb.velocity = new Vector2(this.speed, this.rb.velocity.y);
 	}
 
+	// Token: 0x060001EB RID: 491 RVA: 0x0000FEB8 File Offset: 0x0000E0B8
 	public void Die()
 	{
 		GameObject[] mowerArray = GameAPP.board.GetComponent<Board>().mowerArray;
@@ -106,4 +97,28 @@ public class Mower : MonoBehaviour
 		}
 		Object.Destroy(base.gameObject, 0.5f);
 	}
+
+	// Token: 0x0400013E RID: 318
+	public int theMowerRow;
+
+	// Token: 0x0400013F RID: 319
+	public int theMowerType;
+
+	// Token: 0x04000140 RID: 320
+	private bool isStart;
+
+	// Token: 0x04000141 RID: 321
+	private readonly float speed = 5f;
+
+	// Token: 0x04000142 RID: 322
+	private Rigidbody2D rb;
+
+	// Token: 0x04000143 RID: 323
+	private Animator anim;
+
+	// Token: 0x04000144 RID: 324
+	private int theBoxX;
+
+	// Token: 0x04000145 RID: 325
+	private bool inWater;
 }

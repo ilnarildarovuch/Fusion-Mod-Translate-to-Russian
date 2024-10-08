@@ -1,26 +1,29 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200002E RID: 46
 public class AnimUIOver : MonoBehaviour
 {
-	private Board board;
-
+	// Token: 0x060000D0 RID: 208 RVA: 0x00005EC3 File Offset: 0x000040C3
 	private void Start()
 	{
-		board = GameAPP.board.GetComponent<Board>();
+		this.board = GameAPP.board.GetComponent<Board>();
 	}
 
+	// Token: 0x060000D1 RID: 209 RVA: 0x00005ED8 File Offset: 0x000040D8
 	public void Die()
 	{
 		GameAPP.theGameStatus = 0;
-		board.droppedAwardOrOver = false;
-		foreach (Transform item in board.transform)
+		this.board.droppedAwardOrOver = false;
+		foreach (object obj in this.board.transform)
 		{
-			if (item.CompareTag("Zombie"))
+			Transform transform = (Transform)obj;
+			if (transform.CompareTag("Zombie"))
 			{
-				Object.Destroy(item.gameObject);
+				Object.Destroy(transform.gameObject);
 			}
 		}
-		switch (UIMgr.GetSceneType(GameAPP.theBoardType, GameAPP.theBoardLevel))
+		switch (UIMgr.GetSceneType(GameAPP.theBoardType, GameAPP.theBoardLevel, -1))
 		{
 		case 0:
 			GameAPP.ChangeMusic(2);
@@ -32,19 +35,19 @@ public class AnimUIOver : MonoBehaviour
 			GameAPP.ChangeMusic(6);
 			break;
 		}
-		InGameUIMgr.Instance.ShovelBank.SetActive(value: true);
-		InGameUIMgr.Instance.SlowTrigger.SetActive(value: true);
-		InGameUIMgr.Instance.LevelName2.SetActive(value: true);
+		InGameUIMgr.Instance.ShovelBank.SetActive(true);
+		InGameUIMgr.Instance.SlowTrigger.SetActive(true);
+		InGameUIMgr.Instance.LevelName2.SetActive(true);
 		if (GameAPP.developerMode || GameAPP.advLevelCompleted[3])
 		{
-			InGameUIMgr.Instance.GloveBank.SetActive(value: true);
+			InGameUIMgr.Instance.GloveBank.SetActive(true);
 		}
 		else if (GameAPP.theBoardType == 1)
 		{
 			int theBoardLevel = GameAPP.theBoardLevel;
-			if ((uint)(theBoardLevel - 1) <= 2u)
+			if (theBoardLevel - 1 <= 2)
 			{
-				InGameUIMgr.Instance.GloveBank.SetActive(value: true);
+				InGameUIMgr.Instance.GloveBank.SetActive(true);
 			}
 		}
 		string text = null;
@@ -107,61 +110,82 @@ public class AnimUIOver : MonoBehaviour
 		}
 		if (GameAPP.theBoardType == 1)
 		{
-			switch (GameAPP.theBoardLevel)
+			int theBoardLevel = GameAPP.theBoardLevel;
+			if (theBoardLevel <= 19)
 			{
-			case 1:
-				text = "超级樱桃射手+樱桃机枪射手";
-				break;
-			case 2:
-				text = "火爆窝瓜+窝炬";
-				break;
-			case 3:
-				text = "魅惑菇+魅惑菇";
-				break;
-			case 4:
-				text = "超级大喷菇+超级魅惑菇";
-				break;
-			case 5:
-				text = "超级大嘴花+樱桃大嘴花";
-				break;
-			case 6:
-				text = "小心你没见过的僵尸！";
-				break;
-			case 7:
-				text = "豌豆+樱桃+樱桃";
-				break;
-			case 10:
-				text = "豌豆+坚果+大嘴花";
-				break;
-			case 19:
-				text = "大喷菇+胆小菇+魅惑菇";
-				break;
-			case 22:
+				switch (theBoardLevel)
+				{
+				case 1:
+					text = "超级樱桃射手+樱桃机枪射手";
+					break;
+				case 2:
+					text = "火爆窝瓜+窝炬";
+					break;
+				case 3:
+					text = "魅惑菇+魅惑菇";
+					break;
+				case 4:
+					text = "超级大喷菇+超级魅惑菇";
+					break;
+				case 5:
+					text = "超级大嘴花+樱桃大嘴花";
+					break;
+				case 6:
+					text = "小心你没见过的僵尸！";
+					break;
+				case 7:
+					text = "豌豆+樱桃+樱桃";
+					break;
+				case 8:
+				case 9:
+					break;
+				case 10:
+					text = "豌豆+坚果+大嘴花";
+					break;
+				default:
+					if (theBoardLevel == 19)
+					{
+						text = "大喷菇+胆小菇+魅惑菇";
+					}
+					break;
+				}
+			}
+			else if (theBoardLevel != 22)
+			{
+				switch (theBoardLevel)
+				{
+				case 29:
+					text = "这一关只能种植或融合小喷菇！";
+					break;
+				case 31:
+					text = "火炬+辣椒+辣椒";
+					break;
+				case 32:
+					text = "水草+窝瓜+三线";
+					break;
+				case 35:
+					text = "击败僵尸以获取阳光";
+					break;
+				}
+			}
+			else
+			{
 				text = "大喷菇+寒冰菇+毁灭菇";
-				break;
-			case 29:
-				text = "这一关只能种植或融合小喷菇！";
-				break;
-			case 31:
-				text = "火炬+辣椒+辣椒";
-				break;
-			case 32:
-				text = "水草+窝瓜+三线";
-				break;
-			case 35:
-				text = "击败僵尸以获取阳光";
-				break;
 			}
 		}
 		if (text != null)
 		{
-			board.inGameText.EnableText(text, 7f);
+			this.board.inGameText.EnableText(text, 7f);
 		}
 		Object.Destroy(base.gameObject);
 	}
 
+	// Token: 0x060000D2 RID: 210 RVA: 0x00006238 File Offset: 0x00004438
 	public void Die1()
 	{
 		Object.Destroy(base.gameObject);
 	}
+
+	// Token: 0x040000A8 RID: 168
+	private Board board;
 }

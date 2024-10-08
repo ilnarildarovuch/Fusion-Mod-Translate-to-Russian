@@ -1,19 +1,23 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000045 RID: 69
 public class PuffRandomColor : Bullet
 {
+	// Token: 0x0600014B RID: 331 RVA: 0x0000AB2C File Offset: 0x00008D2C
 	protected override void Start()
 	{
-		puffColor = Random.Range(0, 7);
-		sprite = Resources.Load<Sprite>($"Bullet/Colorfulpuffs/ColorfulPuff{puffColor + 1}");
-		GetComponent<SpriteRenderer>().sprite = sprite;
-		base.transform.GetChild(0).GetComponent<ParticleSystem>().textureSheetAnimation.SetSprite(0, sprite);
+		this.puffColor = Random.Range(0, 7);
+		this.sprite = Resources.Load<Sprite>(string.Format("Bullet/Colorfulpuffs/ColorfulPuff{0}", this.puffColor + 1));
+		base.GetComponent<SpriteRenderer>().sprite = this.sprite;
+		base.transform.GetChild(0).GetComponent<ParticleSystem>().textureSheetAnimation.SetSprite(0, this.sprite);
 	}
 
+	// Token: 0x0600014C RID: 332 RVA: 0x0000ABA0 File Offset: 0x00008DA0
 	protected override void HitZombie(GameObject zombie)
 	{
 		Zombie component = zombie.GetComponent<Zombie>();
-		component.controlledLevel[puffColor] = true;
+		component.controlledLevel[this.puffColor] = true;
 		int num = 0;
 		bool[] controlledLevel = component.controlledLevel;
 		for (int i = 0; i < controlledLevel.Length; i++)
@@ -25,38 +29,48 @@ public class PuffRandomColor : Bullet
 		}
 		if (num > 6)
 		{
-			component.SetMindControl(mustControl: true);
+			component.SetMindControl(true);
 		}
 		else
 		{
-			component.TakeDamage(0, theBulletDamage);
-			PlaySound(component);
+			component.TakeDamage(0, this.theBulletDamage);
+			this.PlaySound(component);
 		}
 		GameObject gameObject = GameAPP.particlePrefab[17];
-		GameObject obj = Object.Instantiate(gameObject, base.transform.position, Quaternion.identity);
-		obj.GetComponent<ParticleSystem>().textureSheetAnimation.SetSprite(0, sprite);
-		obj.transform.SetParent(GameAPP.board.transform);
-		obj.name = gameObject.name;
-		Die();
+		GameObject gameObject2 = Object.Instantiate<GameObject>(gameObject, base.transform.position, Quaternion.identity);
+		gameObject2.GetComponent<ParticleSystem>().textureSheetAnimation.SetSprite(0, this.sprite);
+		gameObject2.transform.SetParent(GameAPP.board.transform);
+		gameObject2.name = gameObject.name;
+		this.Die();
 	}
 
+	// Token: 0x0600014D RID: 333 RVA: 0x0000AC6C File Offset: 0x00008E6C
 	private void AttackZombie()
 	{
-		Collider2D[] array = Physics2D.OverlapBoxAll(base.transform.position, new Vector2(3f, 3f), 0f);
-		foreach (Collider2D collider2D in array)
+		foreach (Collider2D collider2D in Physics2D.OverlapBoxAll(base.transform.position, new Vector2(3f, 3f), 0f))
 		{
-			if (collider2D != null && collider2D.TryGetComponent<Zombie>(out var component) && Mathf.Abs(component.theZombieRow - theBulletRow) <= 1 && (!component.gameObject.TryGetComponent<PolevaulterZombie>(out var component2) || component2.polevaulterStatus != 1) && !component.isMindControlled)
+			Zombie zombie;
+			PolevaulterZombie polevaulterZombie;
+			if (collider2D != null && collider2D.TryGetComponent<Zombie>(out zombie) && Mathf.Abs(zombie.theZombieRow - this.theBulletRow) <= 1 && (!zombie.gameObject.TryGetComponent<PolevaulterZombie>(out polevaulterZombie) || polevaulterZombie.polevaulterStatus != 1) && !zombie.isMindControlled)
 			{
-				TrySetMindControl(component);
+				this.TrySetMindControl(zombie);
 			}
 		}
 	}
 
+	// Token: 0x0600014E RID: 334 RVA: 0x0000AD08 File Offset: 0x00008F08
 	private void TrySetMindControl(Zombie zombie)
 	{
-		float num = zombie.theFirstArmorMaxHealth + zombie.theMaxHealth;
+		float num = (float)(zombie.theFirstArmorMaxHealth + zombie.theMaxHealth);
 		float num2 = ((float)zombie.theFirstArmorHealth + zombie.theHealth) / num;
-		num2 = ((!((double)num2 > 0.5)) ? (num2 / 0.5f) : 1f);
+		if ((double)num2 > 0.5)
+		{
+			num2 = 1f;
+		}
+		else
+		{
+			num2 /= 0.5f;
+		}
 		int num3 = 0;
 		bool[] controlledLevel = zombie.controlledLevel;
 		for (int i = 0; i < controlledLevel.Length; i++)
@@ -76,11 +90,9 @@ public class PuffRandomColor : Bullet
 		}
 		if (Random.value >= num2)
 		{
-			zombie.SetMindControl();
+			zombie.SetMindControl(false);
+			return;
 		}
-		else
-		{
-			zombie.TakeDamage(1, 20);
-		}
+		zombie.TakeDamage(1, 20);
 	}
 }

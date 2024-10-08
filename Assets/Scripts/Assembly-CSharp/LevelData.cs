@@ -1,81 +1,107 @@
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Token: 0x020000F4 RID: 244
 public class LevelData : MonoBehaviour
 {
-	public struct PlantInTravel
-	{
-		public int thePlantType;
-
-		public int thePlantRow;
-
-		public int thePlantColumn;
-
-		public int thePlantHealth;
-	}
-
-	public struct LevelInfo
-	{
-		public int theSun;
-
-		public int theCurrentRound;
-
-		public int theMaxRound;
-	}
-
-	public static List<PlantInTravel> plantInTravel = new List<PlantInTravel>();
-
-	public static LevelInfo level = default(LevelInfo);
-
+	// Token: 0x060004AE RID: 1198 RVA: 0x00026950 File Offset: 0x00024B50
 	public static void AddPlant(Plant plant)
 	{
-		PlantInTravel plantInTravel = default(PlantInTravel);
-		plantInTravel.thePlantType = plant.thePlantType;
-		plantInTravel.thePlantRow = plant.thePlantRow;
-		plantInTravel.thePlantColumn = plant.thePlantColumn;
-		plantInTravel.thePlantHealth = plant.thePlantHealth;
-		PlantInTravel item = plantInTravel;
+		LevelData.PlantInTravel item = new LevelData.PlantInTravel
+		{
+			thePlantType = plant.thePlantType,
+			thePlantRow = plant.thePlantRow,
+			thePlantColumn = plant.thePlantColumn,
+			thePlantHealth = plant.thePlantHealth
+		};
 		LevelData.plantInTravel.Add(item);
 	}
 
+	// Token: 0x060004AF RID: 1199 RVA: 0x000269A6 File Offset: 0x00024BA6
 	public static void ClearPlant()
 	{
-		plantInTravel.Clear();
+		LevelData.plantInTravel.Clear();
 	}
 
+	// Token: 0x060004B0 RID: 1200 RVA: 0x000269B4 File Offset: 0x00024BB4
 	public static void LoadPlant()
 	{
-		foreach (PlantInTravel item in plantInTravel)
+		foreach (LevelData.PlantInTravel plantInTravel in LevelData.plantInTravel)
 		{
 			GameObject gameObject;
 			if (Board.Instance.roadNum == 6)
 			{
-				if (item.thePlantRow != 2)
+				if (plantInTravel.thePlantRow == 2)
 				{
-					gameObject = ((item.thePlantRow == 3) ? CreatePlant.Instance.SetPlant(item.thePlantColumn, 4, item.thePlantType) : ((item.thePlantRow != 4) ? CreatePlant.Instance.SetPlant(item.thePlantColumn, item.thePlantRow, item.thePlantType) : CreatePlant.Instance.SetPlant(item.thePlantColumn, 5, item.thePlantType)));
+					int theRow = Random.Range(2, 4);
+					CreatePlant.Instance.SetPlant(plantInTravel.thePlantColumn, theRow, 12, null, default(Vector2), false, 0f);
+					gameObject = CreatePlant.Instance.SetPlant(plantInTravel.thePlantColumn, theRow, plantInTravel.thePlantType, null, default(Vector2), false, 0f);
+				}
+				else if (plantInTravel.thePlantRow == 3)
+				{
+					gameObject = CreatePlant.Instance.SetPlant(plantInTravel.thePlantColumn, 4, plantInTravel.thePlantType, null, default(Vector2), false, 0f);
+				}
+				else if (plantInTravel.thePlantRow == 4)
+				{
+					gameObject = CreatePlant.Instance.SetPlant(plantInTravel.thePlantColumn, 5, plantInTravel.thePlantType, null, default(Vector2), false, 0f);
 				}
 				else
 				{
-					int theRow = Random.Range(2, 4);
-					CreatePlant.Instance.SetPlant(item.thePlantColumn, theRow, 12);
-					gameObject = CreatePlant.Instance.SetPlant(item.thePlantColumn, theRow, item.thePlantType);
+					gameObject = CreatePlant.Instance.SetPlant(plantInTravel.thePlantColumn, plantInTravel.thePlantRow, plantInTravel.thePlantType, null, default(Vector2), false, 0f);
 				}
 			}
 			else
 			{
-				gameObject = CreatePlant.Instance.SetPlant(item.thePlantColumn, item.thePlantRow, item.thePlantType);
+				gameObject = CreatePlant.Instance.SetPlant(plantInTravel.thePlantColumn, plantInTravel.thePlantRow, plantInTravel.thePlantType, null, default(Vector2), false, 0f);
 			}
 			if (gameObject != null)
 			{
-				gameObject.GetComponent<Plant>().thePlantHealth = item.thePlantHealth;
+				gameObject.GetComponent<Plant>().thePlantHealth = plantInTravel.thePlantHealth;
 			}
 		}
 	}
 
+	// Token: 0x060004B1 RID: 1201 RVA: 0x00026B68 File Offset: 0x00024D68
 	public static void SaveLevel(Board board)
 	{
-		level.theSun = board.theSun;
-		level.theCurrentRound = board.theCurrentSurvivalRound;
-		level.theMaxRound = board.theSurvivalMaxRound;
+		LevelData.level.theSun = board.theSun;
+		LevelData.level.theCurrentRound = board.theCurrentSurvivalRound;
+		LevelData.level.theMaxRound = board.theSurvivalMaxRound;
+	}
+
+	// Token: 0x04000231 RID: 561
+	public static List<LevelData.PlantInTravel> plantInTravel = new List<LevelData.PlantInTravel>();
+
+	// Token: 0x04000232 RID: 562
+	public static LevelData.LevelInfo level = default(LevelData.LevelInfo);
+
+	// Token: 0x0200014A RID: 330
+	public struct PlantInTravel
+	{
+		// Token: 0x04000485 RID: 1157
+		public int thePlantType;
+
+		// Token: 0x04000486 RID: 1158
+		public int thePlantRow;
+
+		// Token: 0x04000487 RID: 1159
+		public int thePlantColumn;
+
+		// Token: 0x04000488 RID: 1160
+		public int thePlantHealth;
+	}
+
+	// Token: 0x0200014B RID: 331
+	public struct LevelInfo
+	{
+		// Token: 0x04000489 RID: 1161
+		public int theSun;
+
+		// Token: 0x0400048A RID: 1162
+		public int theCurrentRound;
+
+		// Token: 0x0400048B RID: 1163
+		public int theMaxRound;
 	}
 }

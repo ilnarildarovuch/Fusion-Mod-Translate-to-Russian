@@ -1,44 +1,50 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200000D RID: 13
 public class DarkManager : MonoBehaviour
 {
-	public bool isEnter;
-
-	private SpriteRenderer r;
-
-	private Color color = Color.black;
-
-	private float existTime;
-
+	// Token: 0x0600001D RID: 29 RVA: 0x0000259A File Offset: 0x0000079A
 	private void Start()
 	{
-		r = GetComponent<SpriteRenderer>();
-		if (!isEnter)
+		this.r = base.GetComponent<SpriteRenderer>();
+		if (!this.isEnter)
 		{
-			color.a = 0f;
+			this.color.a = 0f;
+			return;
 		}
-		else
-		{
-			color.a = 1f;
-		}
+		this.color.a = 1f;
 	}
 
+	// Token: 0x0600001E RID: 30 RVA: 0x000025D4 File Offset: 0x000007D4
 	private void Update()
 	{
-		existTime += Time.deltaTime;
-		if (isEnter)
+		this.existTime += Time.deltaTime;
+		if (this.isEnter)
 		{
-			color.a -= Time.deltaTime;
-			r.color = color;
+			this.color.a = this.color.a - Time.deltaTime;
+			this.r.color = this.color;
 		}
 		else
 		{
-			color.a += 1.5f * Time.deltaTime;
-			r.color = color;
+			this.color.a = this.color.a + 1.5f * Time.deltaTime;
+			this.r.color = this.color;
 		}
-		if (existTime > 1f)
+		if (this.existTime > 1f)
 		{
 			Object.Destroy(base.gameObject);
 		}
 	}
+
+	// Token: 0x04000014 RID: 20
+	public bool isEnter;
+
+	// Token: 0x04000015 RID: 21
+	private SpriteRenderer r;
+
+	// Token: 0x04000016 RID: 22
+	private Color color = Color.black;
+
+	// Token: 0x04000017 RID: 23
+	private float existTime;
 }

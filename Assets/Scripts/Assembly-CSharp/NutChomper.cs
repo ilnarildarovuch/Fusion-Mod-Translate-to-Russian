@@ -1,81 +1,97 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000074 RID: 116
 public class NutChomper : Chomper
 {
-	private Sprite backCrack1;
-
-	private Sprite backCrack2;
-
-	private Sprite headCrack1;
-
-	private Sprite headCrack2;
-
-	private Sprite originBack;
-
-	private Sprite originHead;
-
-	private GameObject back;
-
-	private GameObject head;
-
-	private bool cracked1;
-
-	private bool cracked2;
-
+	// Token: 0x06000263 RID: 611 RVA: 0x00014140 File Offset: 0x00012340
 	protected override void Start()
 	{
 		base.Start();
-		backCrack1 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked1_back");
-		backCrack2 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked2_back");
-		headCrack1 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked1_head");
-		headCrack2 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked2_head");
-		back = base.transform.Find("Wallnut_body").gameObject;
-		head = base.transform.Find("head").gameObject;
-		originBack = back.GetComponent<SpriteRenderer>().sprite;
-		originHead = head.GetComponent<SpriteRenderer>().sprite;
+		this.backCrack1 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked1_back");
+		this.backCrack2 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked2_back");
+		this.headCrack1 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked1_head");
+		this.headCrack2 = Resources.Load<Sprite>("Plants/_Mixer/NutChomper/cracked2_head");
+		this.back = base.transform.Find("Wallnut_body").gameObject;
+		this.head = base.transform.Find("head").gameObject;
+		this.originBack = this.back.GetComponent<SpriteRenderer>().sprite;
+		this.originHead = this.head.GetComponent<SpriteRenderer>().sprite;
 	}
 
+	// Token: 0x06000264 RID: 612 RVA: 0x000141F5 File Offset: 0x000123F5
 	protected override void Update()
 	{
 		base.Update();
-		ReplaceSprite();
+		this.ReplaceSprite();
 	}
 
+	// Token: 0x06000265 RID: 613 RVA: 0x00014203 File Offset: 0x00012403
 	protected override void Swallow()
 	{
 		base.Swallow();
-		Recover(1000);
+		base.Recover(1000);
 	}
 
+	// Token: 0x06000266 RID: 614 RVA: 0x00014218 File Offset: 0x00012418
 	private void ReplaceSprite()
 	{
-		if (thePlantHealth > thePlantMaxHealth * 2 / 3)
+		if (this.thePlantHealth > this.thePlantMaxHealth * 2 / 3)
 		{
-			head.GetComponent<SpriteRenderer>().sprite = originHead;
-			back.GetComponent<SpriteRenderer>().sprite = originBack;
-			cracked1 = false;
-			cracked2 = false;
+			this.head.GetComponent<SpriteRenderer>().sprite = this.originHead;
+			this.back.GetComponent<SpriteRenderer>().sprite = this.originBack;
+			this.cracked1 = false;
+			this.cracked2 = false;
 		}
-		if (thePlantHealth > thePlantMaxHealth / 3 && thePlantHealth < thePlantMaxHealth * 2 / 3)
+		if (this.thePlantHealth > this.thePlantMaxHealth / 3 && this.thePlantHealth < this.thePlantMaxHealth * 2 / 3)
 		{
-			head.GetComponent<SpriteRenderer>().sprite = headCrack1;
-			back.GetComponent<SpriteRenderer>().sprite = backCrack1;
-			cracked2 = false;
-			if (!cracked1)
+			this.head.GetComponent<SpriteRenderer>().sprite = this.headCrack1;
+			this.back.GetComponent<SpriteRenderer>().sprite = this.backCrack1;
+			this.cracked2 = false;
+			if (!this.cracked1)
 			{
-				Object.Instantiate(GameAPP.particlePrefab[13], head.transform.position, Quaternion.identity).transform.SetParent(board.gameObject.transform);
-				cracked1 = true;
+				Object.Instantiate<GameObject>(GameAPP.particlePrefab[13], this.head.transform.position, Quaternion.identity).transform.SetParent(this.board.gameObject.transform);
+				this.cracked1 = true;
 			}
 		}
-		if (thePlantHealth < thePlantMaxHealth / 3)
+		if (this.thePlantHealth < this.thePlantMaxHealth / 3)
 		{
-			head.GetComponent<SpriteRenderer>().sprite = headCrack2;
-			back.GetComponent<SpriteRenderer>().sprite = backCrack2;
-			if (!cracked2)
+			this.head.GetComponent<SpriteRenderer>().sprite = this.headCrack2;
+			this.back.GetComponent<SpriteRenderer>().sprite = this.backCrack2;
+			if (!this.cracked2)
 			{
-				Object.Instantiate(GameAPP.particlePrefab[13], head.transform.position, Quaternion.identity).transform.SetParent(board.gameObject.transform);
-				cracked2 = true;
+				Object.Instantiate<GameObject>(GameAPP.particlePrefab[13], this.head.transform.position, Quaternion.identity).transform.SetParent(this.board.gameObject.transform);
+				this.cracked2 = true;
 			}
 		}
 	}
+
+	// Token: 0x04000181 RID: 385
+	private Sprite backCrack1;
+
+	// Token: 0x04000182 RID: 386
+	private Sprite backCrack2;
+
+	// Token: 0x04000183 RID: 387
+	private Sprite headCrack1;
+
+	// Token: 0x04000184 RID: 388
+	private Sprite headCrack2;
+
+	// Token: 0x04000185 RID: 389
+	private Sprite originBack;
+
+	// Token: 0x04000186 RID: 390
+	private Sprite originHead;
+
+	// Token: 0x04000187 RID: 391
+	private GameObject back;
+
+	// Token: 0x04000188 RID: 392
+	private GameObject head;
+
+	// Token: 0x04000189 RID: 393
+	private bool cracked1;
+
+	// Token: 0x0400018A RID: 394
+	private bool cracked2;
 }

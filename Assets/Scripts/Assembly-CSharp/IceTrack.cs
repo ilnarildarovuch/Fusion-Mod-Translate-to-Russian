@@ -1,39 +1,44 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200003A RID: 58
 public class IceTrack : TrackBullet
 {
+	// Token: 0x0600012C RID: 300 RVA: 0x00009FD4 File Offset: 0x000081D4
 	protected override void HitZombie(GameObject zombie)
 	{
 		Zombie component = zombie.GetComponent<Zombie>();
-		int num = theBulletDamage;
+		int num = this.theBulletDamage;
 		if (component.freezeSpeed == 0f)
 		{
 			num *= 4;
 		}
 		component.TakeDamage(5, num);
 		component.AddfreezeLevel(5);
-		PlaySound(component);
-		Die();
+		this.PlaySound(component);
+		this.Die();
 	}
 
+	// Token: 0x0600012D RID: 301 RVA: 0x0000A01C File Offset: 0x0000821C
 	protected override GameObject GetNearestZombie()
 	{
-		GameObject nearestFreezedZombie = GetNearestFreezedZombie();
+		GameObject nearestFreezedZombie = this.GetNearestFreezedZombie();
 		if (nearestFreezedZombie != null)
 		{
 			return nearestFreezedZombie;
 		}
 		float num = float.MaxValue;
 		GameObject gameObject = null;
-		foreach (GameObject item in Board.Instance.zombieArray)
+		foreach (GameObject gameObject2 in Board.Instance.zombieArray)
 		{
-			if (item != null)
+			if (gameObject2 != null)
 			{
-				Zombie component = item.GetComponent<Zombie>();
-				if (!component.isMindControlled && component.theStatus != 1 && component.shadow.transform.position.x < 9.2f && component.TryGetComponent<Collider2D>(out var component2) && Vector2.Distance(component2.bounds.center, base.transform.position) < num)
+				Zombie component = gameObject2.GetComponent<Zombie>();
+				Collider2D collider2D;
+				if (!component.isMindControlled && component.theStatus != 1 && component.shadow.transform.position.x < 9.2f && component.TryGetComponent<Collider2D>(out collider2D) && Vector2.Distance(collider2D.bounds.center, base.transform.position) < num)
 				{
-					gameObject = item;
-					num = Vector2.Distance(component2.bounds.center, base.transform.position);
+					gameObject = gameObject2;
+					num = Vector2.Distance(collider2D.bounds.center, base.transform.position);
 				}
 			}
 		}
@@ -45,19 +50,21 @@ public class IceTrack : TrackBullet
 		return gameObject;
 	}
 
+	// Token: 0x0600012E RID: 302 RVA: 0x0000A168 File Offset: 0x00008368
 	private GameObject GetNearestFreezedZombie()
 	{
 		float num = float.MaxValue;
 		GameObject gameObject = null;
-		foreach (GameObject item in Board.Instance.zombieArray)
+		foreach (GameObject gameObject2 in Board.Instance.zombieArray)
 		{
-			if (item != null)
+			if (gameObject2 != null)
 			{
-				Zombie component = item.GetComponent<Zombie>();
-				if (component.freezeSpeed == 0f && !component.isMindControlled && component.theStatus != 1 && component.shadow.transform.position.x < 9.2f && component.TryGetComponent<Collider2D>(out var component2) && Vector2.Distance(component2.bounds.center, base.transform.position) < num)
+				Zombie component = gameObject2.GetComponent<Zombie>();
+				Collider2D collider2D;
+				if (component.freezeSpeed == 0f && !component.isMindControlled && component.theStatus != 1 && component.shadow.transform.position.x < 9.2f && component.TryGetComponent<Collider2D>(out collider2D) && Vector2.Distance(collider2D.bounds.center, base.transform.position) < num)
 				{
-					gameObject = item;
-					num = Vector2.Distance(component2.bounds.center, base.transform.position);
+					gameObject = gameObject2;
+					num = Vector2.Distance(collider2D.bounds.center, base.transform.position);
 				}
 			}
 		}

@@ -1,76 +1,87 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000080 RID: 128
 public class Caltrop : Plant
 {
+	// Token: 0x060002A4 RID: 676 RVA: 0x000159B4 File Offset: 0x00013BB4
 	protected override void Update()
 	{
 		base.Update();
-		if (thePlantAttackCountDown > 0f)
+		if (this.thePlantAttackCountDown > 0f)
 		{
-			thePlantAttackCountDown -= Time.deltaTime;
-			if (thePlantAttackCountDown <= 0f)
+			this.thePlantAttackCountDown -= Time.deltaTime;
+			if (this.thePlantAttackCountDown <= 0f)
 			{
-				ReadyToAttack();
-				thePlantAttackCountDown = thePlantAttackInterval + Random.Range(-0.1f, 0.1f);
+				this.ReadyToAttack();
+				this.thePlantAttackCountDown = this.thePlantAttackInterval + Random.Range(-0.1f, 0.1f);
 			}
 		}
 	}
 
+	// Token: 0x060002A5 RID: 677 RVA: 0x00015A18 File Offset: 0x00013C18
 	protected virtual void ReadyToAttack()
 	{
-		Collider2D[] array = Physics2D.OverlapBoxAll(shadow.transform.position, new Vector2(1f, 1f), 0f);
+		Collider2D[] array = Physics2D.OverlapBoxAll(this.shadow.transform.position, new Vector2(1f, 1f), 0f);
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (array[i].TryGetComponent<Zombie>(out var component) && SearchUniqueZombie(component) && component.theZombieRow == thePlantRow)
+			Zombie zombie;
+			if (array[i].TryGetComponent<Zombie>(out zombie) && base.SearchUniqueZombie(zombie) && zombie.theZombieRow == this.thePlantRow)
 			{
-				anim.SetTrigger("attack");
+				this.anim.SetTrigger("attack");
 			}
 		}
 	}
 
+	// Token: 0x060002A6 RID: 678 RVA: 0x00015A98 File Offset: 0x00013C98
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.TryGetComponent<Zombie>(out var component) && component.theStatus != 1 && component.theZombieRow == thePlantRow && !component.isMindControlled)
+		Zombie zombie;
+		if (collision.TryGetComponent<Zombie>(out zombie) && zombie.theStatus != 1 && zombie.theZombieRow == this.thePlantRow && !zombie.isMindControlled)
 		{
-			int theZombieType = component.theZombieType;
+			int theZombieType = zombie.theZombieType;
 			if (theZombieType == 16 || theZombieType == 18 || theZombieType == 201)
 			{
-				anim.SetTrigger("attack");
+				this.anim.SetTrigger("attack");
 			}
 		}
 	}
 
+	// Token: 0x060002A7 RID: 679 RVA: 0x00015AF8 File Offset: 0x00013CF8
 	protected virtual void KillCar()
 	{
-		Collider2D[] array = Physics2D.OverlapBoxAll(shadow.transform.position, new Vector2(1f, 1f), 0f);
+		Collider2D[] array = Physics2D.OverlapBoxAll(this.shadow.transform.position, new Vector2(1f, 1f), 0f);
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (array[i].TryGetComponent<DriverZombie>(out var component) && component.theZombieRow == thePlantRow && !component.isMindControlled && component.theStatus != 1)
+			DriverZombie driverZombie;
+			if (array[i].TryGetComponent<DriverZombie>(out driverZombie) && driverZombie.theZombieRow == this.thePlantRow && !driverZombie.isMindControlled && driverZombie.theStatus != 1)
 			{
-				component.KillByCaltrop();
-				GameAPP.PlaySound(77);
-				Die();
+				driverZombie.KillByCaltrop();
+				GameAPP.PlaySound(77, 0.5f);
+				this.Die();
 			}
 		}
 	}
 
+	// Token: 0x060002A8 RID: 680 RVA: 0x00015B88 File Offset: 0x00013D88
 	protected virtual void AnimAttack()
 	{
-		KillCar();
-		Collider2D[] array = Physics2D.OverlapBoxAll(shadow.transform.position, new Vector2(1f, 1f), 0f);
+		this.KillCar();
+		Collider2D[] array = Physics2D.OverlapBoxAll(this.shadow.transform.position, new Vector2(1f, 1f), 0f);
 		bool flag = false;
 		Collider2D[] array2 = array;
 		for (int i = 0; i < array2.Length; i++)
 		{
-			if (array2[i].TryGetComponent<Zombie>(out var component) && component.theZombieRow == thePlantRow && SearchUniqueZombie(component))
+			Zombie zombie;
+			if (array2[i].TryGetComponent<Zombie>(out zombie) && zombie.theZombieRow == this.thePlantRow && base.SearchUniqueZombie(zombie))
 			{
 				flag = true;
-				component.TakeDamage(4, 20);
+				zombie.TakeDamage(4, 20);
 			}
 		}
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
 }

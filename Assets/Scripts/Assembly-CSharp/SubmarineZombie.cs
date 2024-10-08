@@ -1,104 +1,115 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000E2 RID: 226
 public class SubmarineZombie : Zombie
 {
+	// Token: 0x0600041A RID: 1050 RVA: 0x0001FEBB File Offset: 0x0001E0BB
 	protected override void Start()
 	{
 		base.Start();
-		inWater = true;
+		this.inWater = true;
 	}
 
+	// Token: 0x0600041B RID: 1051 RVA: 0x0001FECC File Offset: 0x0001E0CC
 	protected override void Update()
 	{
-		MoveUpdate();
-		if (GameAPP.theGameStatus == 0 && ((isMindControlled && base.transform.position.x > 10f) || base.transform.position.x > 12f || base.transform.position.x < -10f))
+		base.MoveUpdate();
+		if (GameAPP.theGameStatus == 0 && ((this.isMindControlled && base.transform.position.x > 10f) || base.transform.position.x > 12f || base.transform.position.x < -10f))
 		{
-			Die(2);
+			this.Die(2);
 		}
 	}
 
+	// Token: 0x0600041C RID: 1052 RVA: 0x0001FF3C File Offset: 0x0001E13C
 	protected override void BodyTakeDamage(int theDamage)
 	{
-		theHealth -= theDamage;
-		if (theHealth >= (float)(theMaxHealth * 2) / 3f)
+		this.theHealth -= (float)theDamage;
+		if (this.theHealth >= (float)(this.theMaxHealth * 2) / 3f)
 		{
-			base.transform.GetChild(0).gameObject.SetActive(value: true);
-			base.transform.GetChild(1).gameObject.SetActive(value: false);
-			base.transform.GetChild(2).gameObject.SetActive(value: false);
-			base.transform.GetChild(3).gameObject.SetActive(value: true);
-			base.transform.GetChild(4).gameObject.SetActive(value: false);
-			base.transform.GetChild(5).gameObject.SetActive(value: false);
+			base.transform.GetChild(0).gameObject.SetActive(true);
+			base.transform.GetChild(1).gameObject.SetActive(false);
+			base.transform.GetChild(2).gameObject.SetActive(false);
+			base.transform.GetChild(3).gameObject.SetActive(true);
+			base.transform.GetChild(4).gameObject.SetActive(false);
+			base.transform.GetChild(5).gameObject.SetActive(false);
 		}
-		if (theHealth >= (float)theMaxHealth / 3f && theHealth < (float)(theMaxHealth * 2) / 3f)
+		if (this.theHealth >= (float)this.theMaxHealth / 3f && this.theHealth < (float)(this.theMaxHealth * 2) / 3f)
 		{
-			base.transform.GetChild(0).gameObject.SetActive(value: false);
-			base.transform.GetChild(1).gameObject.SetActive(value: true);
-			base.transform.GetChild(2).gameObject.SetActive(value: false);
-			base.transform.GetChild(3).gameObject.SetActive(value: false);
-			base.transform.GetChild(4).gameObject.SetActive(value: true);
-			base.transform.GetChild(5).gameObject.SetActive(value: false);
+			base.transform.GetChild(0).gameObject.SetActive(false);
+			base.transform.GetChild(1).gameObject.SetActive(true);
+			base.transform.GetChild(2).gameObject.SetActive(false);
+			base.transform.GetChild(3).gameObject.SetActive(false);
+			base.transform.GetChild(4).gameObject.SetActive(true);
+			base.transform.GetChild(5).gameObject.SetActive(false);
 		}
-		if (theHealth < (float)theMaxHealth / 3f)
+		if (this.theHealth < (float)this.theMaxHealth / 3f)
 		{
-			base.transform.GetChild(0).gameObject.SetActive(value: false);
-			base.transform.GetChild(1).gameObject.SetActive(value: false);
-			base.transform.GetChild(2).gameObject.SetActive(value: true);
-			base.transform.GetChild(3).gameObject.SetActive(value: false);
-			base.transform.GetChild(4).gameObject.SetActive(value: false);
-			base.transform.GetChild(5).gameObject.SetActive(value: true);
+			base.transform.GetChild(0).gameObject.SetActive(false);
+			base.transform.GetChild(1).gameObject.SetActive(false);
+			base.transform.GetChild(2).gameObject.SetActive(true);
+			base.transform.GetChild(3).gameObject.SetActive(false);
+			base.transform.GetChild(4).gameObject.SetActive(false);
+			base.transform.GetChild(5).gameObject.SetActive(true);
 		}
-		if (theHealth <= 0f)
+		if (this.theHealth <= 0f)
 		{
-			Die(2);
+			this.Die(2);
 		}
 	}
 
+	// Token: 0x0600041D RID: 1053 RVA: 0x00020170 File Offset: 0x0001E370
 	protected override void DieEvent()
 	{
-		GameAPP.PlaySound(43);
-		Vector2 vector = shadow.transform.position;
-		Object.Instantiate(position: new Vector2(vector.x, vector.y + 0.6f), original: GameAPP.particlePrefab[34], rotation: Quaternion.identity, parent: board.transform);
+		GameAPP.PlaySound(43, 0.5f);
+		Vector2 vector = this.shadow.transform.position;
+		vector = new Vector2(vector.x, vector.y + 0.6f);
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[34], vector, Quaternion.identity, this.board.transform);
 	}
 
+	// Token: 0x0600041E RID: 1054 RVA: 0x000201DC File Offset: 0x0001E3DC
 	protected override void OnTriggerStay2D(Collider2D collision)
 	{
-		if (!isMindControlled && collision.TryGetComponent<Plant>(out var component))
+		Plant plant;
+		if (!this.isMindControlled && collision.TryGetComponent<Plant>(out plant))
 		{
-			if (TypeMgr.IsCaltrop(component.thePlantType))
+			if (TypeMgr.IsCaltrop(plant.thePlantType))
 			{
 				return;
 			}
-			if (component.thePlantRow == theZombieRow)
+			if (plant.thePlantRow == this.theZombieRow)
 			{
-				if (component.thePlantType == 903)
+				if (plant.thePlantType == 903)
 				{
-					component.thePlantHealth -= 500;
+					plant.thePlantHealth -= 500;
 					base.transform.Translate(1f, 0f, 0f);
-					GameAPP.PlaySound(Random.Range(72, 75));
+					GameAPP.PlaySound(Random.Range(72, 75), 0.5f);
 					return;
 				}
-				GameAPP.PlaySound(75);
-				Vector2 vector = component.shadow.transform.position;
+				GameAPP.PlaySound(75, 0.5f);
+				Vector2 vector = plant.shadow.transform.position;
 				vector = new Vector2(vector.x, vector.y - 0.4f);
-				SetWaterSplat(vector, new Vector2(0.5f, 0.5f));
-				component.Crashed();
+				this.SetWaterSplat(vector, new Vector2(0.5f, 0.5f));
+				plant.Crashed();
 			}
 		}
-		if (collision.TryGetComponent<Zombie>(out var component2) && component2.isMindControlled != isMindControlled && component2.theZombieRow == theZombieRow)
+		Zombie zombie;
+		if (collision.TryGetComponent<Zombie>(out zombie) && zombie.isMindControlled != this.isMindControlled && zombie.theZombieRow == this.theZombieRow)
 		{
-			component2.TakeDamage(4, 20);
+			zombie.TakeDamage(4, 20);
 		}
 	}
 
+	// Token: 0x0600041F RID: 1055 RVA: 0x000202F4 File Offset: 0x0001E4F4
 	private GameObject SetWaterSplat(Vector2 position, Vector2 scale)
 	{
-		GameObject gameObject = Object.Instantiate(Resources.Load<GameObject>("Particle/Anim/Water/WaterSplashPrefab"), position, Quaternion.identity, GameAPP.board.transform);
-		foreach (Transform item in gameObject.transform)
+		GameObject gameObject = Object.Instantiate<GameObject>(Resources.Load<GameObject>("Particle/Anim/Water/WaterSplashPrefab"), position, Quaternion.identity, GameAPP.board.transform);
+		foreach (object obj in gameObject.transform)
 		{
-			item.GetComponent<SpriteRenderer>().sortingLayerName = $"particle{theZombieRow}";
+			((Transform)obj).GetComponent<SpriteRenderer>().sortingLayerName = string.Format("particle{0}", this.theZombieRow);
 		}
 		gameObject.transform.localScale = scale;
-		Object.Instantiate(GameAPP.particlePrefab[32], position, Quaternion.identity, GameAPP.board.transform);
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[32], position, Quaternion.identity, GameAPP.board.transform);
 		return gameObject;
 	}
 }

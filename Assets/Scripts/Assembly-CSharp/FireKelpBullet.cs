@@ -1,75 +1,73 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000035 RID: 53
 public class FireKelpBullet : Bullet
 {
+	// Token: 0x0600011D RID: 285 RVA: 0x000098CC File Offset: 0x00007ACC
 	protected override void HitZombie(GameObject zombie)
 	{
 		Zombie component = zombie.GetComponent<Zombie>();
-		component.TakeDamage(0, theBulletDamage);
+		component.TakeDamage(0, this.theBulletDamage);
 		if (component.inWater)
 		{
 			component.SetGrap(2f);
 		}
 		component.Warm(1);
-		if (AllowSputter(component))
+		if (this.AllowSputter(component))
 		{
-			GameAPP.PlaySound(Random.Range(59, 61));
-			PoolMgr.Instance.SpawnParticle(base.transform.position, 33).GetComponent<SpriteRenderer>().sortingLayerName = $"particle{theBulletRow}";
-			AttackOtherZombie(component);
+			GameAPP.PlaySound(Random.Range(59, 61), 0.5f);
+			PoolMgr.Instance.SpawnParticle(base.transform.position, 33).GetComponent<SpriteRenderer>().sortingLayerName = string.Format("particle{0}", this.theBulletRow);
+			this.AttackOtherZombie(component);
 		}
 		else
 		{
-			PlaySound(component);
+			this.PlaySound(component);
 		}
-		Die();
+		this.Die();
 	}
 
+	// Token: 0x0600011E RID: 286 RVA: 0x00009970 File Offset: 0x00007B70
 	private void AttackOtherZombie(Zombie zombie)
 	{
-		int num = theBulletDamage;
+		int theBulletDamage = this.theBulletDamage;
 		Collider2D[] array = Physics2D.OverlapCircleAll(base.transform.position, 1f);
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (array[i].TryGetComponent<Zombie>(out var component) && !(component == zombie) && component.theZombieRow == theBulletRow && !component.isMindControlled && AllowSputter(component))
+			Zombie zombie2;
+			if (array[i].TryGetComponent<Zombie>(out zombie2) && !(zombie2 == zombie) && zombie2.theZombieRow == this.theBulletRow && !zombie2.isMindControlled && this.AllowSputter(zombie2))
 			{
-				zombieToFired.Add(component);
+				this.zombieToFired.Add(zombie2);
 			}
 		}
-		int count = zombieToFired.Count;
+		int count = this.zombieToFired.Count;
 		if (count == 0)
 		{
 			return;
 		}
-		int num2 = num / count;
-		if (num2 == 0)
+		int num = theBulletDamage / count;
+		if (num == 0)
 		{
-			num2 = 1;
+			num = 1;
 		}
-		if ((float)num2 > 1f / 3f * (float)theBulletDamage)
+		if ((float)num > 0.33333334f * (float)this.theBulletDamage)
 		{
-			num2 = (int)(1f / 3f * (float)theBulletDamage);
+			num = (int)(0.33333334f * (float)this.theBulletDamage);
 		}
-		foreach (Zombie item in zombieToFired)
+		foreach (Zombie zombie3 in this.zombieToFired)
 		{
-			item.TakeDamage(0, num2);
-			if (item.inWater)
+			zombie3.TakeDamage(0, num);
+			if (zombie3.inWater)
 			{
-				item.SetGrap(2f);
+				zombie3.SetGrap(2f);
 			}
-			item.Warm(1);
+			zombie3.Warm(1);
 		}
 	}
 
+	// Token: 0x0600011F RID: 287 RVA: 0x00009A98 File Offset: 0x00007C98
 	private bool AllowSputter(Zombie zombie)
 	{
-		if (zombie.theSecondArmorType == 2)
-		{
-			return false;
-		}
-		if (zombie.theZombieType == 14)
-		{
-			return false;
-		}
-		return true;
+		return zombie.theSecondArmorType != 2 && zombie.theZombieType != 14;
 	}
 }

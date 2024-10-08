@@ -1,7 +1,10 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000C9 RID: 201
 public class BoxMgr : MonoBehaviour
 {
+	// Token: 0x060003B7 RID: 951 RVA: 0x0001C8E8 File Offset: 0x0001AAE8
 	public static void SetBox()
 	{
 		Board instance = Board.Instance;

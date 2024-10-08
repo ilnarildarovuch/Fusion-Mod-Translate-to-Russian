@@ -1,100 +1,105 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200006D RID: 109
 public class PotatoMine : Plant
 {
-	private bool isAready;
-
-	private GameObject nearestZombie;
-
-	private float flashInterval = 3f;
-
-	private float flashTime;
-
-	private bool isActive;
-
+	// Token: 0x0600021F RID: 543 RVA: 0x0001125C File Offset: 0x0000F45C
 	protected override void Start()
 	{
 		base.Start();
-		attributeCountdown = Random.Range(14f, 16f);
+		this.attributeCountdown = Random.Range(14f, 16f);
 	}
 
+	// Token: 0x06000220 RID: 544 RVA: 0x0001127C File Offset: 0x0000F47C
 	protected override void Update()
 	{
-		if (attributeCountdown > 0f)
+		if (this.attributeCountdown > 0f)
 		{
-			attributeCountdown -= Time.deltaTime;
+			this.attributeCountdown -= Time.deltaTime;
 		}
-		if (attributeCountdown <= 0f)
+		if (this.attributeCountdown <= 0f)
 		{
-			attributeCountdown = 0f;
-			anim.SetTrigger("rise");
+			this.attributeCountdown = 0f;
+			this.anim.SetTrigger("rise");
 		}
 		base.Update();
-		SetFlash();
-		if (isAready)
+		this.SetFlash();
+		if (this.isAready)
 		{
-			flashTime += Time.deltaTime;
-			if (flashTime > flashInterval)
+			this.flashTime += Time.deltaTime;
+			if (this.flashTime > this.flashInterval)
 			{
-				flashTime = 0f;
-				anim.Play("flash");
+				this.flashTime = 0f;
+				this.anim.Play("flash");
 			}
 		}
 	}
 
+	// Token: 0x06000221 RID: 545 RVA: 0x00011320 File Offset: 0x0000F520
 	private void OnTriggerStay2D(Collider2D collision)
 	{
-		if (!collision.CompareTag("Zombie") || (collision.TryGetComponent<PolevaulterZombie>(out var component) && component.polevaulterStatus != 2))
+		if (collision.CompareTag("Zombie"))
 		{
-			return;
-		}
-		Zombie component2 = collision.GetComponent<Zombie>();
-		if (component2.theZombieRow == thePlantRow && isAready && component2.theStatus != 1 && !component2.isMindControlled)
-		{
-			isAready = false;
-			Explode();
-			Object.Instantiate(position: new Vector3(base.transform.position.x, base.transform.position.y + 1f, base.transform.position.z), original: GameAPP.particlePrefab[8], rotation: Quaternion.LookRotation(new Vector3(0f, 90f, 0f))).transform.SetParent(GameAPP.board.transform);
-			GameAPP.PlaySound(47);
-			ScreenShake.TriggerShake();
-			if (!isActive)
+			PolevaulterZombie polevaulterZombie;
+			if (collision.TryGetComponent<PolevaulterZombie>(out polevaulterZombie) && polevaulterZombie.polevaulterStatus != 2)
 			{
-				Invoke("DelayDie", 0.2f);
-				isActive = true;
+				return;
+			}
+			Zombie component = collision.GetComponent<Zombie>();
+			if (component.theZombieRow == this.thePlantRow && this.isAready && component.theStatus != 1 && !component.isMindControlled)
+			{
+				this.isAready = false;
+				this.Explode();
+				Vector3 position = new Vector3(base.transform.position.x, base.transform.position.y + 1f, base.transform.position.z);
+				Object.Instantiate<GameObject>(GameAPP.particlePrefab[8], position, Quaternion.LookRotation(new Vector3(0f, 90f, 0f))).transform.SetParent(GameAPP.board.transform);
+				GameAPP.PlaySound(47, 0.5f);
+				ScreenShake.TriggerShake(0.15f);
+				if (!this.isActive)
+				{
+					base.Invoke("DelayDie", 0.2f);
+					this.isActive = true;
+				}
 			}
 		}
 	}
 
+	// Token: 0x06000222 RID: 546 RVA: 0x00011444 File Offset: 0x0000F644
 	private void DelayDie()
 	{
-		Die();
+		this.Die();
 	}
 
+	// Token: 0x06000223 RID: 547 RVA: 0x0001144C File Offset: 0x0000F64C
 	public void AnimStartRise()
 	{
-		GameAPP.PlaySound(48);
-		isAshy = true;
-		Object.Instantiate(position: new Vector3(base.transform.position.x, base.transform.position.y + 0.5f, base.transform.position.z), original: GameAPP.particlePrefab[9], rotation: Quaternion.identity).transform.SetParent(GameAPP.board.transform);
+		GameAPP.PlaySound(48, 0.5f);
+		this.isAshy = true;
+		Vector3 position = new Vector3(base.transform.position.x, base.transform.position.y + 0.5f, base.transform.position.z);
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[9], position, Quaternion.identity).transform.SetParent(GameAPP.board.transform);
 	}
 
+	// Token: 0x06000224 RID: 548 RVA: 0x000114D0 File Offset: 0x0000F6D0
 	public void AnimRiseOver()
 	{
-		isAready = true;
+		this.isAready = true;
 	}
 
+	// Token: 0x06000225 RID: 549 RVA: 0x000114D9 File Offset: 0x0000F6D9
 	public virtual void AnimMeshed()
 	{
-		Invoke("Die", 2f);
+		base.Invoke("Die", 2f);
 	}
 
+	// Token: 0x06000226 RID: 550 RVA: 0x000114EC File Offset: 0x0000F6EC
 	private void Explode()
 	{
-		Collider2D[] array = Physics2D.OverlapCircleAll(base.transform.position, 1f);
-		foreach (Collider2D collider2D in array)
+		foreach (Collider2D collider2D in Physics2D.OverlapCircleAll(base.transform.position, 1f))
 		{
 			if (collider2D.CompareTag("Zombie"))
 			{
 				Zombie component = collider2D.GetComponent<Zombie>();
-				if (component.theZombieRow == thePlantRow && !component.isMindControlled)
+				if (component.theZombieRow == this.thePlantRow && !component.isMindControlled)
 				{
 					component.TakeDamage(10, 1800);
 				}
@@ -102,50 +107,65 @@ public class PotatoMine : Plant
 		}
 	}
 
+	// Token: 0x06000227 RID: 551 RVA: 0x00011560 File Offset: 0x0000F760
 	private void SetFlash()
 	{
-		GameObject gameObject = GetNearestZombie();
+		GameObject gameObject = this.GetNearestZombie();
 		if (gameObject == null)
 		{
-			flashInterval = 6f;
+			this.flashInterval = 6f;
 			return;
 		}
 		float num = gameObject.transform.position.x - base.transform.position.x;
 		if (num > 6f)
 		{
-			flashInterval = 6f;
+			this.flashInterval = 6f;
+			return;
 		}
-		else if (num < 1f)
+		if (num < 1f)
 		{
-			flashInterval = 0.2f;
+			this.flashInterval = 0.2f;
+			return;
 		}
-		else
-		{
-			flashInterval = num / 2f;
-		}
+		this.flashInterval = num / 2f;
 	}
 
+	// Token: 0x06000228 RID: 552 RVA: 0x000115E0 File Offset: 0x0000F7E0
 	protected virtual GameObject GetNearestZombie()
 	{
-		nearestZombie = null;
+		this.nearestZombie = null;
 		float num = float.MaxValue;
-		foreach (GameObject item in GameAPP.board.GetComponent<Board>().zombieArray)
+		foreach (GameObject gameObject in GameAPP.board.GetComponent<Board>().zombieArray)
 		{
-			if (!(item != null) || item.transform.position.x < base.transform.position.x)
+			if (gameObject != null && gameObject.transform.position.x >= base.transform.position.x)
 			{
-				continue;
-			}
-			Zombie component = item.GetComponent<Zombie>();
-			if (!component.isMindControlled && component.theZombieRow == thePlantRow && component.theStatus != 1)
-			{
-				float num2 = Vector3.Distance(item.transform.position, base.transform.position);
-				if (num2 < num)
+				Zombie component = gameObject.GetComponent<Zombie>();
+				if (!component.isMindControlled && component.theZombieRow == this.thePlantRow && component.theStatus != 1)
 				{
-					num = num2;
-					nearestZombie = item;
+					float num2 = Vector3.Distance(gameObject.transform.position, base.transform.position);
+					if (num2 < num)
+					{
+						num = num2;
+						this.nearestZombie = gameObject;
+					}
 				}
 			}
 		}
-		return nearestZombie;
+		return this.nearestZombie;
 	}
+
+	// Token: 0x0400016C RID: 364
+	private bool isAready;
+
+	// Token: 0x0400016D RID: 365
+	private GameObject nearestZombie;
+
+	// Token: 0x0400016E RID: 366
+	private float flashInterval = 3f;
+
+	// Token: 0x0400016F RID: 367
+	private float flashTime;
+
+	// Token: 0x04000170 RID: 368
+	private bool isActive;
 }

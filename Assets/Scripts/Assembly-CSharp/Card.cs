@@ -1,86 +1,124 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200004E RID: 78
 public class Card : MonoBehaviour
 {
-	public enum Unlock
-	{
-		CattailGirl = -3,
-		Wheat = -2,
-		EndoFlame = -1,
-		Unlocked = 0,
-		Advantrue1 = 1,
-		Advantrue2 = 2,
-		Advantrue3 = 3,
-		Advantrue4 = 4,
-		Advantrue5 = 5,
-		Advantrue6 = 6,
-		Advantrue7 = 7,
-		Advantrue8 = 8,
-		Advantrue9 = 9,
-		Advantrue10 = 10,
-		Advantrue11 = 11,
-		Advantrue12 = 12,
-		Advantrue13 = 13,
-		Advantrue14 = 14,
-		Advantrue15 = 15,
-		Advantrue16 = 16,
-		Advantrue17 = 17,
-		Advantrue18 = 18,
-		Advantrue19 = 19,
-		Advantrue20 = 20,
-		Advantrue21 = 21,
-		Advantrue22 = 22,
-		Advantrue23 = 23,
-		Advantrue24 = 24,
-		Advantrue25 = 25,
-		Advantrue26 = 26,
-		Advantrue27 = 27
-	}
-
-	public Unlock unlockLevel;
-
-	public bool isNormalCard = true;
-
-	private bool avaliable;
-
+	// Token: 0x0600016A RID: 362 RVA: 0x0000B578 File Offset: 0x00009778
 	private void Start()
 	{
 		if (GameAPP.developerMode)
 		{
 			return;
 		}
-		switch ((int)unlockLevel)
+		switch (this.unlockLevel)
 		{
-		case -3:
+		case Card.Unlock.CattailGirl:
 			if (GameAPP.survivalLevelCompleted[8])
 			{
-				avaliable = true;
+				this.avaliable = true;
 			}
 			break;
-		case -2:
+		case Card.Unlock.Wheat:
 			if (GameAPP.gameLevelCompleted[1])
 			{
-				avaliable = true;
+				this.avaliable = true;
 			}
 			break;
-		case -1:
+		case Card.Unlock.EndoFlame:
 			if (GameAPP.clgLevelCompleted[17])
 			{
-				avaliable = true;
+				this.avaliable = true;
 			}
 			break;
 		}
-		if (unlockLevel >= Unlock.Unlocked && (unlockLevel == Unlock.Unlocked || GameAPP.advLevelCompleted[(int)unlockLevel]))
+		if (this.unlockLevel >= Card.Unlock.Unlocked && (this.unlockLevel == Card.Unlock.Unlocked || GameAPP.advLevelCompleted[(int)this.unlockLevel]))
 		{
-			avaliable = true;
+			this.avaliable = true;
 		}
-		if (avaliable)
+		if (this.avaliable)
 		{
 			return;
 		}
-		foreach (Transform item in base.transform)
+		foreach (object obj in base.transform)
 		{
-			item.gameObject.SetActive(value: false);
+			((Transform)obj).gameObject.SetActive(false);
 		}
+	}
+
+	// Token: 0x04000102 RID: 258
+	public Card.Unlock unlockLevel;
+
+	// Token: 0x04000103 RID: 259
+	public bool isNormalCard = true;
+
+	// Token: 0x04000104 RID: 260
+	private bool avaliable;
+
+	// Token: 0x02000129 RID: 297
+	public enum Unlock
+	{
+		// Token: 0x04000342 RID: 834
+		CattailGirl = -3,
+		// Token: 0x04000343 RID: 835
+		Wheat,
+		// Token: 0x04000344 RID: 836
+		EndoFlame,
+		// Token: 0x04000345 RID: 837
+		Unlocked,
+		// Token: 0x04000346 RID: 838
+		Advantrue1,
+		// Token: 0x04000347 RID: 839
+		Advantrue2,
+		// Token: 0x04000348 RID: 840
+		Advantrue3,
+		// Token: 0x04000349 RID: 841
+		Advantrue4,
+		// Token: 0x0400034A RID: 842
+		Advantrue5,
+		// Token: 0x0400034B RID: 843
+		Advantrue6,
+		// Token: 0x0400034C RID: 844
+		Advantrue7,
+		// Token: 0x0400034D RID: 845
+		Advantrue8,
+		// Token: 0x0400034E RID: 846
+		Advantrue9,
+		// Token: 0x0400034F RID: 847
+		Advantrue10,
+		// Token: 0x04000350 RID: 848
+		Advantrue11,
+		// Token: 0x04000351 RID: 849
+		Advantrue12,
+		// Token: 0x04000352 RID: 850
+		Advantrue13,
+		// Token: 0x04000353 RID: 851
+		Advantrue14,
+		// Token: 0x04000354 RID: 852
+		Advantrue15,
+		// Token: 0x04000355 RID: 853
+		Advantrue16,
+		// Token: 0x04000356 RID: 854
+		Advantrue17,
+		// Token: 0x04000357 RID: 855
+		Advantrue18,
+		// Token: 0x04000358 RID: 856
+		Advantrue19,
+		// Token: 0x04000359 RID: 857
+		Advantrue20,
+		// Token: 0x0400035A RID: 858
+		Advantrue21,
+		// Token: 0x0400035B RID: 859
+		Advantrue22,
+		// Token: 0x0400035C RID: 860
+		Advantrue23,
+		// Token: 0x0400035D RID: 861
+		Advantrue24,
+		// Token: 0x0400035E RID: 862
+		Advantrue25,
+		// Token: 0x0400035F RID: 863
+		Advantrue26,
+		// Token: 0x04000360 RID: 864
+		Advantrue27
 	}
 }

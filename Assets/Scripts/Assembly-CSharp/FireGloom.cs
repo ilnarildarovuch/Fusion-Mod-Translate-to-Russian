@@ -1,46 +1,51 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000AA RID: 170
 public class FireGloom : GloomShroom
 {
+	// Token: 0x0600034C RID: 844 RVA: 0x00019CF8 File Offset: 0x00017EF8
 	protected override void AttackZombie()
 	{
 		bool flag = false;
-		colliders = Physics2D.OverlapCircleAll(center.transform.position, range, zombieLayer);
-		Collider2D[] array = colliders;
-		for (int i = 0; i < array.Length; i++)
+		this.colliders = Physics2D.OverlapCircleAll(this.center.transform.position, this.range, this.zombieLayer);
+		Collider2D[] colliders = this.colliders;
+		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (array[i].TryGetComponent<Zombie>(out var component) && Mathf.Abs(component.theZombieRow - thePlantRow) <= 1 && SearchUniqueZombie(component))
+			Zombie zombie;
+			if (colliders[i].TryGetComponent<Zombie>(out zombie) && Mathf.Abs(zombie.theZombieRow - this.thePlantRow) <= 1 && base.SearchUniqueZombie(zombie))
 			{
 				flag = true;
-				zombieList.Add(component);
+				this.zombieList.Add(zombie);
 			}
 		}
-		for (int num = zombieList.Count - 1; num >= 0; num--)
+		for (int j = this.zombieList.Count - 1; j >= 0; j--)
 		{
-			if (zombieList[num] != null)
+			if (this.zombieList[j] != null)
 			{
-				if (zombieList[num].isJalaed)
+				if (this.zombieList[j].isJalaed)
 				{
-					zombieList[num].TakeDamage(1, 80);
+					this.zombieList[j].TakeDamage(1, 80);
 				}
 				else
 				{
-					zombieList[num].TakeDamage(1, 40);
+					this.zombieList[j].TakeDamage(1, 40);
 				}
-				zombieList[num].Warm();
+				this.zombieList[j].Warm(0);
 			}
 		}
-		zombieList.Clear();
+		this.zombieList.Clear();
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
 
+	// Token: 0x0600034D RID: 845 RVA: 0x00019E23 File Offset: 0x00018023
 	public override GameObject AnimShoot()
 	{
-		Object.Instantiate(GameAPP.particlePrefab[38], center.transform.position, Quaternion.identity, board.transform);
-		AttackZombie();
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[38], this.center.transform.position, Quaternion.identity, this.board.transform);
+		this.AttackZombie();
 		return null;
 	}
 }

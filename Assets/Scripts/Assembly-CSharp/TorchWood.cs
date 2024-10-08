@@ -1,15 +1,27 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x0200009A RID: 154
 public class TorchWood : Plant
 {
+	// Token: 0x06000315 RID: 789 RVA: 0x00018D40 File Offset: 0x00016F40
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.TryGetComponent<Bullet>(out var component) && !(component.torchWood == base.gameObject) && !component.isZombieBullet && (component.theMovingWay == 2 || component.theBulletRow == thePlantRow))
+		Bullet bullet;
+		if (collision.TryGetComponent<Bullet>(out bullet))
 		{
-			int theBulletType = component.theBulletType;
+			if (bullet.torchWood == base.gameObject || bullet.isZombieBullet)
+			{
+				return;
+			}
+			if (bullet.theMovingWay != 2 && bullet.theBulletRow != this.thePlantRow)
+			{
+				return;
+			}
+			int theBulletType = bullet.theBulletType;
 			if (theBulletType == 0 || theBulletType == 7)
 			{
-				Board.Instance.YellowFirePea(component, this);
+				Board.Instance.YellowFirePea(bullet, this, false);
 			}
 		}
 	}

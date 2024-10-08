@@ -1,102 +1,90 @@
+﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Token: 0x020000ED RID: 237
 public class PolevaulterZombie : Zombie
 {
-	public enum PolStatus
-	{
-		run = 0,
-		jump = 1,
-		walk = 2
-	}
-
-	public int polevaulterStatus;
-
-	private Vector2 jumpPos2;
-
-	private Vector2 range = new Vector2(0.7f, 2f);
-
-	private bool willJumpFail;
-
-	private Vector3 failPos;
-
+	// Token: 0x0600045C RID: 1116 RVA: 0x00022BCC File Offset: 0x00020DCC
 	protected override void FixedUpdate()
 	{
 		base.FixedUpdate();
-		if (polevaulterStatus != 0 || theStatus != 0 || isMindControlled || theFreezeCountDown != 0f)
+		if (this.polevaulterStatus == 0 && this.theStatus == 0 && !this.isMindControlled && this.theFreezeCountDown == 0f)
 		{
-			return;
-		}
-		jumpPos2 = new Vector2(shadow.transform.position.x - 0.7f, shadow.transform.position.y + 1f);
-		Collider2D[] array = Physics2D.OverlapBoxAll(jumpPos2, range, 0f);
-		bool flag = false;
-		Collider2D[] array2 = array;
-		foreach (Collider2D collider2D in array2)
-		{
-			if (!collider2D.CompareTag("Plant"))
+			this.jumpPos2 = new Vector2(this.shadow.transform.position.x - 0.7f, this.shadow.transform.position.y + 1f);
+			Collider2D[] array = Physics2D.OverlapBoxAll(this.jumpPos2, this.range, 0f);
+			bool flag = false;
+			foreach (Collider2D collider2D in array)
 			{
-				continue;
-			}
-			Plant component = collider2D.GetComponent<Plant>();
-			if (!TypeMgr.IsCaltrop(component.thePlantType) && component.thePlantRow == theZombieRow)
-			{
-				if (TypeMgr.IsTallNut(component.thePlantType))
+				if (collider2D.CompareTag("Plant"))
 				{
-					willJumpFail = true;
-					failPos = component.shadow.transform.position;
-					failPos = new Vector3(failPos.x + 0.5f, shadow.transform.position.y, 1f);
+					Plant component = collider2D.GetComponent<Plant>();
+					if (!TypeMgr.IsCaltrop(component.thePlantType) && component.thePlantRow == this.theZombieRow)
+					{
+						if (TypeMgr.IsTallNut(component.thePlantType))
+						{
+							this.willJumpFail = true;
+							this.failPos = component.shadow.transform.position;
+							this.failPos = new Vector3(this.failPos.x + 0.5f, this.shadow.transform.position.y, 1f);
+						}
+						flag = true;
+						break;
+					}
 				}
-				flag = true;
-				break;
 			}
-		}
-		if (flag)
-		{
-			polevaulterStatus = 1;
-			theStatus = 3;
-			anim.SetTrigger("jump");
-			shadow.SetActive(value: false);
+			if (flag)
+			{
+				this.polevaulterStatus = 1;
+				this.theStatus = 3;
+				this.anim.SetTrigger("jump");
+				this.shadow.SetActive(false);
+			}
 		}
 	}
 
+	// Token: 0x0600045D RID: 1117 RVA: 0x00022D4A File Offset: 0x00020F4A
 	protected override void OnTriggerStay2D(Collider2D collision)
 	{
-		if (polevaulterStatus == 2)
+		if (this.polevaulterStatus == 2)
 		{
 			base.OnTriggerStay2D(collision);
 		}
 	}
 
+	// Token: 0x0600045E RID: 1118 RVA: 0x00022D5C File Offset: 0x00020F5C
 	public virtual void JumpOver()
 	{
-		if (shadow != null)
+		if (this.shadow != null)
 		{
-			shadow.SetActive(value: true);
+			this.shadow.SetActive(true);
 		}
-		polevaulterStatus = 2;
-		if (theStatus != 1)
+		this.polevaulterStatus = 2;
+		if (this.theStatus != 1)
 		{
-			theStatus = 0;
+			this.theStatus = 0;
 		}
 	}
 
+	// Token: 0x0600045F RID: 1119 RVA: 0x00022D8F File Offset: 0x00020F8F
 	public void PlayJumpSound1()
 	{
-		GameAPP.PlaySound(50);
+		GameAPP.PlaySound(50, 0.5f);
 	}
 
+	// Token: 0x06000460 RID: 1120 RVA: 0x00022D9D File Offset: 0x00020F9D
 	public void PlayJumpSound2()
 	{
-		GameAPP.PlaySound(51);
+		GameAPP.PlaySound(51, 0.5f);
 	}
 
+	// Token: 0x06000461 RID: 1121 RVA: 0x00022DAC File Offset: 0x00020FAC
 	protected override void BodyTakeDamage(int theDamage)
 	{
-		theHealth -= theDamage;
-		if (!isLoseHand && theHealth < (float)(theMaxHealth * 2 / 3))
+		this.theHealth -= (float)theDamage;
+		if (!this.isLoseHand && this.theHealth < (float)(this.theMaxHealth * 2 / 3))
 		{
-			isLoseHand = true;
-			GameAPP.PlaySound(7);
+			this.isLoseHand = true;
+			GameAPP.PlaySound(7, 0.5f);
 			for (int i = 0; i < base.transform.childCount; i++)
 			{
 				Transform child = base.transform.GetChild(i);
@@ -110,82 +98,108 @@ public class PolevaulterZombie : Zombie
 				}
 				if (child.name == "LoseArm")
 				{
-					child.gameObject.SetActive(value: true);
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
+					child.gameObject.SetActive(true);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
 					child.AddComponent<ZombieHead>();
 				}
 			}
 		}
-		if (!(theHealth < (float)(theMaxHealth / 3)) || theStatus == 1)
+		if (this.theHealth < (float)(this.theMaxHealth / 3) && this.theStatus != 1)
 		{
-			return;
-		}
-		theStatus = 1;
-		GameAPP.PlaySound(7);
-		for (int j = 0; j < base.transform.childCount; j++)
-		{
-			Transform child2 = base.transform.GetChild(j);
-			if (child2.CompareTag("ZombieHead"))
+			this.theStatus = 1;
+			GameAPP.PlaySound(7, 0.5f);
+			for (int j = 0; j < base.transform.childCount; j++)
 			{
-				Object.Destroy(child2.gameObject);
-			}
-			if (child2.name == "LoseHead")
-			{
-				child2.gameObject.SetActive(value: true);
-				child2.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(board.transform.GetChild(2 + theZombieRow));
-				child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = $"zombie{theZombieRow}";
-				child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += baseLayer + 29;
-				child2.AddComponent<ZombieHead>();
-				Vector3 localScale = child2.transform.localScale;
-				child2.transform.SetParent(board.transform);
-				child2.transform.localScale = localScale;
+				Transform child2 = base.transform.GetChild(j);
+				if (child2.CompareTag("ZombieHead"))
+				{
+					Object.Destroy(child2.gameObject);
+				}
+				if (child2.name == "LoseHead")
+				{
+					child2.gameObject.SetActive(true);
+					child2.gameObject.GetComponent<ParticleSystem>().collision.AddPlane(this.board.transform.GetChild(2 + this.theZombieRow));
+					child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = string.Format("zombie{0}", this.theZombieRow);
+					child2.gameObject.GetComponent<ParticleSystemRenderer>().sortingOrder += this.baseLayer + 29;
+					child2.AddComponent<ZombieHead>();
+					Vector3 localScale = child2.transform.localScale;
+					child2.transform.SetParent(this.board.transform);
+					child2.transform.localScale = localScale;
+				}
 			}
 		}
 	}
 
+	// Token: 0x06000462 RID: 1122 RVA: 0x00023048 File Offset: 0x00021248
 	public override void Charred()
 	{
-		if (GameAPP.difficulty == 4 && theHealth + (float)theFirstArmorHealth > 1800f)
+		if (GameAPP.difficulty == 4 && this.theHealth + (float)this.theFirstArmorHealth > 1800f)
 		{
-			TakeDamage(10, 1800);
+			this.TakeDamage(10, 1800);
 			return;
 		}
-		if (GameAPP.difficulty == 5 && theHealth + (float)theFirstArmorHealth > 900f)
+		if (GameAPP.difficulty == 5 && this.theHealth + (float)this.theFirstArmorHealth > 900f)
 		{
-			TakeDamage(10, 1800);
+			this.TakeDamage(10, 1800);
 			return;
 		}
-		if (polevaulterStatus != 1 && shadow != null && theStatus == 0)
+		if (this.polevaulterStatus != 1 && this.shadow != null && this.theStatus == 0)
 		{
-			GameObject gameObject = Object.Instantiate(Resources.Load<GameObject>("Zombies/Charred/Zombie_Charred"), Vector2.zero, Quaternion.identity, board.transform);
+			GameObject gameObject = Object.Instantiate<GameObject>(Resources.Load<GameObject>("Zombies/Charred/Zombie_Charred"), Vector2.zero, Quaternion.identity, this.board.transform);
 			Vector3 position = gameObject.transform.Find("Shadow").gameObject.transform.position;
-			Vector3 vector = shadow.transform.position - position;
-			gameObject.transform.position += vector;
-			SetLayer(theZombieRow, gameObject);
+			Vector3 b = this.shadow.transform.position - position;
+			gameObject.transform.position += b;
+			base.SetLayer(this.theZombieRow, gameObject);
 		}
-		Die(2);
+		this.Die(2);
 	}
 
+	// Token: 0x06000463 RID: 1123 RVA: 0x00023160 File Offset: 0x00021360
 	private void JumpFail()
 	{
-		if (!willJumpFail)
+		if (this.willJumpFail)
 		{
-			return;
-		}
-		GameAPP.PlaySound(64);
-		if (theStatus != 1)
-		{
-			anim.Play("walk2");
-			if (shadow != null)
+			GameAPP.PlaySound(64, 0.5f);
+			if (this.theStatus != 1)
 			{
-				shadow.SetActive(value: true);
-				polevaulterStatus = 2;
-				theStatus = 0;
-				AdjustPosition(base.gameObject, failPos);
-				Object.Instantiate(GameAPP.particlePrefab[23], new Vector3(shadow.transform.position.x, shadow.transform.position.y + 1.75f), Quaternion.identity, board.transform);
+				this.anim.Play("walk2");
+				if (this.shadow != null)
+				{
+					this.shadow.SetActive(true);
+					this.polevaulterStatus = 2;
+					this.theStatus = 0;
+					base.AdjustPosition(base.gameObject, this.failPos);
+					Object.Instantiate<GameObject>(GameAPP.particlePrefab[23], new Vector3(this.shadow.transform.position.x, this.shadow.transform.position.y + 1.75f), Quaternion.identity, this.board.transform);
+				}
 			}
 		}
+	}
+
+	// Token: 0x040001F5 RID: 501
+	public int polevaulterStatus;
+
+	// Token: 0x040001F6 RID: 502
+	private Vector2 jumpPos2;
+
+	// Token: 0x040001F7 RID: 503
+	private Vector2 range = new Vector2(0.7f, 2f);
+
+	// Token: 0x040001F8 RID: 504
+	private bool willJumpFail;
+
+	// Token: 0x040001F9 RID: 505
+	private Vector3 failPos;
+
+	// Token: 0x02000145 RID: 325
+	public enum PolStatus
+	{
+		// Token: 0x0400046B RID: 1131
+		run,
+		// Token: 0x0400046C RID: 1132
+		jump,
+		// Token: 0x0400046D RID: 1133
+		walk
 	}
 }

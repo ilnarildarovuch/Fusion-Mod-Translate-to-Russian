@@ -1,90 +1,91 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000BA RID: 186
 public class ScaredFume : Shooter
 {
-	private int shootType;
-
+	// Token: 0x0600037D RID: 893 RVA: 0x0001B278 File Offset: 0x00019478
 	public override GameObject AnimShoot()
 	{
 		Vector3 position = base.transform.Find("Shoot").transform.position;
 		float theX = position.x + 0.1f;
 		float y = position.y;
-		int theRow = thePlantRow;
-		GameObject obj = board.GetComponent<CreateBullet>().SetBullet(theX, y, theRow, 9, 0);
-		obj.GetComponent<Bullet>().theBulletDamage = 20;
-		GameAPP.PlaySound(57);
-		return obj;
+		int thePlantRow = this.thePlantRow;
+		GameObject gameObject = this.board.GetComponent<CreateBullet>().SetBullet(theX, y, thePlantRow, 9, 0);
+		gameObject.GetComponent<Bullet>().theBulletDamage = 20;
+		GameAPP.PlaySound(57, 0.5f);
+		return gameObject;
 	}
 
+	// Token: 0x0600037E RID: 894 RVA: 0x0001B2E8 File Offset: 0x000194E8
 	public void AttackZombie()
 	{
 		bool flag = false;
-		foreach (GameObject item in board.zombieArray)
+		foreach (GameObject gameObject in this.board.zombieArray)
 		{
-			if (item != null)
+			if (gameObject != null)
 			{
-				Zombie component = item.GetComponent<Zombie>();
-				if (!(component.shadow.transform.position.x > shadow.transform.position.x + 7f) && !(component.shadow.transform.position.x < shadow.transform.position.x) && SearchUniqueZombie(component) && component.theZombieRow == thePlantRow)
+				Zombie component = gameObject.GetComponent<Zombie>();
+				if (component.shadow.transform.position.x <= this.shadow.transform.position.x + 7f && component.shadow.transform.position.x >= this.shadow.transform.position.x && base.SearchUniqueZombie(component) && component.theZombieRow == this.thePlantRow)
 				{
-					zombieList.Add(component);
+					this.zombieList.Add(component);
 					flag = true;
 				}
 			}
 		}
-		for (int num = zombieList.Count - 1; num >= 0; num--)
+		for (int i = this.zombieList.Count - 1; i >= 0; i--)
 		{
-			if (zombieList[num] != null)
+			if (this.zombieList[i] != null)
 			{
-				zombieList[num].TakeDamage(1, 20);
+				this.zombieList[i].TakeDamage(1, 20);
 			}
 		}
-		zombieList.Clear();
+		this.zombieList.Clear();
 		if (flag)
 		{
-			GameAPP.PlaySound(Random.Range(0, 3));
+			GameAPP.PlaySound(Random.Range(0, 3), 0.5f);
 		}
 	}
 
+	// Token: 0x0600037F RID: 895 RVA: 0x0001B43C File Offset: 0x0001963C
 	public void AnimShootFume()
 	{
 		Vector3 position = base.transform.Find("Shoot").transform.position;
-		Object.Instantiate(GameAPP.particlePrefab[19], position, Quaternion.Euler(0f, 90f, 0f), board.transform).GetComponent<ParticleSystem>().GetComponent<Renderer>()
-			.sortingLayerName = $"particle{thePlantRow}";
-		GameAPP.PlaySound(58);
-		AttackZombie();
+		Object.Instantiate<GameObject>(GameAPP.particlePrefab[19], position, Quaternion.Euler(0f, 90f, 0f), this.board.transform).GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = string.Format("particle{0}", this.thePlantRow);
+		GameAPP.PlaySound(58, 0.5f);
+		this.AttackZombie();
 	}
 
+	// Token: 0x06000380 RID: 896 RVA: 0x0001B4C8 File Offset: 0x000196C8
 	protected override void PlantShootUpdate()
 	{
-		thePlantAttackCountDown -= Time.deltaTime;
-		if (!(thePlantAttackCountDown < 0f))
+		this.thePlantAttackCountDown -= Time.deltaTime;
+		if (this.thePlantAttackCountDown < 0f)
 		{
-			return;
-		}
-		thePlantAttackCountDown = thePlantAttackInterval;
-		if (SearchZombie() != null)
-		{
-			if (shootType == 0)
+			this.thePlantAttackCountDown = this.thePlantAttackInterval;
+			if (this.SearchZombie() != null)
 			{
-				anim.Play("shoot", 1);
-			}
-			else
-			{
-				anim.SetTrigger("shoot1");
+				if (this.shootType == 0)
+				{
+					this.anim.Play("shoot", 1);
+					return;
+				}
+				this.anim.SetTrigger("shoot1");
 			}
 		}
 	}
 
+	// Token: 0x06000381 RID: 897 RVA: 0x0001B538 File Offset: 0x00019738
 	protected override GameObject SearchZombie()
 	{
 		Zombie zombie = null;
 		float num = float.MaxValue;
-		foreach (GameObject item in board.GetComponent<Board>().zombieArray)
+		foreach (GameObject gameObject in this.board.GetComponent<Board>().zombieArray)
 		{
-			if (item != null)
+			if (gameObject != null)
 			{
-				Zombie component = item.GetComponent<Zombie>();
-				if (component.theZombieRow == thePlantRow && component.shadow.transform.position.x < 9.2f && component.shadow.transform.position.x > shadow.transform.position.x && SearchUniqueZombie(component) && component.shadow.transform.position.x < num)
+				Zombie component = gameObject.GetComponent<Zombie>();
+				if (component.theZombieRow == this.thePlantRow && component.shadow.transform.position.x < 9.2f && component.shadow.transform.position.x > this.shadow.transform.position.x && base.SearchUniqueZombie(component) && component.shadow.transform.position.x < num)
 				{
 					num = component.shadow.transform.position.x;
 					zombie = component;
@@ -95,16 +96,19 @@ public class ScaredFume : Shooter
 		{
 			return null;
 		}
-		if (zombie.shadow.transform.position.x > shadow.transform.position.x && zombie.shadow.transform.position.x < shadow.transform.position.x + 7f)
+		if (zombie.shadow.transform.position.x > this.shadow.transform.position.x && zombie.shadow.transform.position.x < this.shadow.transform.position.x + 7f)
 		{
-			shootType = 1;
+			this.shootType = 1;
 			return zombie.gameObject;
 		}
-		if (zombie.shadow.transform.position.x > shadow.transform.position.x + 7f)
+		if (zombie.shadow.transform.position.x > this.shadow.transform.position.x + 7f)
 		{
-			shootType = 0;
+			this.shootType = 0;
 			return zombie.gameObject;
 		}
 		return null;
 	}
+
+	// Token: 0x040001C8 RID: 456
+	private int shootType;
 }

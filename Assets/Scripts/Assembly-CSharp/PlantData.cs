@@ -1,27 +1,13 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x020000F5 RID: 245
 public class PlantData : MonoBehaviour
 {
-	public struct PlantData_
-	{
-		public float attackInterval;
-
-		public float produceInterval;
-
-		public float attackDamage;
-
-		public float plantHealth;
-
-		public float coolDownTime;
-
-		public float cardPrice;
-	}
-
-	public static PlantData_[] plantData = new PlantData_[2048];
-
+	// Token: 0x060004B4 RID: 1204 RVA: 0x00026BBC File Offset: 0x00024DBC
 	public static void InitPlantData()
 	{
-		plantData[0] = new PlantData_
+		PlantData.plantData[0] = new PlantData.PlantData_
 		{
 			attackInterval = 1.5f,
 			produceInterval = 0f,
@@ -30,7 +16,7 @@ public class PlantData : MonoBehaviour
 			coolDownTime = 7.5f,
 			cardPrice = 100f
 		};
-		plantData[1] = new PlantData_
+		PlantData.plantData[1] = new PlantData.PlantData_
 		{
 			attackInterval = 0f,
 			produceInterval = 25f,
@@ -39,7 +25,7 @@ public class PlantData : MonoBehaviour
 			coolDownTime = 7.5f,
 			cardPrice = 50f
 		};
-		plantData[2] = new PlantData_
+		PlantData.plantData[2] = new PlantData.PlantData_
 		{
 			attackInterval = 0f,
 			produceInterval = 0f,
@@ -48,7 +34,7 @@ public class PlantData : MonoBehaviour
 			coolDownTime = 50f,
 			cardPrice = 150f
 		};
-		plantData[3] = new PlantData_
+		PlantData.plantData[3] = new PlantData.PlantData_
 		{
 			attackInterval = 0f,
 			produceInterval = 0f,
@@ -57,7 +43,7 @@ public class PlantData : MonoBehaviour
 			coolDownTime = 30f,
 			cardPrice = 50f
 		};
-		plantData[4] = new PlantData_
+		PlantData.plantData[4] = new PlantData.PlantData_
 		{
 			attackInterval = 0f,
 			produceInterval = 0f,
@@ -66,5 +52,30 @@ public class PlantData : MonoBehaviour
 			coolDownTime = 30f,
 			cardPrice = 25f
 		};
+	}
+
+	// Token: 0x04000233 RID: 563
+	public static PlantData.PlantData_[] plantData = new PlantData.PlantData_[2048];
+
+	// Token: 0x0200014C RID: 332
+	public struct PlantData_
+	{
+		// Token: 0x0400048C RID: 1164
+		public float attackInterval;
+
+		// Token: 0x0400048D RID: 1165
+		public float produceInterval;
+
+		// Token: 0x0400048E RID: 1166
+		public float attackDamage;
+
+		// Token: 0x0400048F RID: 1167
+		public float plantHealth;
+
+		// Token: 0x04000490 RID: 1168
+		public float coolDownTime;
+
+		// Token: 0x04000491 RID: 1169
+		public float cardPrice;
 	}
 }

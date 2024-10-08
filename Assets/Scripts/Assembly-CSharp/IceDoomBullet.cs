@@ -1,58 +1,72 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000038 RID: 56
 public class IceDoomBullet : Bullet
 {
+	// Token: 0x06000126 RID: 294 RVA: 0x00009DA0 File Offset: 0x00007FA0
 	protected override void HitZombie(GameObject zombie)
 	{
-		zombie.GetComponent<Zombie>().TakeDamage(3, theBulletDamage);
+		zombie.GetComponent<Zombie>().TakeDamage(3, this.theBulletDamage);
 		PoolMgr.Instance.SpawnParticle(base.transform.position, 28);
-		GameAPP.PlaySound(70);
-		AttackZombie();
+		GameAPP.PlaySound(70, 0.5f);
+		this.AttackZombie();
 	}
 
+	// Token: 0x06000127 RID: 295 RVA: 0x00009DE0 File Offset: 0x00007FE0
 	private void AttackZombie()
 	{
-		Collider2D[] array = Physics2D.OverlapCircleAll(base.transform.position, 1.5f, zombieLayer);
-		foreach (Collider2D collider2D in array)
+		foreach (Collider2D collider2D in Physics2D.OverlapCircleAll(base.transform.position, 1.5f, this.zombieLayer))
 		{
-			if (collider2D != null && collider2D.TryGetComponent<Zombie>(out var component))
+			Zombie zombie;
+			if (collider2D != null && collider2D.TryGetComponent<Zombie>(out zombie))
 			{
-				if (component.theStatus == 7)
+				if (zombie.theStatus == 7)
 				{
-					break;
+					return;
 				}
-				if (Mathf.Abs(component.theZombieRow - theBulletRow) <= 1 && !component.isMindControlled && (!component.gameObject.TryGetComponent<PolevaulterZombie>(out var component2) || component2.polevaulterStatus != 1))
+				PolevaulterZombie polevaulterZombie;
+				if (Mathf.Abs(zombie.theZombieRow - this.theBulletRow) <= 1 && !zombie.isMindControlled && (!zombie.gameObject.TryGetComponent<PolevaulterZombie>(out polevaulterZombie) || polevaulterZombie.polevaulterStatus != 1))
 				{
-					component.TakeDamage(1, 10);
+					zombie.TakeDamage(1, 10);
 				}
 			}
 		}
 	}
 
+	// Token: 0x06000128 RID: 296 RVA: 0x00009E7C File Offset: 0x0000807C
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (hitTimes >= 3 || !collision.CompareTag("Zombie") || (collision.TryGetComponent<PolevaulterZombie>(out var component) && component.polevaulterStatus == 1))
+		if (this.hitTimes < 3 && collision.CompareTag("Zombie"))
 		{
-			return;
-		}
-		Zombie component2 = collision.GetComponent<Zombie>();
-		if (component2.theZombieRow != theBulletRow || component2.isMindControlled || component2.theStatus == 7)
-		{
-			return;
-		}
-		foreach (GameObject item in Z)
-		{
-			if (item != null && item == zombie)
+			PolevaulterZombie polevaulterZombie;
+			if (collision.TryGetComponent<PolevaulterZombie>(out polevaulterZombie) && polevaulterZombie.polevaulterStatus == 1)
 			{
 				return;
 			}
-		}
-		hitTimes++;
-		Z.Add(collision.gameObject);
-		HitZombie(collision.gameObject);
-		if (hitTimes == 3)
-		{
-			Die();
+			Zombie component = collision.GetComponent<Zombie>();
+			if (component.theZombieRow != this.theBulletRow || component.isMindControlled)
+			{
+				return;
+			}
+			if (component.theStatus == 7)
+			{
+				return;
+			}
+			foreach (GameObject x in this.Z)
+			{
+				if (x != null && x == this.zombie)
+				{
+					return;
+				}
+			}
+			this.hitTimes++;
+			this.Z.Add(collision.gameObject);
+			this.HitZombie(collision.gameObject);
+			if (this.hitTimes == 3)
+			{
+				this.Die();
+			}
 		}
 	}
 }

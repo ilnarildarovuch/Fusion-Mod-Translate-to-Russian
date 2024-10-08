@@ -1,20 +1,22 @@
+﻿using System;
 using UnityEngine;
 
+// Token: 0x02000052 RID: 82
 public class CreateCoin : MonoBehaviour
 {
-	public static CreateCoin Instance;
-
+	// Token: 0x06000179 RID: 377 RVA: 0x0000BDD4 File Offset: 0x00009FD4
 	private void Awake()
 	{
-		Instance = this;
+		CreateCoin.Instance = this;
 	}
 
+	// Token: 0x0600017A RID: 378 RVA: 0x0000BDDC File Offset: 0x00009FDC
 	public GameObject SetCoin(int theColumn, int theRow, int theCoinType, int theMoveType, Vector3 pos = default(Vector3))
 	{
 		float boxXFromColumn = Mouse.Instance.GetBoxXFromColumn(theColumn);
 		float boxYFromRow = Mouse.Instance.GetBoxYFromRow(theRow);
 		GameObject gameObject = GameAPP.coinPrefab[theCoinType];
-		GameObject gameObject2 = Object.Instantiate(gameObject);
+		GameObject gameObject2 = Object.Instantiate<GameObject>(gameObject);
 		GameAPP.board.GetComponent<Board>().theTotalNumOfCoin++;
 		Vector2 vector = new Vector2(boxXFromColumn, boxYFromRow);
 		gameObject2.name = gameObject.name;
@@ -35,10 +37,11 @@ public class CreateCoin : MonoBehaviour
 		Coin coin = gameObject2.AddComponent<Coin>();
 		coin.theCoinType = theCoinType;
 		coin.theMoveType = theMoveType;
-		SetLayer(gameObject2);
+		this.SetLayer(gameObject2);
 		return gameObject2;
 	}
 
+	// Token: 0x0600017B RID: 379 RVA: 0x0000BEF8 File Offset: 0x0000A0F8
 	private void SetLayer(GameObject coin)
 	{
 		int num = Board.Instance.theTotalNumOfCoin;
@@ -47,9 +50,12 @@ public class CreateCoin : MonoBehaviour
 			num %= 1000;
 		}
 		int num2 = 5 * num;
-		foreach (Transform item in coin.transform)
+		foreach (object obj in coin.transform)
 		{
-			item.GetComponent<Renderer>().sortingOrder += num2;
+			((Transform)obj).GetComponent<Renderer>().sortingOrder += num2;
 		}
 	}
+
+	// Token: 0x04000113 RID: 275
+	public static CreateCoin Instance;
 }

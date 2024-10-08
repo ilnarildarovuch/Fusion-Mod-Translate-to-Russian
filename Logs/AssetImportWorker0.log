@@ -1,0 +1,560 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.44f1 (94d194ca434d) revision 9752980'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Professional' Language: 'ru' Physical Memory: 16308 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.44f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/user/Downloads/RH/Fusion MOD
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+35397
+Successfully changed project path to: C:/Users/user/Downloads/RH/Fusion MOD
+C:/Users/user/Downloads/RH/Fusion MOD
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [3544] Host "[IP] 192.168.1.34 [Port] 0 [Flags] 2 [Guid] 2984138477 [EditorId] 2984138477 [Version] 1048832 [Id] WindowsEditor(7,WIN-111659CT6NV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [3544] Host "[IP] 192.168.1.34 [Port] 0 [Flags] 2 [Guid] 2984138477 [EditorId] 2984138477 [Version] 1048832 [Id] WindowsEditor(7,WIN-111659CT6NV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 96.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.44f1 (94d194ca434d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/user/Downloads/RH/Fusion MOD/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon (TM) RX 470 Graphics (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     4074 MB
+    Driver:   31.0.21912.14
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56900
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007191 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 406 ms
+Refreshing native plugins compatible for Editor in 80.06 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.632 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1633ms)
+		BeginReloadAssembly (185ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1269ms)
+			LoadAssemblies (184ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (232ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (902ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (547ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (80ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (195ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013447 seconds.
+Begin MonoManager ReloadAssembly
+Unloading broken assembly Assets/Plugins/Unity.2D.IK.Runtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.RenderPipelines.Core.Runtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.VisualScripting.Flow.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.2D.Animation.Runtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.VisualScripting.Core.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.TextMeshPro.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.07 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.096 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1097ms)
+		BeginReloadAssembly (212ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (732ms)
+			LoadAssemblies (145ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (243ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (258ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (28ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.08 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 374 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (22.7 KB). Loaded Objects now: 1043.
+Memory consumption went from 49.3 MB to 49.3 MB.
+Total: 3.351100 ms (FindLiveObjects: 0.089500 ms CreateObjectMapping: 0.024900 ms MarkObjects: 3.194900 ms  DeleteObjects: 0.040400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 9578.603052 seconds.
+  path: Assets/Scenes/level0.unity
+  artifactKey: Guid(34a4bde73c4bf104988b13b6ddf5cdea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/level0.unity using Guid(34a4bde73c4bf104988b13b6ddf5cdea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ef911fdc01e2a3221da353a516a9f0d') in 0.013276 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(58a2b3632738a3940a24e2c10ad9e148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes using Guid(58a2b3632738a3940a24e2c10ad9e148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6dd2ddef026196cf2ca9bdfa66432a7') in 0.011849 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 77.141670 seconds.
+  path: Assets/Resources
+  artifactKey: Guid(d8b6289abe8c8464ca8a52c33eb74132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources using Guid(d8b6289abe8c8464ca8a52c33eb74132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a0fd92431a774c39ff26828399e133') in 0.013308 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.105935 seconds.
+  path: Assets/Resources/DebugUICanvas.prefab
+  artifactKey: Guid(5a65f654ec9af284d87657565456f598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/DebugUICanvas.prefab using Guid(5a65f654ec9af284d87657565456f598) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIPanel') references runtime script in scene file. Fixing!
+ -> (artifact id: '95d86fc435c3a9ee976c7e63bcca26fe') in 0.097801 seconds 
+Number of asset objects unloaded after import = 101
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/SwfSettings.asset
+  artifactKey: Guid(a8d8c1891a0d1f84e8d64ca212a31dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/SwfSettings.asset using Guid(a8d8c1891a0d1f84e8d64ca212a31dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd43e9136830e5925b8728307708505e9') in 0.014497 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.518062 seconds.
+  path: Assets/Resources/background
+  artifactKey: Guid(d9b7ffddc92098d4db7df9dd97e68875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background using Guid(d9b7ffddc92098d4db7df9dd97e68875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfc345a0736a36ae8ba9381be3e207b8') in 0.011543 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.125983 seconds.
+  path: Assets/Resources/background/0.asset
+  artifactKey: Guid(3d50ceae0b09cfc42a7f9d7b638e54a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/0.asset using Guid(3d50ceae0b09cfc42a7f9d7b638e54a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff0898f9277034e86ae0624fde15987e') in 0.331679 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Resources/background/3_0.asset
+  artifactKey: Guid(922dc1c056222994c91a5516b36f947f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/3_0.asset using Guid(922dc1c056222994c91a5516b36f947f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ca69806b920303461035af0f68c99f3') in 0.027277 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Resources/background/bg3.png
+  artifactKey: Guid(cadc7525ad2e5a5429c0e0ef807ca66b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg3.png using Guid(cadc7525ad2e5a5429c0e0ef807ca66b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ee0fa1a3455e1dddaf4dba7e35b68a3') in 0.114372 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/background/flame.asset
+  artifactKey: Guid(5b43a8ecaa1602947bcda72142ea2043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/flame.asset using Guid(5b43a8ecaa1602947bcda72142ea2043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd49ff385df12ae6d9984311404bcf716') in 0.046533 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/4_0.asset
+  artifactKey: Guid(40bf3c07ace0b7544bacd49810a8d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/4_0.asset using Guid(40bf3c07ace0b7544bacd49810a8d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a2b6cdbb0e9eb0af5f0195372ae56d4') in 0.039005 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/bg.prefab
+  artifactKey: Guid(f8836aa6ce48ca643af78df8939f309b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg.prefab using Guid(f8836aa6ce48ca643af78df8939f309b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '200e0fb5ca1d4ed32570ce7da5ab8297') in 0.071690 seconds 
+Number of asset objects unloaded after import = 73
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/background/house.asset
+  artifactKey: Guid(c4bb53991ce94004c87bd41301b96ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/house.asset using Guid(c4bb53991ce94004c87bd41301b96ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95bdc52117beb035f7f5ea2aad16d241') in 0.037454 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/background/2_0.asset
+  artifactKey: Guid(1d03cdd006ab7d049b93ff87782b5b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/2_0.asset using Guid(1d03cdd006ab7d049b93ff87782b5b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '691b75e0a56b1c6e77cdd31e93fdbdc7') in 0.020916 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/7.asset
+  artifactKey: Guid(ee4a7066ffae28947a42f6946e5f7a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/7.asset using Guid(ee4a7066ffae28947a42f6946e5f7a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fa8ec90facdd27f2739f894784836e0') in 0.021104 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/6_0.asset
+  artifactKey: Guid(418e3f42a694fb745ac5638b3263b199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/6_0.asset using Guid(418e3f42a694fb745ac5638b3263b199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df39af452bbcf4d0d81d6f5503750290') in 0.036279 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/background/night2.png
+  artifactKey: Guid(4544e0d39526ce348a6005c1508bc737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/night2.png using Guid(4544e0d39526ce348a6005c1508bc737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf0ea073d15c911a9af8d86ddc5ea6d2') in 0.152542 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/background/5_0.asset
+  artifactKey: Guid(f26fcdaa65f8a3442bdbba4be2ee35ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/5_0.asset using Guid(f26fcdaa65f8a3442bdbba4be2ee35ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02001659a144525faab0cefba5a11876') in 0.022489 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/background/bg3_0.png
+  artifactKey: Guid(58660cf296b522c49b4cbd20850d3b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg3_0.png using Guid(58660cf296b522c49b4cbd20850d3b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92f8316b48598daa68672ac02098096c') in 0.152565 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/background/7_0.asset
+  artifactKey: Guid(8f09551780ffbfb4fa577ec915a71c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/7_0.asset using Guid(8f09551780ffbfb4fa577ec915a71c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '783de69122a6723d77c1525e213c406b') in 0.320093 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/background/IcsRoadCtrl.prefab
+  artifactKey: Guid(6d08bff9245f347479868dea687df35b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/IcsRoadCtrl.prefab using Guid(6d08bff9245f347479868dea687df35b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '2a0831c87d8d0dcc7d0f896fa525bf61') in 0.023134 seconds 
+Number of asset objects unloaded after import = 54
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Resources/background/background4.prefab
+  artifactKey: Guid(8dbc2c47b0fd2464f84a7ebdda91ac6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/background4.prefab using Guid(8dbc2c47b0fd2464f84a7ebdda91ac6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '3073146dc40b839906296d37f1730b20') in 0.043126 seconds 
+Number of asset objects unloaded after import = 332
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/night.asset
+  artifactKey: Guid(d0ca35027707fe641b7b4e783b76c59e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/night.asset using Guid(d0ca35027707fe641b7b4e783b76c59e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3819ef9f60903336d6dab9aee34c83d') in 0.133120 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/bg_0005_shadow2.png
+  artifactKey: Guid(21a122ae783789d4ba9fb22bd42ca041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg_0005_shadow2.png using Guid(21a122ae783789d4ba9fb22bd42ca041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5efe87dcc513f02012d9a1418779e52') in 0.030426 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/background/background3 1.asset
+  artifactKey: Guid(b70bf5476061df04a9f22b18d7b1b345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/background3 1.asset using Guid(b70bf5476061df04a9f22b18d7b1b345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bfcda73b5742edb97d6145698f5813a') in 0.154604 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/background/9_0.asset
+  artifactKey: Guid(5015b7507a02c06419b654da7ca19133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/9_0.asset using Guid(5015b7507a02c06419b654da7ca19133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '960a1cf62fa9f639d38658b06af9d4cd') in 0.137677 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/background/background3 1.png
+  artifactKey: Guid(2a0ed2188c4db9a4f83dd9b34b667d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/background3 1.png using Guid(2a0ed2188c4db9a4f83dd9b34b667d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7656f0ca8a0141d57950ab309bc2b63') in 0.155173 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/background/background3.prefab
+  artifactKey: Guid(dd02019e1517beb44932025883ec1ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/background3.prefab using Guid(dd02019e1517beb44932025883ec1ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'adb15247ccf3d6f732de3b37b64a439e') in 0.045333 seconds 
+Number of asset objects unloaded after import = 277
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/background/3.asset
+  artifactKey: Guid(4f4f0feaff9431547b316bc47ba84c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/3.asset using Guid(4f4f0feaff9431547b316bc47ba84c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61fc50408bbf5c95f3cb81428abc3710') in 0.021530 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/bg3.asset
+  artifactKey: Guid(03a35654d7a9a3445bcf9fda3eef8d24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg3.asset using Guid(03a35654d7a9a3445bcf9fda3eef8d24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '181e303ac718a1bf44a2fc16a94988f9') in 0.125891 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/bg_0004_shadow1.asset
+  artifactKey: Guid(210ae57cbf8186449a2aaad2ea5b079b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg_0004_shadow1.asset using Guid(210ae57cbf8186449a2aaad2ea5b079b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6e0462b6e4dfb1a53b33b3849bff23b') in 0.016225 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/fish.asset
+  artifactKey: Guid(a9cb4cf681800b4449bb5216b4b2386b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/fish.asset using Guid(a9cb4cf681800b4449bb5216b4b2386b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa2b61227da01ba35455e02d503c1b60') in 0.017484 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/background/house_0.asset
+  artifactKey: Guid(dac4455a0ce081945b5fc8ff92258a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/house_0.asset using Guid(dac4455a0ce081945b5fc8ff92258a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66edc23c23ba477e69a86d680c921fae') in 0.033662 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Resources/background/4.asset
+  artifactKey: Guid(8d503afaada379944b09789f767e28a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/4.asset using Guid(8d503afaada379944b09789f767e28a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80fed3220944583de04a7996c5fb9be8') in 0.019599 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/background/bg3.prefab
+  artifactKey: Guid(ff4f74579b246fa40a76fc25352e98b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/bg3.prefab using Guid(ff4f74579b246fa40a76fc25352e98b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'a72f1f67ba7d1fd7235b896f1d1a92b8') in 0.023729 seconds 
+Number of asset objects unloaded after import = 38
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/background2.png
+  artifactKey: Guid(b48bf4712a7b6594bb8bf1ce599c76f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/background2.png using Guid(b48bf4712a7b6594bb8bf1ce599c76f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52da16cb9af2e39d436a81d3f63df820') in 0.148214 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/background/background2.asset
+  artifactKey: Guid(fbe4214af310da643a12ce3a0d411c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/background2.asset using Guid(fbe4214af310da643a12ce3a0d411c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0480a8d6f85dddd9da559726f4beb69c') in 0.143361 seconds 
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

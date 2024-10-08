@@ -1,0 +1,2168 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.44f1 (94d194ca434d) revision 9752980'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Professional' Language: 'ru' Physical Memory: 16308 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.44f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/user/Downloads/RH/Fusion MOD
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+35397
+Successfully changed project path to: C:/Users/user/Downloads/RH/Fusion MOD
+C:/Users/user/Downloads/RH/Fusion MOD
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [11648] Host "[IP] 192.168.1.34 [Port] 0 [Flags] 2 [Guid] 1990478711 [EditorId] 1990478711 [Version] 1048832 [Id] WindowsEditor(7,WIN-111659CT6NV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [11648] Host "[IP] 192.168.1.34 [Port] 0 [Flags] 2 [Guid] 1990478711 [EditorId] 1990478711 [Version] 1048832 [Id] WindowsEditor(7,WIN-111659CT6NV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 99.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.44f1 (94d194ca434d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/user/Downloads/RH/Fusion MOD/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon (TM) RX 470 Graphics (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     4074 MB
+    Driver:   31.0.21912.14
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006268 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 389 ms
+Refreshing native plugins compatible for Editor in 68.12 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.519 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1520ms)
+		BeginReloadAssembly (188ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1149ms)
+			LoadAssemblies (185ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (186ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (841ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (513ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (68ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (183ms)
+				ProcessInitializeOnLoadMethodAttributes (74ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.017230 seconds.
+Begin MonoManager ReloadAssembly
+Unloading broken assembly Assets/Plugins/Unity.2D.IK.Runtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.RenderPipelines.Core.Runtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.VisualScripting.Flow.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.2D.Animation.Runtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.VisualScripting.Core.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/Plugins/Unity.TextMeshPro.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.140 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1141ms)
+		BeginReloadAssembly (239ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (720ms)
+			LoadAssemblies (167ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (237ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (256ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (27ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 374 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (22.7 KB). Loaded Objects now: 1043.
+Memory consumption went from 49.4 MB to 49.4 MB.
+Total: 3.324600 ms (FindLiveObjects: 0.106500 ms CreateObjectMapping: 0.024600 ms MarkObjects: 3.156300 ms  DeleteObjects: 0.035100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 9733.507753 seconds.
+  path: Assets/Resources/background/pool.asset
+  artifactKey: Guid(6491614efacd19746b7f5238d0698fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/pool.asset using Guid(6491614efacd19746b7f5238d0698fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb0ea0b59af2825be0636b98673913c') in 0.216432 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Resources/background/Shadow.mat
+  artifactKey: Guid(e6e45d80523b4574e8a151850e0b4688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/Shadow.mat using Guid(e6e45d80523b4574e8a151850e0b4688) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '1d46e9e44d15cbdcb7097b3994c26e9f') in 0.138585 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/background/PoolSparkly.asset
+  artifactKey: Guid(0f48476d1e2637b4aa7237860b4e27ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/PoolSparkly.asset using Guid(0f48476d1e2637b4aa7237860b4e27ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ead7cded7ecf7a711a0cc07fa2f4613') in 0.014459 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/background/图层 16 拷贝 3.asset
+  artifactKey: Guid(33e0cfd5129d93b428e4acd70a732809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/图层 16 拷贝 3.asset using Guid(33e0cfd5129d93b428e4acd70a732809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f83da63944f22221129002a73ff3c8ab') in 0.040929 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/background/shadow.asset
+  artifactKey: Guid(a3991362baff2c048bf60dae403aa5a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/shadow.asset using Guid(a3991362baff2c048bf60dae403aa5a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbae5d1faac3fb6428a97ef201dfa463') in 0.119510 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/background/背景.asset
+  artifactKey: Guid(c049588c7602a8d448d51457eacd9d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/背景.asset using Guid(c049588c7602a8d448d51457eacd9d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d9f3e2ea58ee869748c0d8d5a3b0522') in 0.161596 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/background/shadow2_0.asset
+  artifactKey: Guid(d0ec931e582e9ee4688673c6d3f7a051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/shadow2_0.asset using Guid(d0ec931e582e9ee4688673c6d3f7a051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e80e3a5c06537b178c8eab51af9805c') in 0.032668 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/background/water.asset
+  artifactKey: Guid(de30520f0b7e46743826d544ff7707c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/water.asset using Guid(de30520f0b7e46743826d544ff7707c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6602a48e09d0625de7bf03639d7fdc0e') in 0.077138 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/shadow1_0.asset
+  artifactKey: Guid(f8f9d6a49cc2f13479837f8f6156dd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/shadow1_0.asset using Guid(f8f9d6a49cc2f13479837f8f6156dd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7b193fd9192b8dbf1a9c8c589c5a37a') in 0.023412 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/pool_shading.asset
+  artifactKey: Guid(6e8bfdb2bcde96f4fba2c0b07c12d637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/pool_shading.asset using Guid(6e8bfdb2bcde96f4fba2c0b07c12d637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf2ff00c45f36ec48fcfa53edd5489f') in 0.039401 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/pool_shading_.asset
+  artifactKey: Guid(16dbbfc43ed8c7648b4ce096d9bc42b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/pool_shading_.asset using Guid(16dbbfc43ed8c7648b4ce096d9bc42b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c3c3e90454c2771865a13b74aa822b') in 0.029400 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/pool_shading_.png
+  artifactKey: Guid(98074b0b630dab1438b83d935f0db3bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/pool_shading_.png using Guid(98074b0b630dab1438b83d935f0db3bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9ebc02a422a242a270589e184c1c3f') in 0.064008 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/background/shadow1.asset
+  artifactKey: Guid(9ef165ed092014a40a3f0abced9306ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/shadow1.asset using Guid(9ef165ed092014a40a3f0abced9306ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '056a042de78e4dac2bbcf0c69b5d05b6') in 0.022926 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/background/shadow2.asset
+  artifactKey: Guid(867e6286350352a40b2aa62e43681a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/shadow2.asset using Guid(867e6286350352a40b2aa62e43681a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f2d91295d645abe7679335daf2a9894') in 0.031070 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/background/塔防.asset
+  artifactKey: Guid(a6c0c0599b11b614698e2f0f8249d45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/塔防.asset using Guid(a6c0c0599b11b614698e2f0f8249d45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e3398a9869e2fc4751204eb9b4c9c37') in 0.143550 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/background/背景_0.asset
+  artifactKey: Guid(9665e9cbaca2e4e4687c36ed0b5d9906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/背景_0.asset using Guid(9665e9cbaca2e4e4687c36ed0b5d9906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4fb9374f2897c55fdcd5ee2bcb44bfb') in 0.141009 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/background/pool_caustic_effect.asset
+  artifactKey: Guid(7730e26ab717a6e469d5ff3c932acce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/background/pool_caustic_effect.asset using Guid(7730e26ab717a6e469d5ff3c932acce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74479d2b95a1b23673da541b7cb13f85') in 0.026033 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 3.708617 seconds.
+  path: Assets/Resources/board/FlagMeter_0.asset
+  artifactKey: Guid(19a788e1165dd1249bbc1bd56b00013a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/FlagMeter_0.asset using Guid(19a788e1165dd1249bbc1bd56b00013a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f6de9423c37bdd2f47b048e682cbeae') in 0.019377 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Resources/board/SeedPacket_Pool.asset
+  artifactKey: Guid(3f1f8b2d1801701469a6dc95b325edf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedPacket_Pool.asset using Guid(3f1f8b2d1801701469a6dc95b325edf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e15b9817e19008cf9106ba0c3dacef50') in 0.022222 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Resources/board/FlagMeterParts_2.asset
+  artifactKey: Guid(c6540844a9c5029498b2eacd56d59ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/FlagMeterParts_2.asset using Guid(c6540844a9c5029498b2eacd56d59ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e09e7aa030f6ee482bb463ee056d0eb6') in 0.017194 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/board/SeedPacket_Larger.png
+  artifactKey: Guid(78d8a6e36c1248046afeb2183318a62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedPacket_Larger.png using Guid(78d8a6e36c1248046afeb2183318a62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba7dcc530af7e8aed8cfd1eb5eab7f6d') in 0.022038 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Resources/board/SeedChooser_Button.asset
+  artifactKey: Guid(2383bb049093bf644a639820c363d282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedChooser_Button.asset using Guid(2383bb049093bf644a639820c363d282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1fd7949836ecbdebfc91f312e6a683a') in 0.020743 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/board/SeedPacket_Night.asset
+  artifactKey: Guid(8da790e03f7440644a2274c4b697d34c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedPacket_Night.asset using Guid(8da790e03f7440644a2274c4b697d34c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9a7a9baebe85ced5dae4f8ca99d1ae') in 0.035935 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/board/ShovelBank.asset
+  artifactKey: Guid(cc104e75405496e47bb69b6bcfa057eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/ShovelBank.asset using Guid(cc104e75405496e47bb69b6bcfa057eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcc619fcdb5a451210583f8d82efe801') in 0.016186 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/board/SeedBank.prefab
+  artifactKey: Guid(64591f4e07ade644da7c761d8c4da08f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedBank.prefab using Guid(64591f4e07ade644da7c761d8c4da08f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '09b1b82197442c21f0178cc34b4fa389') in 0.059469 seconds 
+Number of asset objects unloaded after import = 56
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Resources/board/FlagMeterParts_0.asset
+  artifactKey: Guid(fa877abac7ded774b91a59f69ae6d63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/FlagMeterParts_0.asset using Guid(fa877abac7ded774b91a59f69ae6d63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ab2feeacf8481d3886cbd9a286ada96') in 0.018448 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/board/SeedChooser_Button_Disabled.asset
+  artifactKey: Guid(79162817adec2414b9e073f57adcd3d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedChooser_Button_Disabled.asset using Guid(79162817adec2414b9e073f57adcd3d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '696882153781c1fc47cbafe1c3aa1892') in 0.020556 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Resources/board/SeedPacketSilhouette.asset
+  artifactKey: Guid(40b91069363576745bc2f4f7d4388960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedPacketSilhouette.asset using Guid(40b91069363576745bc2f4f7d4388960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b362585041f59bbcc296fc7fe7b6046') in 0.023381 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/board/FlagMeterParts_1.asset
+  artifactKey: Guid(2147d54b50c5a394bb968e9551498b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/FlagMeterParts_1.asset using Guid(2147d54b50c5a394bb968e9551498b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c639be235bd3acb7b8efd13cf7084aa1') in 0.019055 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/board/SeedPacket_Pool.png
+  artifactKey: Guid(c05fbded5d845cc4db28844e75fb6ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedPacket_Pool.png using Guid(c05fbded5d845cc4db28844e75fb6ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8cb384f51c2b7e17ed2756fdbd70727') in 0.025722 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/board/FlagMeterLevelProgress.png
+  artifactKey: Guid(53b600dc927aed44fa9116d70507303e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/FlagMeterLevelProgress.png using Guid(53b600dc927aed44fa9116d70507303e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a02c1c54d784eff946e71888b2a3d6c') in 0.017352 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/board/plantshadow.asset
+  artifactKey: Guid(d4e42e9488991de4d8d7c372b909124f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/plantshadow.asset using Guid(d4e42e9488991de4d8d7c372b909124f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea03f59c5a3fb30eac21679be7760ddf') in 0.017669 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/board/SeedChooser_Button_Glow.asset
+  artifactKey: Guid(d0209dbcfd59d084bb5a47c9827410d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedChooser_Button_Glow.asset using Guid(d0209dbcfd59d084bb5a47c9827410d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b2cc9e3b27d03ab64ead0ebd8faf9d3') in 0.020016 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/board/SeedBank.asset
+  artifactKey: Guid(275ff04159b1227469db33cec717c575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/board/SeedBank.asset using Guid(275ff04159b1227469db33cec717c575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '204182a7cf55bf7b6f2f666e20627754') in 0.027666 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 3.625283 seconds.
+  path: Assets/Resources/bullet/1_0.asset
+  artifactKey: Guid(d5dfe1f5786a8214bb0b9f399588c307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/1_0.asset using Guid(d5dfe1f5786a8214bb0b9f399588c307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81f6241b8f9d653fe5054acd10561d68') in 0.034033 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/7.asset
+  artifactKey: Guid(3bf01d2da78c76945b248f536148b175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/7.asset using Guid(3bf01d2da78c76945b248f536148b175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f431b3d70e3920bc7df7c16d167ac07f') in 0.021088 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/bullet/doom.png
+  artifactKey: Guid(503794011c16cc04fba7f193a6cad020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/doom.png using Guid(503794011c16cc04fba7f193a6cad020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe14972df5e1dea892e356fa6193c8fb') in 0.024084 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/bullet/ProjectilePea.asset
+  artifactKey: Guid(b1bb6944699a16146b749fde9bffd9ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/ProjectilePea.asset using Guid(b1bb6944699a16146b749fde9bffd9ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e280dcf021abd1c8be9c79b251f88c') in 0.017640 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/bullet/IronPeaBullet.asset
+  artifactKey: Guid(39f02333a1b26374a9214248544ac285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/IronPeaBullet.asset using Guid(39f02333a1b26374a9214248544ac285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96448fe78fa471514f02c71a5450d40b') in 0.021652 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Resources/bullet/4_1.asset
+  artifactKey: Guid(f590152cd3dd18945b64c5c0d686b0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/4_1.asset using Guid(f590152cd3dd18945b64c5c0d686b0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cddd9cfef47c1c3390a0e09ab0f43746') in 0.032266 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Resources/bullet/GreenCherry.png
+  artifactKey: Guid(a1e3dc2de749ae34aaf7dd5c2b0fd9c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/GreenCherry.png using Guid(a1e3dc2de749ae34aaf7dd5c2b0fd9c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '418a25a24a9d9a4be3a35e3ec5bbeed8') in 0.041324 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Resources/bullet/FirePea_flame3.asset
+  artifactKey: Guid(99f1a7d3ff66e44478aaad44afa6cdcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/FirePea_flame3.asset using Guid(99f1a7d3ff66e44478aaad44afa6cdcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17160ae885712c07a5d1a55903f3bae7') in 0.019352 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Resources/bullet/彩色泡泡2.png
+  artifactKey: Guid(1171976a3bc0f7f4da964dd0b089d17a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/彩色泡泡2.png using Guid(1171976a3bc0f7f4da964dd0b089d17a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a35dac20038b535b899c84d3184495bf') in 0.022037 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/bullet/nutbullet.png
+  artifactKey: Guid(15d7ca5e4d7a56348b196fe74ca46917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/nutbullet.png using Guid(15d7ca5e4d7a56348b196fe74ca46917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac6b87fc2b2f0a5f60af1e8299f3b72b') in 0.029631 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/bullet/3_1.asset
+  artifactKey: Guid(c6398a624a98ba34a83c82d409738a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/3_1.asset using Guid(c6398a624a98ba34a83c82d409738a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc8197bc49b4bcb71589f8b5526661b') in 0.029324 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/zombieblock2.asset
+  artifactKey: Guid(673159e6a6e4a4141ac7023c476c879b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/zombieblock2.asset using Guid(673159e6a6e4a4141ac7023c476c879b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d042aa851f776f873d505acfa88de0d') in 0.020126 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/6.asset
+  artifactKey: Guid(d49f45b53d5028446b7b00714531cdd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/6.asset using Guid(d49f45b53d5028446b7b00714531cdd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5ae26978938e68b5367821019e369c3') in 0.015534 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/bullet/组 5.asset
+  artifactKey: Guid(83fc2aba45fb19942ab279a11e3c0ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/组 5.asset using Guid(83fc2aba45fb19942ab279a11e3c0ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6983cb83187d210f88e7df50cdf91c4') in 0.019409 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/bullet/FirePea_flame1.png
+  artifactKey: Guid(f16758eb6920abf4293b937d3917cc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/FirePea_flame1.png using Guid(f16758eb6920abf4293b937d3917cc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47acf9438144922da6d3e74c82862bf8') in 0.027219 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/bullet/zombieblock3.png
+  artifactKey: Guid(31eb08d90f880344c93a1d2c4e7dfedf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/zombieblock3.png using Guid(31eb08d90f880344c93a1d2c4e7dfedf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eee16ee5edb1b11f0ead5e271be1cb12') in 0.024956 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/bullet/FirePea_flame2.png
+  artifactKey: Guid(9dcb14496eb83604fb2d596ade7cb592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/FirePea_flame2.png using Guid(9dcb14496eb83604fb2d596ade7cb592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33321a99a44b07ae408976225318531c') in 0.021541 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/bullet/ProjectileSnowPea.asset
+  artifactKey: Guid(fc5fb1b1182f05541a07b75afcb8fa33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/ProjectileSnowPea.asset using Guid(fc5fb1b1182f05541a07b75afcb8fa33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6109e146f6d2032d04a45f7b8daa72db') in 0.015322 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Resources/bullet/icedoom.asset
+  artifactKey: Guid(50c57fbdf72123a4cadd1d7d623cb91e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/icedoom.asset using Guid(50c57fbdf72123a4cadd1d7d623cb91e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf0daa262bf136d83bd571d2ff363f21') in 0.037842 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 4.778480 seconds.
+  path: Assets/Resources/bullet/colorfulpuffs/2.asset
+  artifactKey: Guid(ac9be4581d763a844bdf3283764cf668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/colorfulpuffs/2.asset using Guid(ac9be4581d763a844bdf3283764cf668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14b695fb00691051ffc1cc0ea3140719') in 0.016617 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/colorfulpuffs/ColorfulPuff5.asset
+  artifactKey: Guid(c4350ac4646122847866dfada357a890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/colorfulpuffs/ColorfulPuff5.asset using Guid(c4350ac4646122847866dfada357a890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '848d5474014085ee26c84fa564afa243') in 0.018981 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/bullet/colorfulpuffs/6.asset
+  artifactKey: Guid(a9c9d3cca2240144b99d5e4b8dfc65d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/colorfulpuffs/6.asset using Guid(a9c9d3cca2240144b99d5e4b8dfc65d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01a3b5692440845d4c887b215f287399') in 0.017219 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/bullet/colorfulpuffs/ColorfulPuff1.asset
+  artifactKey: Guid(33d0aeb9dc1539d439b177f2ac7f9867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/colorfulpuffs/ColorfulPuff1.asset using Guid(33d0aeb9dc1539d439b177f2ac7f9867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c1b50846da63a8327bb39a95b1279ef') in 0.019011 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/bullet/colorfulpuffs/ColorfulPuff7.png
+  artifactKey: Guid(bff3ffac83174cb4cb8bdf2ed7cdc278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/colorfulpuffs/ColorfulPuff7.png using Guid(bff3ffac83174cb4cb8bdf2ed7cdc278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df4587d2a3e4a256fa827338f0953882') in 0.017728 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/colorfulpuffs/ColorfulPuff1.png
+  artifactKey: Guid(692724a5ac0bc644781a0f5d65a65b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/colorfulpuffs/ColorfulPuff1.png using Guid(692724a5ac0bc644781a0f5d65a65b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b9c3315ad3e6b2634627e7481892484') in 0.018150 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.101932 seconds.
+  path: Assets/Resources/bullet/firecherryan/CherryBomb_left1_0.asset
+  artifactKey: Guid(0424e4094ca5b604eb84ba03106da078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firecherryan/CherryBomb_left1_0.asset using Guid(0424e4094ca5b604eb84ba03106da078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1350abf98741e80555fbcf37d0630eb') in 0.044885 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/bullet/firecherryan/FireCherry Skeleton.asset
+  artifactKey: Guid(0c94e6563dc870c4b8208303e546f8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firecherryan/FireCherry Skeleton.asset using Guid(0c94e6563dc870c4b8208303e546f8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01c9ded109f1dc56bd58adcf542654d3') in 0.012526 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/bullet/firecherryan/fire6b_0.asset
+  artifactKey: Guid(de1b5449fbb68424198834dcac2ed7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firecherryan/fire6b_0.asset using Guid(de1b5449fbb68424198834dcac2ed7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0dae0aa8e2a68e45b478e382212611f') in 0.024242 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.106680 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire1.png
+  artifactKey: Guid(ccd376d26198b734282095c9e5888b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire1.png using Guid(ccd376d26198b734282095c9e5888b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc17fa2de32417c4887c221c41b9ab78') in 0.024414 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire6.png
+  artifactKey: Guid(682444c258ddebf48b00ceac5a56f10a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire6.png using Guid(682444c258ddebf48b00ceac5a56f10a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eda08f74f762f6eee96cb938b21347c7') in 0.023053 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire3.png
+  artifactKey: Guid(76de1fba9c81d7d40a06c1bf5dbe72c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire3.png using Guid(76de1fba9c81d7d40a06c1bf5dbe72c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e22004ec1e0bb77598321d328efc67c') in 0.019731 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire2.asset
+  artifactKey: Guid(19aaa4074b2f50f43b23d94756fb1b71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire2.asset using Guid(19aaa4074b2f50f43b23d94756fb1b71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28eda1c07031848559dec5eae0bcf8f8') in 0.018208 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire4.asset
+  artifactKey: Guid(d977ecfffa6f5dc4ebb82137c3a08c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire4.asset using Guid(d977ecfffa6f5dc4ebb82137c3a08c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42193b1e98e9d3ac0b2d618872ee5329') in 0.020549 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire4.png
+  artifactKey: Guid(68d4409eda5102947bb25cc0c4807b17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire4.png using Guid(68d4409eda5102947bb25cc0c4807b17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7296fdba1df260720648403488716e06') in 0.018908 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Resources/bullet/firepeaan/fire1_3.asset
+  artifactKey: Guid(58d59f6d63c9f5344a5a9c0d49349286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/firepeaan/fire1_3.asset using Guid(58d59f6d63c9f5344a5a9c0d49349286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8e85f331606a43558f11a2e46e00a36') in 0.020417 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 7.153410 seconds.
+  path: Assets/Resources/bullet/prefabs/CherryBullet.prefab
+  artifactKey: Guid(327b67675978af94b900b11c0e1e6544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/CherryBullet.prefab using Guid(327b67675978af94b900b11c0e1e6544) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '0beb82acc5d59b7f78f196c51c74abff') in 0.024063 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/bullet/prefabs/PuffPea.prefab
+  artifactKey: Guid(a876501e50bfa7647a41dafecb98b144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/PuffPea.prefab using Guid(a876501e50bfa7647a41dafecb98b144) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '31abfe07cf46fcf0f0a33fe0bcd550ff') in 0.024839 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Resources/bullet/prefabs/FirePea3.prefab
+  artifactKey: Guid(aa8c3729025dd074e9007fed9336ab21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/FirePea3.prefab using Guid(aa8c3729025dd074e9007fed9336ab21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '0d6df22de511c6551145cacddbdd3cba') in 0.030246 seconds 
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Resources/bullet/prefabs/PuffSnow.prefab
+  artifactKey: Guid(87cfc378a056cfd41835885a3bd8fd76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/PuffSnow.prefab using Guid(87cfc378a056cfd41835885a3bd8fd76) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '4116a74b163ec2d87e09f7a247ab89c4') in 0.028874 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/prefabs/FirePuffPea.prefab
+  artifactKey: Guid(a8a6dae9a5b161d43a1db98b15309998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/FirePuffPea.prefab using Guid(a8a6dae9a5b161d43a1db98b15309998) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '7d07a236b06448b78eeb898ba4849230') in 0.029338 seconds 
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/bullet/prefabs/FirekelpBullet.prefab
+  artifactKey: Guid(46b1857156013a34cadcad289e04f7e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/FirekelpBullet.prefab using Guid(46b1857156013a34cadcad289e04f7e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '5d823570343f1696843cae78d9d760dc') in 0.034531 seconds 
+Number of asset objects unloaded after import = 38
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/bullet/prefabs/FirePea1.prefab
+  artifactKey: Guid(68f84a411fef7394a9aefcc3fc727c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/FirePea1.prefab using Guid(68f84a411fef7394a9aefcc3fc727c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '2d1e6eca158f183f34df89a7972804f7') in 0.030367 seconds 
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/bullet/prefabs/TangkelpBullet.prefab
+  artifactKey: Guid(8921a0f911173b849b920c7ef04c4d08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/TangkelpBullet.prefab using Guid(8921a0f911173b849b920c7ef04c4d08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '02b561c638057645672e7503423231e3') in 0.023476 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/bullet/prefabs/SquashKelpBullet.prefab
+  artifactKey: Guid(97a1394199c642849835ce6a1cdb0b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/prefabs/SquashKelpBullet.prefab using Guid(97a1394199c642849835ce6a1cdb0b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '028a45af14cc9727d16c9897710d12fd') in 0.024488 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 3.861053 seconds.
+  path: Assets/Resources/bullet/threespikebullet/2.asset
+  artifactKey: Guid(19af4d712c26a01429cb6f483c281578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/threespikebullet/2.asset using Guid(19af4d712c26a01429cb6f483c281578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd743b5b06142f24110c7fb7a1cd37d') in 0.031527 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/bullet/threespikebullet/齿轮子弹.png
+  artifactKey: Guid(e715dd01c0da9af4bb57bfa026c7537c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/threespikebullet/齿轮子弹.png using Guid(e715dd01c0da9af4bb57bfa026c7537c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff35c256907160912ad13a149118d1e0') in 0.020235 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Resources/bullet/threespikebullet/Zombie_digger_dig1.asset
+  artifactKey: Guid(f1c422a025343d2468fa74742229634a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/bullet/threespikebullet/Zombie_digger_dig1.asset using Guid(f1c422a025343d2468fa74742229634a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f09b206c7be6be486f1f94a41cd30b17') in 0.028698 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 4.573596 seconds.
+  path: Assets/Resources/fonts & materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(f3fc463290b0b0b46bd54b86cecdeaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/fonts & materials/LiberationSans SDF - Fallback.asset using Guid(f3fc463290b0b0b46bd54b86cecdeaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5840b44782f26b14a06f8ba05037e15c') in 0.025373 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/fonts & materials/LiberationSans SDF Material_0.mat
+  artifactKey: Guid(30ecabfe56c97f24ba19372251091351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/fonts & materials/LiberationSans SDF Material_0.mat using Guid(30ecabfe56c97f24ba19372251091351) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'd4cf3055ba4aec8be3550a2ae20e0f42') in 0.026516 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 55.413898 seconds.
+  path: Assets/Resources/image/Almanac_GroundDay.png
+  artifactKey: Guid(74aca2438924a714d87f0b83c6967246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/Almanac_GroundDay.png using Guid(74aca2438924a714d87f0b83c6967246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b5b00ecf3c93041231a435f97339689') in 0.045024 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/image/seeds_8.asset
+  artifactKey: Guid(ae30f11a6166364419dfaaea67e62662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/seeds_8.asset using Guid(ae30f11a6166364419dfaaea67e62662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a0d1ff088a037030b61a539deed51e') in 0.019962 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/image/seedp.asset
+  artifactKey: Guid(271130031a724a34abf988fced431fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/seedp.asset using Guid(271130031a724a34abf988fced431fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f3a0fd755b406e965bed192e698d04c') in 0.020548 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/image/dirtsmall_12.asset
+  artifactKey: Guid(a4d9f67880294e248ab34e13a1622a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtsmall_12.asset using Guid(a4d9f67880294e248ab34e13a1622a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca574ada62144bd0c540a47251907c44') in 0.017784 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/image/CursorDefault.png
+  artifactKey: Guid(f9a589d1480f5724e93c01def90acac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/CursorDefault.png using Guid(f9a589d1480f5724e93c01def90acac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83d1b1430fc254ad8759578ebc460cc8') in 0.016753 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/image/seeds_5.asset
+  artifactKey: Guid(86cfb1d4a0c7a2945b94051675fe1f79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/seeds_5.asset using Guid(86cfb1d4a0c7a2945b94051675fe1f79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '350d63bd5c455de3cdd7478501187086') in 0.019885 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/image/dirtbig_1.asset
+  artifactKey: Guid(d8187f15bbffb3e4db248fd5a1b13a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtbig_1.asset using Guid(d8187f15bbffb3e4db248fd5a1b13a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd23989888f178e3c13a43fe3aa76bc99') in 0.020892 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/image/dirtbig_6.asset
+  artifactKey: Guid(9d4f2a3013c01514893252e39e813172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtbig_6.asset using Guid(9d4f2a3013c01514893252e39e813172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dafa354a80c8e609cc719df54eb7e14d') in 0.017430 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/WateringCan.asset
+  artifactKey: Guid(9268e14f34b92ca46aac8cfab00f5df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/WateringCan.asset using Guid(9268e14f34b92ca46aac8cfab00f5df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38955c4097a52998da4ca518ff901528') in 0.022589 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/image/dirtsmall_7.asset
+  artifactKey: Guid(c912ceb3d17a23449abd01592c3aa6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtsmall_7.asset using Guid(c912ceb3d17a23449abd01592c3aa6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '868ed71c872ab1635345109704895fbd') in 0.017976 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Resources/image/seeds.png
+  artifactKey: Guid(e969ecfaf74b60840a0607ea7bab23e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/seeds.png using Guid(e969ecfaf74b60840a0607ea7bab23e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ed16d05adf46bc218cad4c7bdcda321') in 0.016757 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/image/PeaShooterZ.asset
+  artifactKey: Guid(59997a40e7ce39744b3caf840bc0140f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/PeaShooterZ.asset using Guid(59997a40e7ce39744b3caf840bc0140f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a76d5241bd98212ac9bc5490d16cb7f') in 0.033515 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Resources/image/dirtbig_7.asset
+  artifactKey: Guid(35fdba30a0e3fd5459ef1b8e3c80d2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtbig_7.asset using Guid(35fdba30a0e3fd5459ef1b8e3c80d2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6afffd6cfff9dd0aa4adb8ad177f8ec3') in 0.019825 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/image/brain.asset
+  artifactKey: Guid(73cfe2df652dd914888806c78ca1e1ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/brain.asset using Guid(73cfe2df652dd914888806c78ca1e1ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0869534d89201556e465e4a986accf16') in 0.017876 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/Fertilizer.asset
+  artifactKey: Guid(b667397278b009a49aceca69556f65c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/Fertilizer.asset using Guid(b667397278b009a49aceca69556f65c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '353f02061054c6705d60939b2eb118ee') in 0.018028 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/image/seeds_0.asset
+  artifactKey: Guid(354e27a10dc11ed468111e155e537a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/seeds_0.asset using Guid(354e27a10dc11ed468111e155e537a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3309086690b844ceb2930e7476532da8') in 0.018184 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/image/dirtsmall_4.asset
+  artifactKey: Guid(9288005b92be5874c927a52ce39db559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtsmall_4.asset using Guid(9288005b92be5874c927a52ce39db559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77f9cf8966f6c4b7a74b50239cb2eda0') in 0.017557 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/dirtbig_2.asset
+  artifactKey: Guid(bb0b16fa5be0aa4429626dc31e5d787d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtbig_2.asset using Guid(bb0b16fa5be0aa4429626dc31e5d787d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b2f82377216ea27197bf044f3848d39') in 0.017030 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Resources/image/dirtbig.png
+  artifactKey: Guid(ddd361abcf086e5489c05d840af20bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/dirtbig.png using Guid(ddd361abcf086e5489c05d840af20bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7775f432427562f297548cf051d492ac') in 0.016773 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 8.364085 seconds.
+  path: Assets/Resources/image/crater/crater_0.asset
+  artifactKey: Guid(35e16880eba29194993941ef6525a38b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/crater/crater_0.asset using Guid(35e16880eba29194993941ef6525a38b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ae74c564b00b91eea0de91ec8eeb156') in 0.024136 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/crater/crater_roof_left.asset
+  artifactKey: Guid(5ca82115d662a644eb9207a5d18c8b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/crater/crater_roof_left.asset using Guid(5ca82115d662a644eb9207a5d18c8b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0b880ce9b561a6ebaa89d65ee926062') in 0.024557 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/crater/crater_roof_left.png
+  artifactKey: Guid(2e771a40a07a0fd4791003f7b99b1fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/crater/crater_roof_left.png using Guid(2e771a40a07a0fd4791003f7b99b1fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2619f9012385d28db790ecf257595107') in 0.021396 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/crater/crater_water_day.asset
+  artifactKey: Guid(07e9675493c73624fb5983f588383a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/crater/crater_water_day.asset using Guid(07e9675493c73624fb5983f588383a3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '395ac93813cb819ea1e432a5c53d3ea3') in 0.018016 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.918977 seconds.
+  path: Assets/Resources/image/fertilizer/ZenGarden_fertilize_bag1.png
+  artifactKey: Guid(1dc2de4703cb8414884bfe5dabdfe89f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/fertilizer/ZenGarden_fertilize_bag1.png using Guid(1dc2de4703cb8414884bfe5dabdfe89f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85ed411e59d3dc80d9a94d989581160') in 0.026101 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/image/fertilizer/ZenGarden_fertilizer_seed1.png
+  artifactKey: Guid(e9050561ede06474b8fe9d8f7a6c1c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/fertilizer/ZenGarden_fertilizer_seed1.png using Guid(e9050561ede06474b8fe9d8f7a6c1c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8545d9dae892f0ea0322d520dd06f56a') in 0.023564 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Resources/image/fertilizer/ZenGarden_fertilizer_seed4.png
+  artifactKey: Guid(fd1b636ab74fa7049a665c80168789ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/fertilizer/ZenGarden_fertilizer_seed4.png using Guid(fd1b636ab74fa7049a665c80168789ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d1bff5a42a719a55e2cb144465ed61d') in 0.015682 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/image/fertilizer/ZenGarden_fertilizer_bag3.asset
+  artifactKey: Guid(99cc7e94f61fec34eadaf136bf520af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/fertilizer/ZenGarden_fertilizer_bag3.asset using Guid(99cc7e94f61fec34eadaf136bf520af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fd1ba815a33523ea4c9f014a3b058b2') in 0.021990 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/image/fertilizer/ZenGarden_fertilizer_bag3.png
+  artifactKey: Guid(41f95228e6089774abb73c8f580be047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/fertilizer/ZenGarden_fertilizer_bag3.png using Guid(41f95228e6089774abb73c8f580be047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23536e9d9f2ff1933baf9722f1b22ffb') in 0.021381 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.527654 seconds.
+  path: Assets/Resources/image/ice/ice_sparkles_0.asset
+  artifactKey: Guid(776061617c84b984cb00f49b96c873e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/ice/ice_sparkles_0.asset using Guid(776061617c84b984cb00f49b96c873e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '477d1205b58d45a0a036eb6183365d9b') in 0.020774 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/image/ice/icetrap2.png
+  artifactKey: Guid(1934f7966f82f6b4480cd4e70809ac41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/ice/icetrap2.png using Guid(1934f7966f82f6b4480cd4e70809ac41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb947333f2b641b53fa4ff2d62303ffa') in 0.019437 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/image/ice/icesparkle_3.asset
+  artifactKey: Guid(89165813fac620b4793c3bd083a04307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/ice/icesparkle_3.asset using Guid(89165813fac620b4793c3bd083a04307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76ae90fb4b2333842a673ba8bc3040a6') in 0.018504 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/image/ice/icetrap_particles_0.asset
+  artifactKey: Guid(38abed98450ca364aadf8e4c2250d42e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/ice/icetrap_particles_0.asset using Guid(38abed98450ca364aadf8e4c2250d42e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51dbb3ee84968f553e0ec6efc0bc2cc1') in 0.016478 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Resources/image/ice/icetrap_particles.png
+  artifactKey: Guid(46646a09b9a4ba54382b0c72a1c5ef49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/ice/icetrap_particles.png using Guid(46646a09b9a4ba54382b0c72a1c5ef49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b5d2f0068eb0671f8a89c8f8906c595') in 0.017781 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/image/ice/icetrap.png
+  artifactKey: Guid(88702eb929a11244fa3dd07b3142ef89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/image/ice/icetrap.png using Guid(88702eb929a11244fa3dd07b3142ef89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e607ab6e37f88ee773d224d384e286c2') in 0.019042 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 6.544213 seconds.
+  path: Assets/Resources/items/Helmet.prefab
+  artifactKey: Guid(666815d6037ad584d9d25ee4b26efb63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/items/Helmet.prefab using Guid(666815d6037ad584d9d25ee4b26efb63) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '791039db24f2fb73d265de13e5949b72') in 0.020003 seconds 
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 2.905349 seconds.
+  path: Assets/Resources/items/levelup/Lv.asset
+  artifactKey: Guid(de8c771db38f1c74d97bae7f35c1b1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/items/levelup/Lv.asset using Guid(de8c771db38f1c74d97bae7f35c1b1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5227cf05dbc2d7cae94691bf0e22871c') in 0.028506 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.981513 seconds.
+  path: Assets/Resources/items/sun/Sun.prefab
+  artifactKey: Guid(41c2499432406d74ab4a69f50ff42cf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/items/sun/Sun.prefab using Guid(41c2499432406d74ab4a69f50ff42cf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.GameObjectInspector:DoRenderPreview()
+UnityEditor.GameObjectInspector:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '49da983023e4808571c5e7b75b8290a1') in 0.026420 seconds 
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/items/sun/阳光 Skeleton.asset
+  artifactKey: Guid(9b6744127d3b23f4b8867f99386d1f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/items/sun/阳光 Skeleton.asset using Guid(9b6744127d3b23f4b8867f99386d1f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '851e4a8b6bf0430905a713c6e2392410') in 0.013990 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 12.582604 seconds.
+  path: Assets/Resources/mower/lawn/LawnMower_backshine1.asset
+  artifactKey: Guid(ddb2bf8c2deed3a459850e5d20b3ce8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/mower/lawn/LawnMower_backshine1.asset using Guid(ddb2bf8c2deed3a459850e5d20b3ce8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db78188b9acc31052be9a945cda383dd') in 0.025175 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Resources/mower/lawn/LawnMower_engine.asset
+  artifactKey: Guid(3dfccb38849318f48a9c7eee9725a84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/mower/lawn/LawnMower_engine.asset using Guid(3dfccb38849318f48a9c7eee9725a84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03fe5ca635761d39f8c4bbece67a16e8') in 0.021479 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Resources/mower/lawn/LawnMower_frontshine1.asset
+  artifactKey: Guid(24d3c4942c8947949a464f8e1bc68a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/mower/lawn/LawnMower_frontshine1.asset using Guid(24d3c4942c8947949a464f8e1bc68a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0500cfe4d2b3f10fbe5a5a94c3c736a8') in 0.016842 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/mower/lawn/LawnMower_frontwheelpiece1.asset
+  artifactKey: Guid(ea924357123d00e4c88d5b1eb9533aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/mower/lawn/LawnMower_frontwheelpiece1.asset using Guid(ea924357123d00e4c88d5b1eb9533aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '763d4e280caa950110c98cc1477da770') in 0.021053 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/mower/lawn/小推车 Skeleton.asset
+  artifactKey: Guid(7a513835b51e7044780ca3c35b859d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/mower/lawn/小推车 Skeleton.asset using Guid(7a513835b51e7044780ca3c35b859d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0424cade276d1bd157d3ea46ac517e3c') in 0.012870 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/mower/lawn/LawnMower_backwheelpiece1.asset
+  artifactKey: Guid(d07dc74c88f586a49acd7b842255d037) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/mower/lawn/LawnMower_backwheelpiece1.asset using Guid(d07dc74c88f586a49acd7b842255d037) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e2bc1e9bfc1cc58c2e478a424f97c2') in 0.021056 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 5.337997 seconds.
+  path: Assets/Resources/music/Day.ogg
+  artifactKey: Guid(b30c13c7eb1e95a4c93cff3bcf0f49c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/music/Day.ogg using Guid(b30c13c7eb1e95a4c93cff3bcf0f49c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd92e786fc63558d4c1180fd404358fee') in 0.081229 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/music/SelectCard.ogg
+  artifactKey: Guid(7ba10acafef9d4b41a2e7716a760ce54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/music/SelectCard.ogg using Guid(7ba10acafef9d4b41a2e7716a760ce54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85f23359a84814647e4b316da3ae72d4') in 0.022624 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/music/winmusic.ogg
+  artifactKey: Guid(0331dffe3d0674e47a2230ce115cb2db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/music/winmusic.ogg using Guid(0331dffe3d0674e47a2230ce115cb2db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d77debe9f83eb2b9177d14e73a5ddc9') in 0.020954 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Resources/music/Pool.ogg
+  artifactKey: Guid(1af9e6b8ae3739b4bb08f9d68e746fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/music/Pool.ogg using Guid(1af9e6b8ae3739b4bb08f9d68e746fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8afa355bc35f46d061af13ce31eb98db') in 0.017782 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 378.734689 seconds.
+  path: Assets/Font
+  artifactKey: Guid(608dba8d2e8b6a145966587066b3bfa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Font using Guid(608dba8d2e8b6a145966587066b3bfa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bf90fdd5fd9d854dd0df62d6901f2be') in 0.012047 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.118623 seconds.
+  path: Assets/Font/ContinuumBold.ttf
+  artifactKey: Guid(53b9263ba8dbee548bb344540abbb7b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Font/ContinuumBold.ttf using Guid(53b9263ba8dbee548bb344540abbb7b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '2050b6998e162b6676dea69ee649f0a4') in 0.063071 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Font/fzjz.ttf
+  artifactKey: Guid(4342578883551e04f8ece46046e5ac4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Font/fzjz.ttf using Guid(4342578883551e04f8ece46046e5ac4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'c98de57964ddd61087e8a503e6146dde') in 0.028076 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Font/汉仪夏日体W.ttf
+  artifactKey: Guid(12528d4c5d925b245b9bbee65875536d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Font/汉仪夏日体W.ttf using Guid(12528d4c5d925b245b9bbee65875536d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'a8d00d8514c51c3503ff132d05b795ad') in 0.028501 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 361.538874 seconds.
+  path: Assets/Sprite
+  artifactKey: Guid(a20796b4de1a32c4ea9cc05b9db6fadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sprite using Guid(a20796b4de1a32c4ea9cc05b9db6fadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '964cb34cccaf3769ffe6e08656e377f8') in 0.015074 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.669158 seconds.
+  path: Assets/Texture2D
+  artifactKey: Guid(bf610c0fb64be7e46b684be546448ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D using Guid(bf610c0fb64be7e46b684be546448ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '401585c5b2f8724e04cfcefa04fe393d') in 0.011140 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.092440 seconds.
+  path: Assets/Texture2D/AreaTex.png
+  artifactKey: Guid(0f3122c341421fa408c6ce4fe44aa0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/AreaTex.png using Guid(0f3122c341421fa408c6ce4fe44aa0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58093e76d037479594b2b1bb450ff2d1') in 0.023455 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.007507 seconds.
+  path: Assets/Texture2D/EmojiOne.png
+  artifactKey: Guid(babc70c562ede1041a2223ac6e564409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/EmojiOne.png using Guid(babc70c562ede1041a2223ac6e564409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35c8b82de5fdde8f14362704a3d325c7') in 0.020977 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Texture2D/LDR_LLL1_8.png
+  artifactKey: Guid(5e4694b52cd4c8d4fa1ea1d83f3252ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_8.png using Guid(5e4694b52cd4c8d4fa1ea1d83f3252ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f65b421f2ddea01fa30c0e9585b84613') in 0.027249 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Texture2D/LDR_LLL1_4.png
+  artifactKey: Guid(a418b458a15ba064cac5238249599bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_4.png using Guid(a418b458a15ba064cac5238249599bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '482506feac55da84c1b4b00f37a3e798') in 0.057223 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Texture2D/LDR_LLL1_7.png
+  artifactKey: Guid(7502459c61066f44c854063d9aa33ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_7.png using Guid(7502459c61066f44c854063d9aa33ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7a25a5417d5c50e1d70166c9eaa3e8') in 0.028404 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Texture2D/LDR_LLL1_26.png
+  artifactKey: Guid(46c25b90666f87944aaf8d8c731d1826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_26.png using Guid(46c25b90666f87944aaf8d8c731d1826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7778381ac857c09d35f452a6033dc0e6') in 0.018482 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Texture2D/LDR_LLL1_9.png
+  artifactKey: Guid(2c026ba0fda06874fac83f3434070cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_9.png using Guid(2c026ba0fda06874fac83f3434070cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e407e5867684b31e6ef01dcbf11fd746') in 0.021269 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Texture2D/Large01.png
+  artifactKey: Guid(408f252a14c29a443838c353243cd935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Large01.png using Guid(408f252a14c29a443838c353243cd935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '021b96f5728084f7365bd6e5bc23cfbb') in 0.068433 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Texture2D/LDR_LLL1_14.png
+  artifactKey: Guid(31dcaf59d384eee409dc99097383dfcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_14.png using Guid(31dcaf59d384eee409dc99097383dfcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83c830308ee1edf381f6e5836ffa7bce') in 0.033384 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Texture2D/LDR_LLL1_10.png
+  artifactKey: Guid(cc76ac448c2d35e4e85231daf2d9c0eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_10.png using Guid(cc76ac448c2d35e4e85231daf2d9c0eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd184a66cc9ed907938428765cd0edf04') in 0.020185 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Texture2D/fzjz Atlas.png
+  artifactKey: Guid(6f8af04a5fe24d14e85fa68132623b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/fzjz Atlas.png using Guid(6f8af04a5fe24d14e85fa68132623b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d86ca243575f363d29c2b76ab1fbec6') in 0.048630 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture2D/LDR_LLL1_18.png
+  artifactKey: Guid(bc77247e270641140abf363aa1fa2512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_18.png using Guid(bc77247e270641140abf363aa1fa2512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '180258eaaebfe1214b71056213ea9ef6') in 0.020725 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Texture2D/LDR_LLL1_3.png
+  artifactKey: Guid(7fd17525440531340b532be2915e5526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_3.png using Guid(7fd17525440531340b532be2915e5526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09eb5837f3e3dfa7c5db338fd5dbd6c9') in 0.039190 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Texture2D/Medium06.png
+  artifactKey: Guid(d16e91a34cb2c41478ab57cede42ae30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Medium06.png using Guid(d16e91a34cb2c41478ab57cede42ae30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '971e5be4b6691257274590c8d2233c12') in 0.066665 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Texture2D/Medium04.png
+  artifactKey: Guid(1bd0d4db266f4cd48ad908246500a257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Medium04.png using Guid(1bd0d4db266f4cd48ad908246500a257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8e88d3a38a90b31d1fafe1d62ac5cf9') in 0.043395 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Texture2D/UIElement8px.png
+  artifactKey: Guid(a261d089c8dc24748bfca3405f6fb090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/UIElement8px.png using Guid(a261d089c8dc24748bfca3405f6fb090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd797e228ca680f63b9e179d00934f6a8') in 0.139622 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Texture2D/FalloffLookupTexture.png
+  artifactKey: Guid(87fd8ae02ad3c69418795ed2f2d6d551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/FalloffLookupTexture.png using Guid(87fd8ae02ad3c69418795ed2f2d6d551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6552e7de2a2215b8aa79dfda9b4a91cc') in 0.076936 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Texture2D/LDR_LLL1_1.png
+  artifactKey: Guid(f563da1cdd2548545af28f5a4e9f6121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_1.png using Guid(f563da1cdd2548545af28f5a4e9f6121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '166ab32a398137347ffd8d547cd412da') in 0.015553 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Texture2D/UIFoldoutOpened.png
+  artifactKey: Guid(370b2f5398d4b4b44844e01a03820dfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/UIFoldoutOpened.png using Guid(370b2f5398d4b4b44844e01a03820dfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8233119e6b0dfafb72753ad194f2c03') in 0.073521 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Texture2D/LDR_LLL1_11.png
+  artifactKey: Guid(5db3673bee1d81444a445df5c26a7737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_11.png using Guid(5db3673bee1d81444a445df5c26a7737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc22a5fdadd3d6db37247263f169a27c') in 0.064127 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Texture2D/豌豆射手.png
+  artifactKey: Guid(17a331cb05b6dfb4fae09bb04514a478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/豌豆射手.png using Guid(17a331cb05b6dfb4fae09bb04514a478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '328c7da7ab938f2f3cd3132a27ad213a') in 0.039810 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Texture2D/Medium02.png
+  artifactKey: Guid(22142a192b02d1b479cdd5e14c14e00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Medium02.png using Guid(22142a192b02d1b479cdd5e14c14e00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1624b0a3a0322e675978f7f4eee5c57') in 0.075353 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Texture2D/LDR_LLL1_27.png
+  artifactKey: Guid(b68ad215b534d2a47b74dd88f917aaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_27.png using Guid(b68ad215b534d2a47b74dd88f917aaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43f40639801c8e57418ad7642ef52c7e') in 0.014718 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Texture2D/LDR_LLL1_21.png
+  artifactKey: Guid(a8a76fb8a986ca042a30147a4e0510ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_21.png using Guid(a8a76fb8a986ca042a30147a4e0510ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b49048b5e9331e2f76a6ff8064e925c') in 0.071183 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Texture2D/Thin02.png
+  artifactKey: Guid(680c1523fe38c344b86f151b3ba3f7bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Thin02.png using Guid(680c1523fe38c344b86f151b3ba3f7bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ed75d292d511a4bff8f24c21d2190d6') in 0.071533 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Texture2D/Circle.png
+  artifactKey: Guid(4c76c3d68408c274ebca5c71dd9367a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Circle.png using Guid(4c76c3d68408c274ebca5c71dd9367a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c5d6b6ee86fca5770a6f350b0d51323') in 0.049017 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Texture2D/LDR_LLL1_22.png
+  artifactKey: Guid(2b2d0e2ba2ce2f84396116a0bde636df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_22.png using Guid(2b2d0e2ba2ce2f84396116a0bde636df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e91e1d7538f3632254eb02f50f32613e') in 0.066733 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Texture2D/LDR_LLL1_28.png
+  artifactKey: Guid(eeb1fb5cf9e9787449bd6e1a0933f587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_28.png using Guid(eeb1fb5cf9e9787449bd6e1a0933f587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '933ffed96da6094bb0b4bc3f69b04519') in 0.104209 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture2D/LDR_LLL1_20.png
+  artifactKey: Guid(8ef98fb683930da4083cd4e76f4ff6eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_20.png using Guid(8ef98fb683930da4083cd4e76f4ff6eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '264cb315710700f37a8c7592bde5f866') in 0.583817 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Texture2D/SearchTex.png
+  artifactKey: Guid(06765fa8f3e050344b3aa1070360f97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/SearchTex.png using Guid(06765fa8f3e050344b3aa1070360f97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9f715a6b000576327dbe3e891c42f80') in 0.061195 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Texture2D/汉仪夏日体W Atlas.png
+  artifactKey: Guid(e3feb70a0f3a81e40bfa929a7d23391e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/汉仪夏日体W Atlas.png using Guid(e3feb70a0f3a81e40bfa929a7d23391e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5837c82610df433f4a747d499fc4fd63') in 0.237486 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Texture2D/LDR_LLL1_24.png
+  artifactKey: Guid(70d4e73ca5f792043b8f658e13ada5b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/LDR_LLL1_24.png using Guid(70d4e73ca5f792043b8f658e13ada5b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '558284965527c223ed578d698dd96fd8') in 0.065723 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Texture2D/Large02.png
+  artifactKey: Guid(1c8658ac5f272934ea24653f90b2ec93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/Large02.png using Guid(1c8658ac5f272934ea24653f90b2ec93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46bed4b20ef9982ac09e4f9d1a23768c') in 0.136525 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Texture2D/White1px.png
+  artifactKey: Guid(8111fd384b55621448b0cc82088d4cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Texture2D/White1px.png using Guid(8111fd384b55621448b0cc82088d4cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d855c90a504d366f1ecec494e1f243c') in 0.060812 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 49.882422 seconds.
+  path: Assets/Plugins
+  artifactKey: Guid(7bad8cf2c8f7d6446b4598a01134b370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins using Guid(7bad8cf2c8f7d6446b4598a01134b370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e792571ca2d09afc383aebfba39e85c0') in 0.011595 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.040885 seconds.
+  path: Assets/Material
+  artifactKey: Guid(3f7245e601b78b84e9af4759db2a5055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material using Guid(3f7245e601b78b84e9af4759db2a5055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eb14de156dc8119acf9597f8e87a8ab') in 0.011185 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.092194 seconds.
+  path: Assets/Material/Brightness.mat
+  artifactKey: Guid(c10d6fda35352bc4789bae053a9aebcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/Brightness.mat using Guid(c10d6fda35352bc4789bae053a9aebcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '2a6fee3e916675437f8ac8ca19fd920d') in 0.040620 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Material/TextMeshPro_Sprite.mat
+  artifactKey: Guid(68a1b3e0a2fc97e4d9811cd11ddb32db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/TextMeshPro_Sprite.mat using Guid(68a1b3e0a2fc97e4d9811cd11ddb32db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'de4ff6327a832b06d065763b36437a97') in 0.034068 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Material/fzjz Atlas Material.mat
+  artifactKey: Guid(3c437010c8654174ba409071d4a3f5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/fzjz Atlas Material.mat using Guid(3c437010c8654174ba409071d4a3f5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'af975a9b8c52659f1c635ae1e9a2d5a3') in 0.078231 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Material/Red.mat
+  artifactKey: Guid(8565018f02da4f94bb47b62838ebb483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/Red.mat using Guid(8565018f02da4f94bb47b62838ebb483) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: 'e56a048af2290b55592dd5a99bdeddc0') in 0.045451 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Material/fzjz Atlas Material_0.mat
+  artifactKey: Guid(792549c84b0925b4a9dd2f1e01b51041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/fzjz Atlas Material_0.mat using Guid(792549c84b0925b4a9dd2f1e01b51041) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '6f873dfe9baf3c0967794805570d0b9c') in 0.075462 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Material/Water.mat
+  artifactKey: Guid(d011281150e9cce469515948730acd48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/Water.mat using Guid(d011281150e9cce469515948730acd48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '8c3fb2ffb2c4ca90bb87562499e59997') in 0.036105 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Material/fzcq Atlas Material_0.mat
+  artifactKey: Guid(33dce67a86d8d3a4f9f450a359f48845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Material/fzcq Atlas Material_0.mat using Guid(33dce67a86d8d3a4f9f450a359f48845) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset.CreatePipeline () [0x00039] in <c71b5fc1156445c48e427f056be27e13>:0 
+  at UnityEngine.Rendering.RenderPipelineAsset.InternalCreatePipeline () [0x00004] in <fa7a3c481a1145ec94aaee2ff55b440a>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline()
+UnityEngine.Rendering.RenderPipelineManager:PrepareRenderPipeline(RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal(RenderPipelineAsset, IntPtr, List`1, AtomicSafetyHandle)
+UnityEngine.Camera:Render(Camera)
+UnityEditor.PreviewRenderUtility:Render(Boolean, Boolean)
+UnityEditor.MaterialEditor:DoRenderPreview(PreviewRenderUtility, Boolean)
+UnityEditor.MaterialEditor:RenderStaticPreview(String, Object[], Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreview(Object, Object[], String, Int32, Int32)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String)
+
+ -> (artifact id: '5f1a7d83ca0136c76bc7535150e549bb') in 0.075043 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.781699 seconds.
+  path: Assets/Resources/plants/peashooter/PeaShooter_0.png
+  artifactKey: Guid(02cb0dc84a34b2845b5fa0ffbf6c728f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/plants/peashooter/PeaShooter_0.png using Guid(02cb0dc84a34b2845b5fa0ffbf6c728f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd46b17f70fc991427f3b8e24a879d77') in 0.047078 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 24.378444 seconds.
+  path: Assets/MonoBehaviour
+  artifactKey: Guid(9fa8541110a890e44875236bea7dba94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/MonoBehaviour using Guid(9fa8541110a890e44875236bea7dba94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd191ac213b5222e9e0dc1d17b5f3e14') in 0.013716 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.217599 seconds.
+  path: Assets/MonoBehaviour/ContinuumBold SDF.asset
+  artifactKey: Guid(b3eaf328832afc44ba26c23d7c5077bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/MonoBehaviour/ContinuumBold SDF.asset using Guid(b3eaf328832afc44ba26c23d7c5077bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f917eaeeb99b4a97ecb4ef27c4c0463') in 0.032172 seconds 
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/MonoBehaviour/New Universal Render Pipeline Asset_Renderer.asset
+  artifactKey: Guid(f67aea7d592cc6744ac2a686b6feea18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/MonoBehaviour/New Universal Render Pipeline Asset_Renderer.asset using Guid(f67aea7d592cc6744ac2a686b6feea18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '828953ba044521afb6cf6b4df727dda9') in 0.014180 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/MonoBehaviour/UniversalRenderPipelineGlobalSettings.asset
+  artifactKey: Guid(dc0d1eee8fba0c64e819b794c88ad7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/MonoBehaviour/UniversalRenderPipelineGlobalSettings.asset using Guid(dc0d1eee8fba0c64e819b794c88ad7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec417cd00ef0c1a744694b6fcb82fc9') in 0.021322 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/MonoBehaviour/line.asset
+  artifactKey: Guid(8350578fa0917a344b6f24302879dddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/MonoBehaviour/line.asset using Guid(8350578fa0917a344b6f24302879dddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10cc00d5a588a8475c07cd132e6a1b34') in 0.023026 seconds 
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 27.664121 seconds.
+  path: Assets/PrefabInstance
+  artifactKey: Guid(b3e2ce20907590c419b16b7c7774d307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance using Guid(b3e2ce20907590c419b16b7c7774d307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1eb200029f629d65e4cbded59b76569') in 0.011866 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.013459 seconds.
+  path: Assets/PrefabInstance/DebugUIBitField.prefab
+  artifactKey: Guid(9612c2a07995c6e438eef42064e6d367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance/DebugUIBitField.prefab using Guid(9612c2a07995c6e438eef42064e6d367) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIBitField') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 16') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 4') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 23') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 15') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 1') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 8') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 7') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 20') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 12') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 3') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 19') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 6') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 17') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 25') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 13') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 26') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 30') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 31') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 22') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 21') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 24') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 11') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 9') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 29') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 5') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 0') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 10') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 18') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 27') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 28') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 14') references runtime script in scene file. Fixing!
+GameObject (named 'DebugUI Toggle 2') references runtime script in scene file. Fixing!
+ -> (artifact id: 'b7405c20fa6399d2bf3426dedb6bd3fa') in 0.030294 seconds 
+Number of asset objects unloaded after import = 605
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/PrefabInstance/DebugUIGroup.prefab
+  artifactKey: Guid(36a95892b25ac9846bb3e1a853a624c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance/DebugUIGroup.prefab using Guid(36a95892b25ac9846bb3e1a853a624c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIGroup') references runtime script in scene file. Fixing!
+ -> (artifact id: '172ccc4116962d45686db4b6360feaef') in 0.013878 seconds 
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/PrefabInstance/DebugUIObjectList.prefab
+  artifactKey: Guid(04404dcedaa449f4bb7e413dbcb40991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance/DebugUIObjectList.prefab using Guid(04404dcedaa449f4bb7e413dbcb40991) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIObjectList') references runtime script in scene file. Fixing!
+ -> (artifact id: '7f73f8d1a1465dfa8a8712fe82695de9') in 0.013381 seconds 
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/PrefabInstance/DebugUIFloatField.prefab
+  artifactKey: Guid(c0efcbde9129de949ac3b12d72d5717b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance/DebugUIFloatField.prefab using Guid(c0efcbde9129de949ac3b12d72d5717b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIFloatField') references runtime script in scene file. Fixing!
+ -> (artifact id: 'b434d321d73cfb9b72192f702433f4ff') in 0.014518 seconds 
+Number of asset objects unloaded after import = 35
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/PrefabInstance/DebugUIEnumHistory.prefab
+  artifactKey: Guid(9a86b7f6e9e5c814e8e8e4ec9d3382ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance/DebugUIEnumHistory.prefab using Guid(9a86b7f6e9e5c814e8e8e4ec9d3382ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIEnumHistory') references runtime script in scene file. Fixing!
+ -> (artifact id: 'bf37a1cd359fefe759f7f35620f9e126') in 0.014114 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/PrefabInstance/DebugUIProgressBar.prefab
+  artifactKey: Guid(f2aca791c0008ea49965807fb5f8ab84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/PrefabInstance/DebugUIProgressBar.prefab using Guid(f2aca791c0008ea49965807fb5f8ab84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) GameObject (named 'DebugUIProgressBar') references runtime script in scene file. Fixing!
+ -> (artifact id: 'e41af580ace555e11267861fde2d0096') in 0.014138 seconds 
+Number of asset objects unloaded after import = 19
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

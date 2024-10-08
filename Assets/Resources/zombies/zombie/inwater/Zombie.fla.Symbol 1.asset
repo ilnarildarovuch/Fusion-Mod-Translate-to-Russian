@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81fe925196120246486013f4073d19b, type: 3}
+  m_Name: Zombie.fla.Symbol 1
+  m_EditorClassIdentifier:
+  Name: Symbol 1
+  Sprite: {fileID: 21300000, guid: c9395fd144887d14eb493b2b0206783b, type: 2}
+  FrameRate: 12
+  AssetGUID: 432866d2c7eb8054396237926777bd5f
+  Sequences:
+  - Name: Default
+    Frames:
+    - Labels: []
+      MeshData:
+        SubMeshes:
+        - StartVertex: 0
+          IndexCount: 6
+        Vertices:
+        - {x: 0, y: 0}
+        - {x: 0.087997735, y: 0}
+        - {x: 0.087997735, y: -0.16799743}
+        - {x: 0, y: -0.16799743}
+        UVs:
+        - 1920950015
+        - 2071949311
+        AddColors:
+        - 0
+        - 0
+        MulColors:
+        - 33554944
+        - 33554944
+      Materials:
+      - {fileID: 2100000, guid: d2aed876d29806c469fd71fcef4ec892, type: 2}
